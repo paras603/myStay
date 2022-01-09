@@ -1,0 +1,152 @@
+/* login , create account*/
+.login, .signup{
+    /* background-color: rgb(185, 183, 183); */
+    border-radius: 10px;
+    margin: auto;
+    /* width: 50%; */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.288);
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-heading, .signup-heading{
+    background-color: rgb(84,174,63);
+    padding-left: 40px;
+    color: white;
+}
+
+.login-form, .signup-form{
+    padding: 10% 20% 5% 20%;
+}
+
+.login-logo, .signup-logo{
+   display: flex;
+   justify-content: center;
+}
+
+.form-floating input{
+    border-radius: 35px;
+    padding-left: 30px;
+}
+
+.form-floating input[type="password"],
+.form-floating input[type="text"],
+.form-floating label[for="floatingInput"],
+.form-floating label[for="floatingPassword"],
+.form-floating label[for='floatingEmail'],
+.form-floating input[type="email"]
+{
+    padding-left: 30px;
+}
+
+.forgot-password{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.forgot-password a{
+    color: rgb(84,174,63);
+    font-size: 14px;
+}
+
+.login-form button, .signup-form button{
+    text-transform: uppercase;
+    padding: 15px 136px;
+    border: 1px solid rgb(206,212,218);
+    border-radius: 34px;
+    white-space: nowrap;
+    background-color: rgb(84,174,63);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.login-form button:hover, .signup-form button:hover{
+    background-color: white;
+    border: 1px solid rgb(84,174,63);
+    color: rgb(84,174,63);
+}
+
+.signup-now, .signin-now{
+    text-align: center;
+}
+
+.signup-now h6, .signin-now h6{    
+    font-size: 14px;
+}
+
+.signup-now h6 a, .signin-now h6 a{
+    text-transform: uppercase;
+    color: rgb(84,174,63);
+}
+
+.terms-and-conditions{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.terms-and-conditions label a{
+    color: rgb(84, 174, 63)!important;
+}
+
+.terms-and-conditions label a:hover{
+    text-decoration: underline;
+}
+
+.signin-left{
+    background-image: url(../images/homestay1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 40px 20px;
+    padding: 30px 30px;
+    height: 420px;
+    border-radius: 10px;
+}
+
+.singin-left-cont{
+    background-color: rgba(128, 128, 128, 0.575);
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.singin-left-cont h1, .singin-left-cont h3{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.singin-left-cont h1{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.singin-left-cont h3{
+    font-family: 'Moon Dance', cursive;
+    font-size: 50px;
+    margin-bottom: 35px;
+}
+
+.singin-left-cont button{
+    margin-left: 29%;
+    margin-right: 20%;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    text-transform: uppercase;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 34px;
+    white-space: nowrap;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.singin-left-cont button:hover{
+    color: white;
+    background-color:  rgb(84, 174, 63);
+    border-color:  white;
+}
+

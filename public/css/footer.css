@@ -1,0 +1,53 @@
+/*     footer    */
+footer{
+    font-family: 'Noto Sans', sans-serif;
+    border-top: 1px solid rgba(175, 170, 170, 0.288);
+    padding-top: 10px;
+}
+
+footer h6{
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin-bottom: 30px;
+}
+
+footer p,a{
+    font-size: 15px;
+    letter-spacing: 0.1px;
+}
+
+footer p, footer li{
+    color: rgb(105, 102, 102);
+}
+
+.footer-item ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-item ul li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-social-media ul li{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer-payment-method ul{
+    list-style-type: none;
+}
+
+.footer-payment-method li{
+    display: inline;
+    float: right;
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+.footer-payment-method{
+    margin-right: 40px;
+}
+
