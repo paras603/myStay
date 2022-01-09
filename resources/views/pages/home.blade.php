@@ -34,6 +34,8 @@
                 </div>                     
             </div>
         </div>
+
+{{-- company features like easy booking, money return and so on --}}
         <div class="row banner-services pt-4 pb-4">
             <div class="col-xl-3">
                 <div class="row">
@@ -90,113 +92,27 @@
               <h3>New Homestays</h3>
         </div>
         <div>
-        <div class="row mt-3" style="margin-left: 10px;">
-            <div class="col-xl-4 col-md-6">
-                <div class="row home-top-cate-card mt-3 pt-4 pb-3">
-                    <div class="col-md-6">
-                        <img src="../images/homestay5.jpg" style="width:100%;">
-                    </div>
-                    <div class="col-md-6 home-top-cate-items">
-                        <h6><a>Niraj Homestay</a></h6>
-                        <ul>
-                            <li><a>Services</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Gallery</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Rating & Review</a></li>
-                        </ul>
-                    </div>
-                </div>                    
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="row home-top-cate-card mt-3 pt-4 pb-3">
-                    <div class="col-md-6">
-                        <img src="../images/homestay5.jpg" style="width:100%;">
-                    </div>
-                    <div class="col-md-6 home-top-cate-items">
-                        <h6><a>Niraj Homestay</a></h6>
-                        <ul>
-                            <li><a>Services</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Gallery</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Rating & Review</a></li>
-                        </ul>
-                    </div>
-                </div>                    
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="row home-top-cate-card mt-3 pt-4 pb-3">
-                    <div class="col-md-6">
-                        <img src="../images/homestay5.jpg" style="width:100%;">
-                    </div>
-                    <div class="col-md-6 home-top-cate-items">
-                        <h6><a>Niraj Homestay</a></h6>
-                        <ul>
-                            <li><a>Services</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Gallery</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Rating & Review</a></li>
-                        </ul>
-                    </div>
-                </div>                    
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="row home-top-cate-card mt-3 pt-4 pb-3">
-                    <div class="col-md-6">
-                        <img src="../images/homestay5.jpg" style="width:100%;">
-                    </div>
-                    <div class="col-md-6 home-top-cate-items">
-                        <h6><a>Niraj Homestay</a></h6>
-                        <ul>
-                            <li><a>Services</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Gallery</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Rating & Review</a></li>
-                        </ul>
-                    </div>
-                </div>                    
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="row home-top-cate-card mt-3 pt-4 pb-3">
-                    <div class="col-md-6">
-                        <img src="../images/homestay5.jpg" style="width:100%;">
-                    </div>
-                    <div class="col-md-6 home-top-cate-items">
-                        <h6><a>Niraj Homestay</a></h6>
-                        <ul>
-                            <li><a>Services</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Gallery</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Rating & Review</a></li>
-                        </ul>
-                    </div>
-                </div>                    
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="row home-top-cate-card mt-3 pt-4 pb-3">
-                    <div class="col-md-6">
-                        <img src="../images/homestay5.jpg" style="width:100%;">
-                    </div>
-                    <div class="col-md-6 home-top-cate-items">
-                        <h6><a>Niraj Homestay</a></h6>
-                        <ul>
-                            <li><a>Services</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Gallery</a></li>
-                            <li><a>Nearby Places</a></li>
-                            <li><a>Rating & Review</a></li>
-                        </ul>
-                    </div>
-                </div>                    
-            </div>
-            
-           
-        </div>
-        
+            <div class="row mt-3" style="margin-left: 10px;">
+                @for ($x = 0; $x < 6; $x++)
+                <div class="col-xl-4 col-md-6">
+                    <div class="row home-top-cate-card mt-3 pt-4 pb-3">
+                        <div class="col-md-6">
+                            <img src="../images/homestay5.jpg" style="width:100%;">
+                        </div>
+                        <div class="col-md-6 home-top-cate-items">
+                            <h6><a>Niraj Homestay</a></h6>
+                            <ul>
+                                <li><a>Services</a></li>
+                                <li><a>Nearby Places</a></li>
+                                <li><a>Gallery</a></li>
+                                <li><a>Nearby Places</a></li>
+                                <li><a>Rating & Review</a></li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>
+                @endfor          
+            </div>        
         </div>
     </div>
 </section>
@@ -246,20 +162,12 @@
         <div class="col-xl-5 home-section-title">
             <h3>Top Homestays of the Week</h3>
         </div>
-        {{-- <div class="col-xl-7 section-nav">
-            <ul><!--
-                --><li><a id="section-nav-current" href="#">Electronics</a></li><!--
-                --><li><a href="#">Computers</a></li><!--
-                --><li><a href="#">Air Condition</a></li><!--
-                --><li><a href="#">Smartphones</a></li><!--
-                --><li><a href="#">Office Electronic</a></li><!--
-            --></ul>
-        </div> --}}
     </div>
     <div>
         <div class="row">
             <div class="container">
                 <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
+                    @for($x=0; $x<6; $x++)
                     <div class="item home-carousel-item pt-2" id="teamtxt">
                         <div class="container" id="home-carousel-img">                               
                                 
@@ -301,217 +209,7 @@
                             </ul>
                         </div>
                     </div>
-                    
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow"></p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-20%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Hill-Side Homestay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(3)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status">
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-20%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Sano Seven-Star</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span>(5)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status">
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-15%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Mero Ghar</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike></strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(0)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p></p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Manju ko Bhatti</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(1)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-5%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Roshan Homestay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike></strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(1)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
+                    @endfor                    
                 </div>
             </div>
         </div>            
@@ -560,6 +258,7 @@
         <div class="row">
             <div class="container">
                 <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
+                    @for($x=0; $x<6; $x++)
                     <div class="item home-carousel-item pt-2" id="teamtxt">
                         <div class="container" id="home-carousel-img">                               
                                 
@@ -601,219 +300,7 @@
                             </ul>
                         </div>
                     </div>
-                    
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow"></p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-20%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Pravu Homestay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(3)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status">
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-20%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Himalayan Homestay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span>(5)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status">
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-15%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Tour est Stay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike></strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(0)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p></p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Gurung Homestay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(1)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-5%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Magar Homestay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike></strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(1)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-         
-                    
+                    @endfor                        
                 </div>
             </div>
         </div>  
