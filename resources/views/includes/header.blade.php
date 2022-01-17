@@ -19,7 +19,7 @@
                         <li><a href="{{url('customer-signin')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">login</span>
                             Sign in</a></li>
-                        <li><a href="#" class="dropdown-item">
+                        <li><a href="{{ url('customer-profile') }}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             My Account</a></li>
                         <li><a href="#" class="dropdown-item">

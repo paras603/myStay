@@ -11,7 +11,7 @@ class MyStayController extends Controller
     }
 
     public function merchantSigninPage(){
-        return view('pages.merchant-singin');
+        return view('pages.merchant-signin');
     }
 
     public function customerSignupPage()
@@ -38,5 +38,9 @@ class MyStayController extends Controller
 
     public function customerDashboard(){
         return view('pages.customer');
+    }
+
+    public function customerProfilePage(){
+        return view('pages.customer-profile');
     }
 }

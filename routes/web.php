@@ -35,3 +35,5 @@ Route::get('blogs', [MyStayController::class, 'blogsPage']);
 Route::get('blog', [MyStayController::class, 'blogPage']);
 
 Route::get('faq', [MyStayController::class, 'faqPage']);
+
+Route::get('customer-profile', [MyStayController::class, 'customerProfilePage']);

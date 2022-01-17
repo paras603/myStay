@@ -22,10 +22,14 @@
                         <h3>Welcome to myStay!</h3>
                     </div>
                     <div class="signin-option-btn">
-                        <button>Merchant SignIn</button>
+                        <form method="GET" action="{{ url('merchant-signin') }}">
+                            <button>Merchant SignIn</button>
+                        </form>
                     </div>
                     <div class="signin-option-btn">
-                        <button>Customer SignIn</button>
+                        <form method="get" action="{{ url('customer-signin') }}">
+                            <button>Customer SignIn</button>
+                        </form>
                     </div>
                 </div>
             </div>
