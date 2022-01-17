@@ -23,14 +23,14 @@
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             My Account</a></li>
                         <li><a href="#" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">favorite_border</span>
-                            Wishlist</a></li>
+                            <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
+                            Bookmark</a></li>
                         <li><a href="#" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">compare</span>
-                            Compare 0</a></li>
+                            <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
+                            Blogs</a></li>
                         <li><a href="#" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">task_alt</span>
-                            Checkout 0</a></li>                                
+                            Checkout</a></li>                                
                     </ul>
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
@@ -39,10 +39,8 @@
                         </li>
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="#" class="dropdown-item">
-                        <span>FAQ</span></a></li>
-                        <li><a href="#" class="dropdown-item">
-                        <span>user manual</span></a></li>                               
+                        <li><a href="{{ url('faq') }}" class="dropdown-item">
+                        <span>FAQ</span></a></li>                        
                     </ul>
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
@@ -86,17 +84,9 @@
 
                                 <ul class="dropdown-menu nav-dropdown dropdown-scroll" aria-labelledby="dropdownMenuLink">
                                     <li><a id="mid-nav-current" class="dropdown-item" href="#">All Categories</a></li>
-                                    <li><a class="dropdown-item" href="#">Clothing</a></li>
-                                    <li><a class="dropdown-item" href="#">Shoes</a></li>
-                                    <li><a class="dropdown-item" href="#">Jwelery</a></li>
-                                    <li><a class="dropdown-item" href="#">Smart Phone</a></li>
-                                    <li><a class="dropdown-item" href="#">Laptop</a></li>
-                                    <li><a class="dropdown-item" href="#">Cookware</a></li>
-                                    <li><a class="dropdown-item" href="#">Utensil & Gadget</a></li>
-                                    <li><a class="dropdown-item" href="#">Beauty & Health</a></li>
-                                    <li><a class="dropdown-item" href="#">Furniture</a></li>
-                                    <li><a class="dropdown-item" href="#">Computer & Accessories</a></li>
-                                    <li><a class="dropdown-item" href="#">Kitchen & Dining</a></li>
+                                    <li><a class="dropdown-item" href="#">Location</a></li>
+                                    <li><a class="dropdown-item" href="#">Name</a></li>
+                                    <li><a class="dropdown-item" href="#">Rating</a></li>
                                 </ul>
                             </div>
                         </div>

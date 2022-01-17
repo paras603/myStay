@@ -26,4 +26,9 @@ class MyStayController extends Controller
     public function blogPage(){
         return view('pages.blog');
     }
+
+    public function faqPage()
+    {
+        return view('pages.faq');
+    }
 }

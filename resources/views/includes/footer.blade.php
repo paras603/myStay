@@ -45,8 +45,8 @@
                         <li><a>Contact</a></li>
                         <li><a>Address</a></li>
                         <li><a>Term & Condition</a></li>
-                        <li><a>Delivery</a></li>
-                        <li><a>Manufacture</a></li>
+                        <li><a>Blogs</a></li>
+                        <li><a>User Manual</a></li>
                         <li><a>FAQs</a></li>
                     </ul>
                 </div>
@@ -54,19 +54,19 @@
                     <h6>My Account</h6>
                     <ul>
                         <li><a>My Account</a></li>
-                        <li><a>Order History</a></li>
-                        <li><a>Stores</a></li>
-                        <li><a>Pastwork</a></li>
+                        <li><a>Booking History</a></li>
+                        <li><a>Popular Homestays</a></li>
                         <li><a>Discount</a></li>
+                        <li><a>Blogs</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-item">
                     <h6>Bussiness</h6>
                     <ul>
-                        <li><a>Our Press</a></li>
-                        <li><a>Checkout</a></li>
-                        <li><a>My Account</a></li>
-                        <li><a>Shop</a></li>
+                        <li><a>Be a Customer</a></li>
+                        <li><a>Be a Merchat</a></li>
+                        <li><a>About us</a></li>
+                        <li><a>Homestays</a></li>
                     </ul>
                 </div>
             </div>
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row pt-1 pb-3">
                 <div class="col-sm-6">
-                    <p style="padding-top: 25px;">Copyright&copy2021 ~ Ecommerce. All rights reserved.</p>
+                    <p style="padding-top: 25px;">Copyright&copy2021 ~ myStay. All rights reserved.</p>
                 </div>
                 <div class="col-sm-6">
                     <div class="footer-payment-method">

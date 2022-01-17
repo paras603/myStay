@@ -29,3 +29,5 @@ Route::get('customer-signup', [MyStayController::class, 'customerSignupPage']);
 Route::get('merchant-signup', [MyStayController::class, 'merchantSignupPage']);
 
 Route::get('blog', [MyStayController::class, 'blogPage']);
+
+Route::get('faq', [MyStayController::class, 'faqPage']);

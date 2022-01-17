@@ -1,128 +1,141 @@
 @extends('layouts.default')
 
 @section('content')
-<!-- news from blog -->
-<section class="news-from-blog pt-5 pb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 home-section-title">
-                <h3>News from Blog</h3>
-            </div>
-            <div class="container">
-                <div class="owl-carousel-wrapper mt-1 pt-4">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                        
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                <img src="../images/homestay1.jpg">
-                                            </div>
+<main>
+    <div class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog-left-sidebar">
+                        @for($x=0; $x<3; $x++)
+                        {{-- @foreach($blogs as $blog) --}}
+                        <article class="blog-item">
+                            <div class="blog-item-img">
+                                {{-- <img src="{{asset('images/'.$blog->image)}}"> --}}
+                                <img src="{{asset('images/homestay1.jpg')}}">
+                                <a class="blog-item-date">
+                                    {{-- <h3>{{$blog->published_date}}</h3> --}}
+                                    <h3>23 August 2021</h3>
+                                    <!-- <p>Jun</p> -->
+                                </a>
+                            </div>
+                            <div class="blog-details">
+                                <a class="d-inline-block" href="#">
+                                    {{-- <h2 class="blog-head">{{$blog->title}}</h2> --}}
+                                    <h2 class="blog-head">wave them goodbye</h2>
+                                </a>
+                                {{-- <p>{{$blog->description}}</p> --}}
+                                <p>I walk in a lonely road</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#">
+                                        <i class="fa fa-user"></i>
+                                        {{-- {{$blog->category}} --}}
+                                        Hitch-hiking
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa fa-comments"></i>02 comments
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </article>
+                        {{-- @endforeach --}}
 
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
-                                                <h6>100% Lottery Win Rate</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
-                                            </div>
-                                        </div>                    
+                        {{-- <div class="container">
+                            {{$blogs->links('pagination::bootstrap-4')}}
+
+                        </div> --}}
+                        @endfor
+                    </div>                        
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-right-sidebar">
+                        <aside class="single-sidebar-widget search-widget">
+                            <form action="{{url('search')}}">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search keyword" name="keyword">
+                                        <div class="input-group-append d-flex">
+                                            <button class="boxed-btn2" type="submit">Search</button>
+                                        </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                <img src="../images/homestay1.jpg">
-                                            </div>
-
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
-                                                <h6>100% Lottery Win Rate</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
-                                            </div>
-                                        </div>                    
-                                    </div> 
+                                </div>
+                            </form>
+                        </aside>
+                        <aside class="single-sidebar-widget post-category-widget">
+                            <h2 class="widget-title">Category</h2>
+                            <ul class="cat-list">
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Technology</p>
+                                        <p>(23)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Travel</p>
+                                        <p>(12)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Lifestyle</p>
+                                        <p>(22)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Politics</p>
+                                        <p>(09)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Esports</p>
+                                        <p>(11)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Medicine</p>
+                                        <p>(13)</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="single-sidebar-widget recent-post-widget">
+                            <h3 class="widget-title" style="margin-bottom: 50px;">Recent Post</h3>
+                            @for($x=0; $x<4; $x++)
+                            <div class="media post-item">
+                                <img src="..\images\homestay1.jpg">
+                                <div class="media-body">
+                                    <a href="blog.html">
+                                        <h5>From rags to riches</h5>
+                                        <p>August 20, 2021</p>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <div class="row">                        
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                <img src="../images/homestay1.jpg">
-                                            </div>
-
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
-                                                <h6>Scam on Internet</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
-                                            </div>
-                                        </div>                    
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                <img src="../images/homestay1.jpg">
-                                            </div>
-
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
-                                                <h6>Avoid Scam on Internet</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
-                                            </div>
-                                        </div>                    
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev slider-btn" id="slider-before-icon" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-                            <span class="material-icons-outlined" style="font-size: 18px;">navigate_before</span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next slider-btn" id="slider-next-icon" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-                            <span class="material-icons-outlined" style="font-size: 18px;">navigate_next</span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                            @endfor
+                        </aside>
+                        <aside class="single-sidebar-widget tag-clouds-widget">
+                            <h4 class="widget-title">Tag Clouds</h4>
+                            <ul class="list">
+                                <li><a href="#">lifestyle</a></li>
+                                <li><a href="#">sports</a></li>
+                                <li><a href="#">love</a></li>
+                                <li><a href="#">project</a></li>
+                                <li><a href="#">technology</a></li>
+                                <li><a href="#">music</a></li>
+                                <li><a href="#">esports</a></li>
+                                <li><a href="#">travel</a></li>
+                                <li><a href="#">politics</a></li>
+                                <li><a href="#">science</a></li>
+                            </ul>
+                        </aside>
+                        
                     </div>
                 </div>
-            </div>  
-        </div> 
+            </div>
+        </div>
     </div>
-</section>
-
+</main>
 @endsection
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript">
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        autoplay:false,
-        autoplayTimeout: 1500,
-        dots:false,
-        nav:false,
-        // navText:["<",">"],
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            950:{
-                items:4
-            },
-            1150:{
-                items:5
-            }
-        }
-    })
-
-</script>

@@ -1,0 +1,64 @@
+.faq-title{
+    margin: 40px 0px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.1px;
+    padding-top: 120px;
+}
+
+.faq-title h3{
+    font-weight: 700;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.faq-title p{
+    font-weight: 400;
+    font-size: 20px;
+    margin: 10px 0px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.faq-title span{
+    font-family: 'Urbanist';
+    font-weight: 300;
+    color: rgb(105, 102, 102);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+}
+
+.faq-title span a{
+    color: rgb(84,174,63);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*faq image*/
+.faq-img{
+    margin: 20px 0px;
+}
+
+/* faq main question and answer? */
+.faq-main{
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 60px;
+    padding: 40px 30px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.288);
+}
+
+.faq-item{
+    margin: 10px 0px;
+}
+
+.question, .answer{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+}
+
+.question{
+    font-weight: bold;
+}
+

@@ -4,10 +4,15 @@ a{
     color: rgb(33,37,41);
 }
 
+.form-control{
+    border-left: transparent;
+}
+
 .form-control:focus {
     color: #212529;
     background-color: #fff;
     border-color: rgb(84,174,63);
+    border-left: transparent;
     outline: 0;
     box-shadow:none;
 }
