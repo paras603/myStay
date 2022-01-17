@@ -7,38 +7,60 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog-left-sidebar">
-                        <article class="each-blog">
-                            <div class="each-blog-title">
-                                <h2>Reproductive Rights and Health Care Are Deal Breakers in 2021 Midterm Elections</h2>
+                        @for($x=0; $x<3; $x++)
+                        {{-- @foreach($blogs as $blog) --}}
+                        <article class="blog-item">
+                            <div class="blog-item-img">
+                                {{-- <img src="{{asset('images/'.$blog->image)}}"> --}}
+                                <img src="{{asset('images/homestay1.jpg')}}">
+                                <span class="blog-item-date">
+                                    {{-- <h3>{{$blog->published_date}}</h3> --}}
+                                    <h3>23 August 2021</h3>
+                                    <!-- <p>Jun</p> -->
+                                </span>
                             </div>
-                            <div class="each-blog-published-date">
-                                <p>Publlished on: December 28, 2021</p>
-                            </div>
-                            <div class="each-blog-img">
-                                <img src="images/homestay5.jpg">
-                            </div>
-                            <div class="each-blog-content">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque suscipit cupiditate blanditiis minima facilis ut odit libero iste dolorum aliquid?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, facere eaque blanditiis quidem, corporis tempora suscipit veniam quisquam dolores eveniet molestiae veritatis necessitatibus. Dicta blanditiis molestias voluptatem architecto, iure necessitatibus.
-                            <br><br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis in illo molestiae harum tempore, placeat, dolorum similique quisquam obcaecati fuga provident dolores voluptas sit unde iste eum rem? Tempora possimus eius asperiores modi beatae praesentium est libero rerum molestias voluptas? Voluptatibus reiciendis ab quos quaerat asperiores at culpa perferendis magni natus dignissimos, distinctio fugit reprehenderit minus accusamus! Quisquam, reprehenderit ab.
-                            <br><br>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla quaerat non quibusdam, soluta iste natus voluptatem! Qui delectus ipsum nostrum unde aperiam. Id, aliquam similique consequatur rerum nulla fuga? Unde sapiente placeat, dolorum maiores ab alias temporibus optio?
-                            </div>
-                            <div class="each-blog-author">
-                                <ul>
+                            <div class="blog-details">
+                                <a class="d-inline-block" href="{{ url('blog') }}">
+                                    {{-- <h2 class="blog-head">{{$blog->title}}</h2> --}}
+                                    <h2 class="blog-head">Reproductive Rights and Health Care Are Deal Breakers in 2021 Midterm Elections</h2>
+                                </a>
+                                {{-- <p>{{$blog->description}}</p> --}}
+                                <p>I walk in a lonely road</p>
+                                <ul class="blog-info-link">
                                     <li><a href="#">
                                         <i class="fa fa-user"></i>
-                                        Albert Shrestha
+                                        {{-- {{$blog->category}} --}}
+                                        Hitch-hiking
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa fa-comments"></i>02 comments
                                     </a></li>
                                 </ul>
                             </div>
                         </article>
+                        {{-- @endforeach --}}
+
+                        {{-- <div class="container">
+                            {{$blogs->links('pagination::bootstrap-4')}}
+
+                        </div> --}}
+                        @endfor
                     </div>                        
                 </div>
                 <div class="col-lg-4">
                     <div class="blog-right-sidebar">
-                        
+                        <aside class="single-sidebar-widget search-widget">
+                            <form action="{{url('search')}}">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search keyword" name="keyword">
+                                        <div class="input-group-append d-flex">
+                                            <button class="boxed-btn2" type="submit">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </aside>
                         <aside class="single-sidebar-widget post-category-widget">
                             <h2 class="widget-title">Category</h2>
                             <ul class="cat-list">
@@ -93,7 +115,23 @@
                                 </div>
                             </div>
                             @endfor
-                        </aside>                        
+                        </aside>
+                        <aside class="single-sidebar-widget tag-clouds-widget">
+                            <h4 class="widget-title">Tag Clouds</h4>
+                            <ul class="list">
+                                <li><a href="#">lifestyle</a></li>
+                                <li><a href="#">sports</a></li>
+                                <li><a href="#">love</a></li>
+                                <li><a href="#">project</a></li>
+                                <li><a href="#">technology</a></li>
+                                <li><a href="#">music</a></li>
+                                <li><a href="#">esports</a></li>
+                                <li><a href="#">travel</a></li>
+                                <li><a href="#">politics</a></li>
+                                <li><a href="#">science</a></li>
+                            </ul>
+                        </aside>
+                        
                     </div>
                 </div>
             </div>

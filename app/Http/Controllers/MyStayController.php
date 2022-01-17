@@ -23,6 +23,10 @@ class MyStayController extends Controller
         return view('pages.merchant-signup');
     }
 
+    public function blogsPage(){
+        return view('pages.blogs');
+    }
+
     public function blogPage(){
         return view('pages.blog');
     }

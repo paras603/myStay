@@ -25,7 +25,7 @@
                         <li><a href="#" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
                             Bookmark</a></li>
-                        <li><a href="#" class="dropdown-item">
+                        <li><a href="{{url('blogs')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
                             Blogs</a></li>
                         <li><a href="#" class="dropdown-item">

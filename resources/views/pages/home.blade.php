@@ -238,17 +238,6 @@
         <div class="col-xl-5   home-section-title">
             <h3>Popular Homestay</h3>
         </div>
-        {{-- <div class="col-xl-7 section-nav">
-            <ul><!--
-                --><li><a id="section-nav-current" href="#">Best Seller</a></li><!--
-                --><li><a href="#">Men</a></li><!--
-                --><li><a href="#">Women</a></li><!--
-                --><li><a href="#">Girls</a></li><!--
-                --><li><a href="#">Boys</a></li><!--
-                --><li><a href="#">Baby</a></li><!--
-                --><li><a href="#">Sales $ Deals</a></li><!--                       
-            --></ul>
-        </div> --}}
     </div>
     <div>
         <div class="row">
@@ -318,7 +307,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
-                                        
+                                    @for($x=0; $x<2; $x++)
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
@@ -329,28 +318,16 @@
                                                 <h6>100% Lottery Win Rate</h6>
                                                 <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
                                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
+                                                <a class="home-blog-read-more" href="{{ url('blog') }}">Read more</a>
                                             </div>
                                         </div>                    
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                <img src="../images/homestay2.jpg">
-                                            </div>
-
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
-                                                <h6>100% Lottery Win Rate</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
-                                            </div>
-                                        </div>                    
-                                    </div> 
+                                    @endfor
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="row">                        
+                                <div class="row">   
+                                    @for($x=0; $x<2; $x++)                     
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
@@ -361,24 +338,11 @@
                                                 <h6>Scam on Internet</h6>
                                                 <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
                                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
+                                                <a class="home-blog-read-more" href="{{ url('blog') }}">Read more</a>
                                             </div>
                                         </div>                    
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                <img src="../images/homestay2.jpg">
-                                            </div>
-
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
-                                                <h6>Avoid Scam on Internet</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
-                                                <a class="home-blog-read-more">Read more</a>
-                                            </div>
-                                        </div>                    
-                                    </div> 
+                                    @endfor
                                 </div>
                             </div>
                         </div>
