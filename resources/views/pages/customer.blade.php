@@ -5,29 +5,33 @@
 <section>
     <div class="container">
         <div class="row" style="margin: 20px 20px 20px 20px;">
-            <div class="col-lg-9 col-sm-12 home-banner" id="banner-img">
-                <div class="main-banner mb-5 pb-4">
-                    <h6>adhikari community</h6>
-                    <h1>Experience<br>local lifestyle</h1>
-                    <h4>From <span style="font-weight: 600;">$488</span></h4>
-                    <a href="#">book now</a>  
-                </div>                               
+            <div class="col-lg-8 col-sm-12 home-banner" id="banner-img">
+                <div class="col-lg-6">
+                    <div class="main-banner mb-5 pb-4">
+                        <h6>adhikari community</h6>
+                        <h1>Experience<br>local lifestyle</h1>
+                        <h4>From <span style="font-weight: 600;">$488</span></h4>
+                        <a href="#">book now</a>  
+                    </div>               
+                </div>
             </div>
-            <div class="col-lg-3 col-sm-12">
-                <div class="signin-option pb-4">
-                    <div class="signin-option-profile">
-                        <img src="images/profile.jpg" height="100px" width="100px">
-                    </div>
-                    <div class="signin-option-title">
-                        <h3>Welcome to myStay!</h3>
-                    </div>
-                    <div class="signin-option-btn">
-                        <button>Merchant SignIn</button>
-                    </div>
-                    <div class="signin-option-btn">
-                        <button>Customer SignIn</button>
+            <div class="col-lg-4 col-sm-12">
+                <div class="secondary-banner" id="secondary-banner-1">
+                    <div class=" col-lg-4 col-sm-12">
+                        <div class="secondary-banner-text">
+                            <h4>Thakali <br>Home<br>Stay<br></h4>
+                            <a href="#">Book now</a>
+                        </div>
                     </div>
                 </div>
+                <div class="secondary-banner" id="secondary-banner-2">
+                    <div class=" col-lg-4 col-sm-12">
+                        <div class="secondary-banner-text">
+                            <h4>Rishi<br>Ko<br>Kuti<br></h4>
+                            <a href="#">Book now</a>
+                        </div>
+                    </div>
+                </div>                     
             </div>
         </div>
 

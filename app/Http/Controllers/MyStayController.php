@@ -31,4 +31,8 @@ class MyStayController extends Controller
     {
         return view('pages.faq');
     }
+
+    public function customerDashboard(){
+        return view('pages.customer');
+    }
 }

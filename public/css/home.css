@@ -1,0 +1,48 @@
+.signin-option{
+    background-color: rgb(241,243,246);
+    display: grid;
+    border-radius: 3px;
+}
+
+.signin-option-title{
+    justify-self: center;
+    margin: 20px 0px;
+    font-family: 'Dongle', sans-serif;
+}
+
+.signin-option-title h3{
+    font-size: 40px;
+}
+
+.signin-option-profile{
+    justify-self: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.signin-option-profile img{
+    border-radius: 50%;
+}
+
+.signin-option-btn{
+    margin: 10px 0px;
+    justify-self: center;
+}
+
+.signin-option-btn button{    
+    color: white;
+    background-color: rgba(114, 67, 25, 0.589);
+    border: 1px solid rgba(114, 67, 25, 0.589);
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 5px 15px;
+    word-spacing: 4px;
+}
+
+.signin-option-btn button:hover{
+    background-color: white;
+    color: rgb(114,67,25);
+}
