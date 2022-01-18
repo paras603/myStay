@@ -36,4 +36,10 @@ Route::get('blog', [MyStayController::class, 'blogPage']);
 
 Route::get('faq', [MyStayController::class, 'faqPage']);
 
-Route::get('customer-profile', [MyStayController::class, 'customerProfilePage']);
+Route::get('customer-details', [MyStayController::class, 'customerDetailsPage']);
+
+Route::get('customer-bookings', [MyStayController::class, 'customerBookingsPage']);
+
+Route::get('customer-blogs', [MyStayController::class, 'customerBlogsPage']);
+
+Route::get('customer-settings', [MyStayController::class, 'customerSettingsPage']);

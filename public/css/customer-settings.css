@@ -1,0 +1,29 @@
+.account-settings-head{    
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-left: 3px solid rgba(0, 110, 255, 0.973);
+    padding-left: 9px;
+}
+
+.account-settings-title{
+    font-weight: 600;
+    padding: 0px 0px;
+    border-bottom: 1px solid rgb(108, 98, 98);
+    margin: 30px 0px 20px 0px;
+}
+
+.account-settings-content{
+    margin: 10px 0px 10px 0px;
+}
+
+.account-settings-content button{
+    background-color: rgb(66, 143, 245);
+    color: white;
+    border: 1px solid rgb(66, 143, 245);
+    padding: 5px 15px;
+    border-radius: 5px ;
+}
+
+.account-settings:last-child{
+    margin-bottom: 90px;
+}

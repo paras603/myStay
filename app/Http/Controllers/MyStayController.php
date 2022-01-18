@@ -40,7 +40,19 @@ class MyStayController extends Controller
         return view('pages.customer');
     }
 
-    public function customerProfilePage(){
-        return view('pages.customer-profile');
+    public function customerDetailsPage(){
+        return view('pages.customer.pages.customer-details');
+    }
+
+    public function customerBookingsPage(){
+        return view('pages.customer.pages.customer-bookings');
+    }
+
+    public function customerBlogsPage(){
+        return view('pages.customer.pages.customer-blogs');
+    }
+
+    public function customerSettingsPage(){
+        return view('pages.customer.pages.customer-settings');
     }
 }

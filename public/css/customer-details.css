@@ -1,0 +1,52 @@
+.customer-details{
+    background-color: white;
+    box-shadow: 0 0 10px 3px rgb(108 98 98 / 20%);
+    padding: 45px 20px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+}
+
+.customer-details h3{
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-left: 3px solid rgba(0, 110, 255, 0.973);
+    padding-left: 9px;
+}
+
+.customer-details h6{
+    font-weight: 600;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(108, 98, 98);
+}
+
+.customer-details span{
+    font-weight: bold;
+}
+
+.customer-details p{
+    margin-top: 10px;
+}
+
+.customer-details i{
+    margin-right: 5px;
+}
+
+.customer-details button{
+    border: 1px solid rgba(0, 110, 255, 0.973);
+    background-color: rgba(0, 110, 255, 0.171);
+    color: rgba(0, 110, 255, 0.973);
+    border-radius: 3px;
+    padding: 5px 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 20px 0px;
+}
+
+.customer-details button:hover{
+    color: white;
+    background-color: rgba(0, 110, 255, 0.973);
+}

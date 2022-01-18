@@ -9,8 +9,12 @@
     font-weight: 600;
 }
 
-.cust-profile-nav{
+/* .cust-profile-nav{
     display: grid;
+} */
+
+.cust-profile-nav{
+    margin-bottom: 40px;
 }
 
 .cust-profile-nav div{
@@ -31,10 +35,10 @@
     color: rgba(0, 110, 255, 0.973);
 }
 
-.current-cust-profile-nav{
+/* .current-cust-profile-nav{
     background-color: rgba(0, 110, 255, 0.171);
-}
+} */
 
-.current-cust-profile-nav a{
+/* .current-cust-profile-nav a{
     color: rgba(0, 110, 255, 0.973);
-}
+} */
