@@ -22,15 +22,15 @@
                             <li><a href="{{ url('customer-details') }}" class="dropdown-item">
                                 <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                                 My Account</a></li>
-                            <li><a href="#" class="dropdown-item">
+                            <li><a href="{{ url('bookmark') }}" class="dropdown-item">
                                 <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
                                 Bookmark</a></li>
                             <li><a href="{{url('blogs')}}" class="dropdown-item">
                                 <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
                                 Blogs</a></li>
-                            <li><a href="#" class="dropdown-item">
+                            {{-- <li><a href="#" class="dropdown-item">
                                 <span class="material-icons-outlined" style="font-size: 18px ;">task_alt</span>
-                                Checkout</a></li>                                
+                                Checkout</a></li>                                 --}}
                         </ul>
                         <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <li>

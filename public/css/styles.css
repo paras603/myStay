@@ -223,6 +223,10 @@ a{
     font-size: 18px;
 }
 
+.home-top-cate-items h6 a:hover{
+    color: rgb(84,174,63);
+}
+
 .home-top-cate-items ul{
     list-style-type: none;
     padding-left: 0;
@@ -236,7 +240,7 @@ a{
     margin-top: 4px;
 }
 
-.home-top-cate-items li:hover{
+.home-top-cate-items li a:hover{
     color: rgb(84,174,63);
 }
 
@@ -297,6 +301,10 @@ a{
 
 .home-carousel-details ul li a{
     cursor: pointer;
+}
+
+.home-carousel-details ul li a:hover{
+    color: rgb(84,174,63);
 }
 
 #product-name{
@@ -437,6 +445,7 @@ a{
      /* border-radius: 2px; */
     padding: 20px;
     margin: 35px;
+    background-color: rgba(124, 121, 121, 0.678);
 }
 
 .second-showcase h4{
@@ -450,7 +459,7 @@ a{
     font-weight: 600;
     padding-top: 2px;
     padding-bottom: 2px;
-    color: rgb(41, 19, 19);
+    color: white;
 }
 
 .second-showcase h5{
@@ -460,6 +469,7 @@ a{
 }
 
 .second-showcase h6 a{
+    color: white;
     border-bottom: 2px solid rgb(255, 255, 255);
     font-weight: 600;
 }

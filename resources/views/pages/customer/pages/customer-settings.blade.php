@@ -15,7 +15,7 @@
             </div>
             <div class="row account-settings-content">
                 <div class="col-lg-2 col-md-3 col-sm-12 ">
-                    <h6>Name</h6>
+                    <h6><i class="bi bi-person-circle"></i>Name</h6>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>
@@ -40,7 +40,7 @@
             </div>
             <div class="row account-settings-content">
                 <div class="col-lg-2 col-md-3 col-sm-12">
-                    <h6>Username</h6>
+                    <h6><i class="bi bi-person"></i>Username</h6>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>
@@ -59,7 +59,7 @@
             </div>
             <div class="row account-settings-content">
                 <div class="col-lg-2 col-md-3 col-sm-12">
-                    <h6>Address</h6>
+                    <h6><i class="bi bi-geo-alt-fill"></i>Address</h6>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>
@@ -78,7 +78,7 @@
             </div>
             <div class="row account-settings-content">
                 <div class="col-lg-2 col-md-3 col-sm-12">
-                    <h6>Phone number</h6>
+                    <h6><i class="bi bi-telephone-fill"></i>Contact no.</h6>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>
@@ -103,7 +103,7 @@
             </div>
             <div class="row account-settings-content">
                 <div class="col-lg-2 col-md-3 col-sm-12">
-                    <h6>Email address</h6>
+                    <h6><i class="bi bi-envelope-fill"></i>Email address</h6>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>
@@ -128,7 +128,7 @@
             </div>
             <div class="row account-settings-content ">
                 <div class="col-lg-2 col-md-3 col-sm-12">
-                    <h6>Password</h6>
+                    <h6><i class="bi bi-key-fill"></i>Password</h6>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>

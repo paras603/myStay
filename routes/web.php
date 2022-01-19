@@ -43,3 +43,11 @@ Route::get('customer-bookings', [MyStayController::class, 'customerBookingsPage'
 Route::get('customer-blogs', [MyStayController::class, 'customerBlogsPage']);
 
 Route::get('customer-settings', [MyStayController::class, 'customerSettingsPage']);
+
+Route::get('homestay', [MyStayController::class, 'homestayPage']);
+
+Route::get('bookmark', [MyStayController::class, 'bookmarkPage']);
+
+Route::get('search', [MyStayController::class, 'searchPage']);
+
+Route::get('merchant', [MyStayController::class, 'merchantPage']);

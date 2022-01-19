@@ -1,0 +1,173 @@
+.homestay-img{
+    margin: 50px 60px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
+}
+
+.homestay-book-btn{
+}
+
+.homestay-book-btn button{    
+    font-family: 'Urbanist', sans-serif;    
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(84,174,63);
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.homestay-intro{
+    padding: 40px 40px;
+}
+
+.homestay-intro i{
+    margin-right: 5px;
+}
+
+.homestay-intro h3, .homestay-intro a, .homestay-nearby-places h6, .homestay-nearby-places p{
+    font-family: 'Roboto', sans-serif;
+}
+
+.homestay-intro h3{
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    border-left: 3px solid  rgb(84,174,63);
+    padding-left: 10px;
+}
+
+.homestay-intro h6{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: rgb(65, 65, 65);
+}
+
+.homestay-intro ul{
+    font-family: 'Open Sans', sans-serif;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.homestay-services ul{
+    margin-left: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: rgb(65, 65, 65);
+}
+
+.homestay-nearby-places{
+    margin: 40px 0px;
+}
+
+.homestay-nearby-places h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    border-left: 3px solid  rgb(84,174,63);
+    padding-left: 10px;
+    margin: 20px 0px;
+}
+
+.nearby-places h6{
+    margin: 30px 0px 5px 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: rgb(65, 65, 65);
+}
+
+.nearby-places i{
+    margin-right: 5px;
+}
+
+.nearby-places p{
+    font-family: 'Roboto', sans-serif;
+    margin: 5px 0px 10px 20px;
+
+}
+
+.homestay-review{
+    margin: 50px 0px;
+}
+
+.homestay-review h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    border-left: 3px solid  rgb(84,174,63);
+    padding-left: 10px;
+}
+
+.homestay-review img{
+    width: 50px;
+}
+
+.post-review{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 40px 0px;
+}
+
+.post-review .form-floating textarea{
+    border-top: transparent;
+    border-right: transparent;
+    border-radius: 0px;
+}
+
+.post-review .form-floating label{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.post-review button{
+    background-color: rgb(84,174,63);
+    border: 1px solid rgb(84,174,63);
+    padding: 5px 18px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.post-review button:hover{
+    color: rgb(70, 182, 45);
+    border: 2px solid rgb(84,174,63);
+    background-color: white;
+}
+
+.customer-review{
+    margin: 10px 0px 40px 0px;
+}
+
+.customer-review img{
+
+}
+
+.customer-review h6{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: rgb(65, 65, 65);
+}
+
+.customer-review p{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.1px;
+}
+
+.add-to-bookmark{
+    margin-left: 20px;
+}
+
+.add-to-bookmark button{
+    background-color: rgb(84,174,63);
+    border: 1px solid rgb(84,174,63);
+    padding: 5px 18px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    border-radius: 3px;
+    font-weight: 700;
+}

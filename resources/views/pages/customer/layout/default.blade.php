@@ -25,7 +25,10 @@
                                 <a href="{{ url('customer-bookings') }}"><i class="bi bi-cart-check-fill"></i>My bookings</a>
                             </div>
                             <div class="cust-profile-nav-item">
-                                <a href="{{ url('customer-blogs') }}"><i class="bi bi-card-text"></i></i>Blog</a>
+                                <a href="{{ url('customer-blogs') }}"><i class="bi bi-card-text"></i>Blog</a>
+                            </div>
+                            <div class="cust-profile-nav-item">
+                                <a href="{{ url('bookmark') }}"><i class="bi bi-bookmark-check-fill"></i>Bookmark</a>
                             </div>
                             <div class="cust-profile-nav-item">
                                 <a href="customer-settings"><i class="bi bi-gear-fill"></i>Account Settings</a>

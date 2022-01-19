@@ -55,4 +55,22 @@ class MyStayController extends Controller
     public function customerSettingsPage(){
         return view('pages.customer.pages.customer-settings');
     }
+
+    public function homestayPage(){
+        return view('pages.homestay');
+    }
+
+    public function bookmarkPage(){
+        return view('pages.customer.pages.customer-bookmarks');
+    }
+    
+    public function searchPage()
+    {
+        return view('pages.search');
+    }
+
+    public function merchantPage(){
+        return view('pages.merchant');
+    }
+
 }

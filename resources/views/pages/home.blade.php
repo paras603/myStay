@@ -100,7 +100,7 @@
                             <img src="../images/homestay5.jpg" style="width:100%;">
                         </div>
                         <div class="col-md-6 home-top-cate-items">
-                            <h6><a>Niraj Homestay</a></h6>
+                            <h6><a href="{{ url('homestay') }}">Niraj Homestay</a></h6>
                             <ul>
                                 <li><a>Services</a></li>
                                 <li><a>Nearby Places</a></li>
@@ -121,6 +121,7 @@
 <section class="pb-5 mb-3 pt-5">
     <div class="container">
         <div class="row" >
+            @for($x=0; $x<3; $x++)
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div id="showcase-img" class="showcase-item">
                     <div class="col-lg-6 col-md-12 col-sm-12 showcase-details" >
@@ -131,26 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div id="showcase-img" class="showcase-item">
-                    <div class="col-lg-6 col-md-12 col-sm-12 showcase-details" >
-                        <h6>Boyka Building</h6>
-                        <h2>Feel like<br>Manjumania</h2>
-                        <h5>Starting at</h5>
-                        <h4>$ 99</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <div id="showcase-img" class="showcase-item">
-                    <div class="col-lg-6 col-md-12 col-sm-12 showcase-details" >
-                        <h6>Boyka Building</h6>
-                        <h2>Feel like<br>Manjumania</h2>
-                        <h5>Starting at</h5>
-                        <h4>$ 99</h4>
-                    </div>
-                </div>
-            </div>
+            @endfor
         </div>
     </div>
 </section>
@@ -186,17 +168,9 @@
                                                         
                         </div>
                         <div class=" container home-carousel-details">
-                            <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div>
                             <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Afno Ghar</a></li>
+                                <li>Home</li>
+                                <li id="product-name"><a href="{{ url('homestay') }}">Afno Ghar</a></li>
                                 <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
                                 <li class="star-rating">
                                     <span class="fa fa-star checked"></span>
@@ -227,7 +201,7 @@
                 <h4>Feel like Home</h4>
                 <h3>Old Barkhe</h3>
                 <h5>Since 1999</h5>
-                <h6><a>Book now</a></h6>
+                <h6><a href="{{ url('homestay') }}">Book now</a></h6>
                 </span>
             </div>
         </div>
@@ -266,17 +240,18 @@
                                                         
                         </div>
                         <div class=" container home-carousel-details">
-                            <div class="teamDiv">
+                            {{-- hover buttons --}}
+                            {{-- <div class="teamDiv">
                                 <ul>
                                     <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
                                     <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
                                     <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
                                     <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
                                 </ul>
-                            </div>
+                            </div> --}}
                             <ul>
-                                <li><a>Home</a></li>
-                                <li id="product-name"><a>Rajan Homestay</a></li>
+                                <li>Home</li>
+                                <li id="product-name"><a href="{{ url('homestay') }}">Rajan Homestay</a></li>
                                 <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
                                 <li class="star-rating">
                                     <span class="fa fa-star checked"></span>

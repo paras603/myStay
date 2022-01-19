@@ -1,20 +1,20 @@
-.customer-bookmarks-title h3, .customer-bookmarks-title p{
+.customer-bookings-title h3, .customer-bookings-title p{
     font-family: 'Roboto', sans-serif;
 }
 
-.customer-bookmarks-title{    
+.customer-bookings-title{    
     border-bottom: 2px solid gray;
     margin-bottom: 30px;
 }
 
-.customer-bookmarks-title h3{
+.customer-bookings-title h3{
     font-weight: 700;
     letter-spacing: 0.3px;
     border-left: 3px solid rgb(84,174,63);
     padding-left: 9px;
 }
 
-.customer-bookmarks-title p{
+.customer-bookings-title p{
     font-size: 14px;
     font-weight: 700;
     color: rgb(65, 63, 63);
@@ -22,7 +22,7 @@
     margin: 10px 0px 10px 12px;
 }
 
-.customer-bookmarks{
+.customer-bookings{
     background-color: white;
     box-shadow: 0 0 10px 3px rgb(108 98 98 / 20%);
     padding: 20px 25px 25px 25px;
@@ -31,63 +31,63 @@
     border: 3px solid transparent;
 }
 
-.customer-bookmarks:hover{
+.customer-bookings:hover{
     border-left: 3px solid rgb(84,174,63);
 }
 
-.customer-bookmarks p{
+.customer-bookings p{
     font-size: 14px;
     font-weight: 700;
     color: rgb(65, 63, 63);
 }
 
-.bookmarked-homestay{
+.booked-homestay{
     display: flex;
     background-color: rgb(239,239,239);
     background-color: white;
 }
 
-.bookmarked-homestay div{
+.booked-homestay div{
     flex: 50%;
 }
 
-.bookmarked-homestay img{
+.booked-homestay img{
     width: 100%;
 }
 
-.bookmarked-homestay-details{
+.booked-homestay-details{
     margin: 20px 20px;
 }
 
-.bookmarked-homestay-details a:hover{
+.booked-homestay-details a:hover{
     color: rgb(84,174,63);
 }
 
-.bookmarked-homestay-details h6{
+.booked-homestay-details h6{
     font-weight: 900;
     letter-spacing: 0.3px;
     font-size: 18px;
 }
 
-.bookmarked-homestay-details span{
+.booked-homestay-details span{
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
 
-.bookmarked-homestay-details i{
+.booked-homestay-details i{
     margin-right: 5px;
     font-family: 'Roboto', sans-serif;
 }
 
-.bookmarked-homestay-details p{
+.booked-homestay-details p{
     color: rgb(112, 109, 109);
 }
 
-.customer-rm-bookmark-btns{
+.customer-booking-btns{
     margin: 0px 0px;
 }
 
-.customer-rm-bookmark-btn1{
+.customer-booking-btn1{
     padding: 9px 95px;
     background-color: rgb(84,174,63);
     border: 2px solid rgb(84,174,63);
@@ -99,14 +99,14 @@
     border-radius: 3px;
 }
 
-.customer-rm-bookmark-btn1:hover{
+.customer-booking-btn1:hover{
     border: 2px solid rgb(84,174,63);
     color: rgb(84,174,63);
     background-color: white;
 }
 
-.customer-rm-bookmark-btn2{
-    padding: 9px 130px;
+.customer-booking-btn2{
+    padding: 9px 95px;
     background-color:rgb(239,239,239);
     margin: 20px 0px;
     border: 2px solid rgba(0, 110, 255, 0.61);

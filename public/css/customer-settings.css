@@ -16,6 +16,10 @@
     margin: 10px 0px 10px 0px;
 }
 
+.account-settings-content i{
+    margin-right: 10px;
+}
+
 .account-settings-content button{
     background-color: rgb(66, 143, 245);
     color: white;
