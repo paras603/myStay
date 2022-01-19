@@ -51,3 +51,7 @@ Route::get('bookmark', [MyStayController::class, 'bookmarkPage']);
 Route::get('search', [MyStayController::class, 'searchPage']);
 
 Route::get('merchant', [MyStayController::class, 'merchantPage']);
+
+Route::get('merchant-settings', [MyStayController::class, 'merchantsettingPage']);
+
+Route::get('merchant-view', [MyStayController::class, 'merchantViewPage']);

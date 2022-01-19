@@ -102,7 +102,9 @@
             </div>
             {{-- search btn --}}
             <div class="col-lg-2">
-                <button class="btn nav-search-btn" type="button">Search</button>
+                <form method="get" action="{{ url('search') }}">
+                    <button class="btn nav-search-btn">Search</button>
+                </form>
             </div>
             
         </div>

@@ -1,0 +1,61 @@
+.print-search-result{
+    padding: 35px 0px;
+    border-bottom: 1px solid  rgb(177, 171, 171);
+}
+
+.print-search-result h3{
+    font-family: 'Roboto', sans-serif;
+}
+
+.searched-homestay{
+    margin: 20px 20px;
+}
+
+.searched-homestay img{
+    width: 100%;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+   border-radius: 3px;
+}
+
+.searched-homestay ul{
+    list-style-type: none;
+    margin-left: 10px;
+    padding-left: 0;
+    font-size: 16px;
+    color: gray;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.searched-homestay ul li{
+    line-height: 30px;
+}
+
+.searched-homestay ul li a{
+    cursor: pointer;
+}
+
+.searched-homestay ul li a:hover{
+    color: rgb(84,174,63);
+}
+
+#homestay-name{
+    color: rgb(53, 50, 50);
+    font-weight: 700;
+}
+
+#homestay-price{
+    color: rgb(84,174,63);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.searched-homestay ul li strike{
+    color: gray;
+}
+
+.star-checked{
+    color: rgb(255, 208, 0);
+}
+.searched-stay-star-rating{
+    font-size: 12px;
+}

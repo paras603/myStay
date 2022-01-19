@@ -1,0 +1,139 @@
+.merchant-profile-img{
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.merchant-profile-img a{
+    margin: 10px 0px;
+}
+
+.merchant-profile-img img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.merchant-profile-img i{
+    font-size:46px;
+    color: rgb(75, 75, 75);
+}
+
+.merchant-details{
+    border-left: 2px solid gray;
+    padding: 10px 0px 10px 40px;
+}
+
+.merchant-details h3{
+    margin: 10px 0px 30px 0px;
+}
+
+.merchant-profile-subhead{
+    margin: 20px 0px;
+    padding-left: 10px;
+    border-left: 3px solid rgb(84,174,63);
+}
+
+.add-homestay-img{
+    display: flex;
+    flex-flow: row;    
+}
+
+.add-homestay-img img{
+    width: 100%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
+}
+
+.add-homestay-img-input{
+    margin: 30px 0px;
+}
+
+.add-homestay-img-input label{
+    font-family: 'Poppins', sans-serif;
+}
+
+.add-homestay-services ul{
+    list-style-type: none;
+    padding-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.add-homestay-services ul li i{
+    margin-right: 8px;
+}
+
+.add-homestay-services-input{
+    margin: 20px 0px;
+    align-items: center;
+}
+
+
+.add-homestay-services-input .form-floating textarea{
+    border-top: transparent;
+    border-right: transparent;
+    border-radius: 0px;
+}
+
+.add-homestay-services-input .form-floating label{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.add-homestay-services-input button{
+    background-color: rgb(25,135,84);
+    border: 1px solid rgb(84,174,63);
+    padding: 5px 18px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.add-homestay-services-input button:hover{
+    
+    background-color: rgb(21, 124, 76);
+    border: 1px solid rgb(84,174,63);
+    /* color: rgb(70, 182, 45);
+    border: 2px solid rgb(84,174,63);
+    background-color: white; */
+}
+
+.add-nearby-places{
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.add-nearby-places-input{
+    margin: 20px 0px;
+    align-items: center;
+}
+
+.add-nearby-places-input .form-floating textarea{
+    border-top: transparent;
+    border-right: transparent;
+    border-radius: 0px;
+}
+
+.add-nearby-places-input .form-floating label{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.add-nearby-places-input button{
+    background-color: rgb(25,135,84);
+    border: 1px solid rgb(84,174,63);
+    padding: 5px 18px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.add-nearby-places-input button:hover{
+    
+    background-color: rgb(21, 124, 76);
+    border: 1px solid rgb(84,174,63);
+    /* color: rgb(70, 182, 45);
+    border: 2px solid rgb(84,174,63);
+    background-color: white; */
+}

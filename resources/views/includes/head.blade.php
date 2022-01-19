@@ -27,6 +27,9 @@
 <link rel="stylesheet" href="css/customer-settings.css">
 <link rel="stylesheet" href="css/homestay.css">
 <link rel="stylesheet" href="css/customer-bookmarks.css"> 
+<link rel="stylesheet" href="css/search.css">
+<link rel="stylesheet" href="css/merchant.css">
+<link rel="stylesheet" href="css/merchant-view.css">
 
 {{-- owl carousel --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />

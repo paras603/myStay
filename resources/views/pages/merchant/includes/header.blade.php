@@ -9,12 +9,12 @@
             <div class="col-lg-4">
                 <div class="nav-li">
                     <ul>
-                        <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{-- <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <li>
                             <span>Account</span>
                             <span class="material-icons-outlined expand-more">expand_more</span>
                             </li>
-                        </button>
+                        </button> --}}
                         <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
                             <li><a href="{{url('customer-signin')}}" class="dropdown-item">
                                 <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
@@ -42,12 +42,12 @@
                             <li><a href="{{ url('faq') }}" class="dropdown-item">
                             <span>FAQ</span></a></li>                        
                         </ul>
-                        {{-- <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <li>
                             <span>Homestay</span>
                             <span class="material-icons-outlined expand-more">expand_more</span>
                             </li>
-                        </button> --}}
+                        </button>
                         <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
                             <li><a href="{{ url('customer-signin') }}" class="dropdown-item">
                                 <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>

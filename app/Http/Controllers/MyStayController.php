@@ -70,7 +70,16 @@ class MyStayController extends Controller
     }
 
     public function merchantPage(){
-        return view('pages.merchant');
+        return view('pages.merchant.pages.merchant');
     }
+
+    public function merchantsettingPage(){
+        return view('pages.merchant.pages.merchant-settings');
+    }
+
+    public function merchantViewPage(){
+        return view('pages.merchant.pages.merchant-view');
+    }
+
 
 }
