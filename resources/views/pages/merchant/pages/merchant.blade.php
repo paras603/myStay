@@ -82,6 +82,23 @@
             </div>
         </div>
 
+        <div class="col-lg-12 col-md-12 col-sm-12 mt-5 mb-5">
+            <div class="merchant-profile-subhead">
+                <h6>Add Map (iframe)</h6>
+            </div>
+            <div class="row add-map-input">
+                <div class="col-lg-10 col-md-10 col-sm-12">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">iframe from google map</label>
+                        </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <button>Add</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 @endsection

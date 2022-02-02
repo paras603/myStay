@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-12 homestay-intro">
                     <div class="row mt-3 mb-3 " style="border-bottom: 1px solid gray;">
-                        <div class="col-lg-6 col-sm-12">
+                        <div class="col-lg-12 col-sm-12">
                             <h3>Homestay Name</h3>
                             <h6><i class="bi bi-geo-alt"></i>Kathmandu, Nepal</h6>
                             <ul>
@@ -47,13 +47,7 @@
                             </li>
                             </ul>
                         </div>
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="col-lg-6 col-sm-12 homestay-book-btn">
-                                <form>
-                                <button type="button" class="btn btn-success">Book Now</button>
-                                </form>
-                            </div>
-                        </div>
+                        
                     </div>   
                     <div class="row">
                         <div class="col-lg-12 homestay-services  mt-3 mb-3">
@@ -64,22 +58,37 @@
                                 <li><i class="bi bi-check2"></i>Tour Guide</li>
                             </ul>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 add-to-bookmark">
+                        
+                    </div> 
+                    <div class="col-lg-12 col-sm-12 homestay-nearby-places">
+                        <h3>Nearby Places</h3>
+                        @for($x=0; $x<3; $x++)
+                        <div class="nearby-places">
+                            <h6><i class="bi bi-geo-alt-fill"></i>Tinjure Hill</h6>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum quaerat vero ipsa?</p>
+                        </div>
+                        @endfor
+                    </div>         
+                </div>                
+                <div class="col-lg-6 col-sm-12">
+                    <div class="location">
+                    <h3>Location</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56966.43289936654!2d87.27756799999999!3d26.8271616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef43173e613351%3A0xa2c34b493254330b!2sDana%20Bari!5e0!3m2!1sen!2snp!4v1643699564246!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="book-bookmark">
+                        <div class="col-lg-6 col-sm-6 ">
+                            <form>
+                                <button type="button" class="btn btn-success">Book Now</button>
+                            </form>
+                        </div>
+                        <div>
                             <form>
                                 <button type="button" class="btn btn-success">Bookmark</button>
                             </form>
                         </div>
-                    </div>          
-                </div>                
-                <div class="col-lg-6 col-sm-12 homestay-nearby-places">
-                    <h3>Nearby Places</h3>
-                    @for($x=0; $x<3; $x++)
-                    <div class="nearby-places">
-                        <h6><i class="bi bi-geo-alt-fill"></i>Tinjure Hill</h6>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum quaerat vero ipsa?</p>
                     </div>
-                    @endfor
                 </div>
+                
             </div>
         </div>
         </div>

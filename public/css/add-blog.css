@@ -1,0 +1,27 @@
+.add-blog-page h3{
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border-left: 3px solid rgb(84,174,63);
+    padding-left: 9px;  
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-blog-details{
+    margin: 20px 0px 80px 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-blog-details div{
+    margin: 20px 0px;
+}
+
+.publish-blog-button button{
+    background-color: rgb(84,174,63);
+    border: 1px solid rgb(84,174,63);
+    padding: 5px 18px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    border-radius: 3px;
+    font-weight: 700;
+}

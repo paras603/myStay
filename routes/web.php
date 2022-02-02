@@ -55,3 +55,5 @@ Route::get('merchant', [MyStayController::class, 'merchantPage']);
 Route::get('merchant-settings', [MyStayController::class, 'merchantsettingPage']);
 
 Route::get('merchant-view', [MyStayController::class, 'merchantViewPage']);
+
+Route::get('customer-add-blog', [MyStayController::class, 'addBlogPage']);

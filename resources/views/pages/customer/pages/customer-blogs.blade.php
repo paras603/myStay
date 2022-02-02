@@ -8,7 +8,7 @@
                     <h3>Blogs</h3>
                 </div>
                 <div class="col-lg-6 col-sm-12 customer-write-blog">
-                    <form action="#">
+                    <form action="{{ url('customer-add-blog') }}">
                         <button>Add blog</button>
                     </form>
                 </div>

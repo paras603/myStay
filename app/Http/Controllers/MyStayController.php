@@ -56,6 +56,10 @@ class MyStayController extends Controller
         return view('pages.customer.pages.customer-settings');
     }
 
+    public function addBlogPage(){
+        return view('pages.customer.pages.customer-add-blog');
+    }
+
     public function homestayPage(){
         return view('pages.homestay');
     }
@@ -80,6 +84,5 @@ class MyStayController extends Controller
     public function merchantViewPage(){
         return view('pages.merchant.pages.merchant-view');
     }
-
 
 }

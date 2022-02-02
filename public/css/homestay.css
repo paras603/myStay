@@ -3,23 +3,6 @@
     box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
 }
 
-.homestay-book-btn{
-}
-
-.homestay-book-btn button{    
-    font-family: 'Urbanist', sans-serif;    
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(84,174,63);
-    padding: 10px 25px;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-
-}
-
 .homestay-intro{
     padding: 40px 40px;
 }
@@ -49,6 +32,10 @@
     font-family: 'Open Sans', sans-serif;
     list-style: none;
     padding-left: 0px;
+}
+
+.homestay-services{
+    border-bottom: 1px solid gray;
 }
 
 .homestay-services ul{
@@ -157,11 +144,26 @@
     letter-spacing: 0.1px;
 }
 
-.add-to-bookmark{
-    margin-left: 20px;
+
+.location{
+    margin: 40px 0px;
 }
 
-.add-to-bookmark button{
+.location h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    border-left: 3px solid  rgb(84,174,63);
+    padding-left: 10px;
+    margin: 20px 0px;
+}
+
+.book-bookmark{
+    display: flex;
+    text-align: center;
+}
+
+.book-bookmark button{
     background-color: rgb(84,174,63);
     border: 1px solid rgb(84,174,63);
     padding: 5px 18px;
@@ -170,4 +172,8 @@
     letter-spacing: 0.8px;
     border-radius: 3px;
     font-weight: 700;
+}
+
+.book-bookmark button{
+    margin: 0px 5px;
 }

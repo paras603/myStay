@@ -137,3 +137,35 @@
     border: 2px solid rgb(84,174,63);
     background-color: white; */
 }
+
+.add-map-input{
+    margin: 20px 0px;
+    align-items: center;
+}
+
+.add-map-input .form-floating textarea{
+    border-top: transparent;
+    border-right: transparent;
+    border-radius: 0px;
+}
+
+.add-map-input .form-floating label{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.add-map-input button{
+    background-color: rgb(25,135,84);
+    border: 1px solid rgb(84,174,63);
+    padding: 5px 18px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.add-map-input button:hover{
+    
+    background-color: rgb(21, 124, 76);
+    border: 1px solid rgb(84,174,63);
+}
