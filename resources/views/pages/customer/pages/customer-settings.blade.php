@@ -89,6 +89,21 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-lg-2 col-md-3 col-sm-12">
+                    {{-- <h6><i class="bi bi-telephone-fill"></i>Contact no.</h6> --}}
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-12">
+                    {{-- <h6><i class="bi bi-telephone-fill"></i>Contact no.</h6> --}}
+                </div>
+                <div class="col-lg-8 col-md-7 col-sm-12">
+                    <div>
+                        <form>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Phone number" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="col-lg-2 col-md-2 col-sm-12">
                     <form action="{{ url('') }}" method="post">
                     <button>Save</button>

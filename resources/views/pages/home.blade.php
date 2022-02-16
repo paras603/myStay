@@ -3,7 +3,7 @@
 @section('content')
     <!-- banner section -->
 <section>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row" style="margin: 20px 20px 20px 20px;">
             <div class="col-lg-9 col-sm-12 home-banner" id="banner-img">
                 <div class="main-banner mb-5 pb-4">

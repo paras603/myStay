@@ -38,8 +38,8 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="blog-right-sidebar">
-                        
-                        <aside class="single-sidebar-widget post-category-widget">
+                        {{-- tags for blog --}}
+                        {{-- <aside class="single-sidebar-widget post-category-widget">
                             <h2 class="widget-title">Category</h2>
                             <ul class="cat-list">
                                 <li>
@@ -79,7 +79,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> --}}
                         <aside class="single-sidebar-widget recent-post-widget">
                             <h3 class="widget-title" style="margin-bottom: 50px;">Recent Post</h3>
                             @for($x=0; $x<4; $x++)

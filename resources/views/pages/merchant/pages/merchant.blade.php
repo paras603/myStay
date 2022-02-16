@@ -99,6 +99,35 @@
             </div>
         </div>
 
+        {{-- add room --}}
+        <div class="col-lg-12 col-sm-12 mt-5 mb-5">
+            <div class="merchant-profile-subhead">
+                <h6>Add Room</h6>
+            </div>
+            <div class="add-homestay-img">
+                <div class="row">                                
+                    @for($x=0; $x<2; $x++)
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <img src="images/homestay2.jpg">
+                    </div>
+                    @endfor                                
+                </div>
+            </div>
+            <div class="add-homestay-img-input">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Add Image</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            <div class="add-homestay-img-btn">
+                <button type="button" class="btn btn-success">Add</button>
+            </div>
+        </div>
+
     </div>
 </section>
 @endsection

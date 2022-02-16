@@ -18,6 +18,10 @@
                     <label for="exampleFormControlTextarea1" class="form-label">Write your blog....</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="12"></textarea>
                 </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Add Image</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
                 <div class="publish-blog-button">
                     <form>
                         <button type="button" class="btn btn-success">Publish</button>

@@ -29,20 +29,30 @@
                                 <div class="login-logo mb-5">
                                     <img src="../images/logo.png">
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="username">
-                                    <label for="floatingInput">Username</label>                            
-                                </div>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">Password</label>
-                                    <h6 class="forgot-password mt-2"><a href="#">Forgot password?</a></h6>
-                                </div>
-                                <button class="form-control">sign in</button>
-                                <div class="signup-now mt-5">
-                                    <h6>Don't have an account?</h6>
-                                    <h6><a href="{{url('merchant-signup')}}">sign up now</a></h6>
-                                </div>
+                                <form action="/merchantLogin" method="POST">
+                                    @csrf
+                                    @if (session('status'))
+                                        <h5 style="font-size: 13px;">{{ session ('status')}}</h5>
+                                    @endif
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" name="email" id="floatingInput" placeholder="username">
+                                        <label for="floatingInput">email</label> 
+                                        <span style="font-size:13px;color:red;">@error('email'){{ $message }}@enderror</span>                            
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Password</label>
+                                        <span style="font-size:13px;color:red;">@error('password'){{ $message }}@enderror</span> 
+                                    </div>
+                                    <br>
+                                    <button class="form-control">sign in</button>
+                                    <div class="signup-now mt-5">
+                                        <h6>Don't have an account?</h6>
+                                        <h6><a href="{{url('merchant-signup')}}">sign up now</a></h6>
+                                    </div>
+                            </form>
+                            
+                           
                             </div>
                         </div>
                     </div>

@@ -32,9 +32,9 @@
                                         {{-- {{$blog->category}} --}}
                                         Hitch-hiking
                                     </a></li>
-                                    <li><a href="#">
+                                    {{-- <li><a href="#">
                                         <i class="fa fa-comments"></i>02 comments
-                                    </a></li>
+                                    </a></li> --}}
                                 </ul>
                             </div>
                         </article>
@@ -61,7 +61,8 @@
                                 </div>
                             </form>
                         </aside>
-                        <aside class="single-sidebar-widget post-category-widget">
+                        {{-- category tags for blog --}}
+                        {{-- <aside class="single-sidebar-widget post-category-widget">
                             <h2 class="widget-title">Category</h2>
                             <ul class="cat-list">
                                 <li>
@@ -101,7 +102,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> --}}
                         <aside class="single-sidebar-widget recent-post-widget">
                             <h3 class="widget-title" style="margin-bottom: 50px;">Recent Post</h3>
                             @for($x=0; $x<4; $x++)
@@ -116,7 +117,8 @@
                             </div>
                             @endfor
                         </aside>
-                        <aside class="single-sidebar-widget tag-clouds-widget">
+                        {{-- tag clouds for blog --}}
+                        {{-- <aside class="single-sidebar-widget tag-clouds-widget">
                             <h4 class="widget-title">Tag Clouds</h4>
                             <ul class="list">
                                 <li><a href="#">lifestyle</a></li>
@@ -130,7 +132,7 @@
                                 <li><a href="#">politics</a></li>
                                 <li><a href="#">science</a></li>
                             </ul>
-                        </aside>
+                        </aside> --}}
                         
                     </div>
                 </div>

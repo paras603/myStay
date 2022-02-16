@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyStayController;
+use App\Http\Controllers\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,11 @@ Route::get('merchant-settings', [MyStayController::class, 'merchantsettingPage']
 Route::get('merchant-view', [MyStayController::class, 'merchantViewPage']);
 
 Route::get('customer-add-blog', [MyStayController::class, 'addBlogPage']);
+
+Route::get('customer-signouts',[Login::class,'logout']);
+
+/*login*/
+Route::post('/customerRegister', [Login::class, 'customerRegister']);
+Route::post('/merchantRegister', [Login::class, 'merchantRegister']);
+Route::post('/merchantLogin', [Login::class, 'merchantLogin']);
+Route::post('/customerLogin', [Login::class, 'customerLogin']);

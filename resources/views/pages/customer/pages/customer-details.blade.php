@@ -20,7 +20,7 @@
                     <p><span><i class="bi bi-geo-alt-fill"></i>Address</span><br>CHarali-3, Jhapa</p>
                 </div>
                 <div class="col-lg-6 col-sm-12">
-                    <p><span><i class="bi bi-telephone-fill"></i>Phone number</span><br>98283746</p>
+                    <p><span><i class="bi bi-telephone-fill"></i>Phone number</span><br>98283746<br>98486868</p>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <p><span><i class="bi bi-envelope-fill"></i>Email</span><br>ramghale@gmail.com</p>

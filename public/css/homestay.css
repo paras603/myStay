@@ -32,10 +32,12 @@
     font-family: 'Open Sans', sans-serif;
     list-style: none;
     padding-left: 0px;
+    margin-left: 20px;
 }
 
 .homestay-services{
     border-bottom: 1px solid gray;
+    padding-bottom: 40px;
 }
 
 .homestay-services ul{
@@ -76,7 +78,8 @@
 }
 
 .homestay-review{
-    margin: 50px 0px;
+    margin: 50px 0px 0px 0px;
+    padding: 70px 0px 50px 0px;
 }
 
 .homestay-review h3{
@@ -166,7 +169,7 @@
 .book-bookmark button{
     background-color: rgb(84,174,63);
     border: 1px solid rgb(84,174,63);
-    padding: 5px 18px;
+    padding: 5px 35px;
     color: white;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.8px;
@@ -174,6 +177,60 @@
     font-weight: 700;
 }
 
+.book-bookmark form{
+    margin: 0px;
+}
+
 .book-bookmark button{
     margin: 0px 5px;
+}
+
+/* homestay rooms */
+.homestay-rooms{
+    margin: 60px 0px;
+}
+
+.homestay-room-heading h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    border-left: 3px solid  rgb(84,174,63);
+    padding-left: 10px;
+    margin: 20px 0px;
+}
+
+.homestay-room{
+    margin: 30px 0px;
+}
+
+.room-details{
+    margin: 20px 0px;
+}
+
+.room-details h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    margin: 10px 0px;
+    font-size: 20px;
+}
+
+.room-details p{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.1px;
+    margin: 10px 0px;
+}
+
+/* book room button */
+.book-room-btn button{
+    background-color: rgb(84,174,63);
+    border: 1px solid rgb(84,174,63);
+    padding-top: 5px;
+    width: 100%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    border-radius: 3px;
+    font-weight: 700;
+    margin: 10px 0px;
 }
