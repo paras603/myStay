@@ -4,7 +4,6 @@
     <div class="container pt-1 pb-1">
     <div class="row">
         <div class="col-lg-8">
-
         </div>
         <div class="col-lg-4">
             <div class="nav-li">
@@ -19,14 +18,14 @@
                         {{-- <li><a href="{{url('customer-signin')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">login</span>
                             Sign in</a></li> --}}
-                        @if(Session::has('user'))
+{{--                        @if(Session::has('user'))--}}
                         <li><a href="{{ url('customer-details') }}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             My Account</a></li>
                         <li><a href="{{ url('bookmark') }}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
                             Bookmark</a></li>
-                        @endif
+{{--                        @endif--}}
                         <li><a href="{{url('blogs')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
                             Blogs</a></li>
@@ -42,23 +41,22 @@
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
                         <li><a href="{{ url('faq') }}" class="dropdown-item">
-                        <span>FAQ</span></a></li>                        
+                        <span>FAQ</span></a></li>
                     </ul>
 
-                    @if(Session::has('user'))
+{{--                    @if(Session::has('user'))--}}
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
-                        <span>{{ Session::get('user')['name'] }}</span>
+                        <span>Test</span>
                         <span class="material-icons-outlined expand-more">expand_more</span>
                         </li>
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
                         <li><a href="{{ url('customer-signouts') }}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
-                            Log out</a></li>                               
+                            Log out</a></li>
                     </ul>
 
-                    @else
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
                         <span>Homestay</span>
@@ -66,17 +64,37 @@
                         </li>
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{ url('customer-signin') }}" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">login</span>
-                            Sign in</a></li>
-                        <li><a href="{{ url('customer-signup') }}" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">how_to_reg</span>
-                            Sign up</a></li>                               
+                        @auth
+                            <li>
+                                <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
+                                    log out
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        @endauth
+                        @guest
+                        <li>
+                            <a href="{{ route('login') }}" class="dropdown-item">
+                                <span class="material-icons-outlined" style="font-size: 18px ;">login</span>
+                                Sign in
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('register') }}" class="dropdown-item">
+                                <span class="material-icons-outlined" style="font-size: 18px ;">how_to_reg</span>
+                                Sign up
+                            </a>
+                        </li>
+                        @endguest
                     </ul>
-                    @endif
 
-                    
-                    
+
+
+
                 </ul>
             </div>
         </div>
@@ -89,7 +107,7 @@
         <div class=" row">
             {{-- website logo --}}
             <div class="col-lg-3 col-md-3">
-                <a href="/"><img src="\images\logo.png" alt="website logo"></a>
+                <a href="{{route('front.index')}}"><img src="\images\logo.png" alt="website logo"></a>
             </div>
             {{-- search bar --}}
             <div class="col-lg-7 col-md-7">
@@ -113,7 +131,7 @@
                         <div class="col-sm-7">
                             <div class="search-field">
                                 <input type="text" class="form-control" required placeholder="Search">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -126,7 +144,7 @@
                     <button class="btn nav-search-btn">Search</button>
                 </form>
             </div>
-            
+
         </div>
     </div>
 </div>

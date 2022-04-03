@@ -15,9 +15,7 @@ use App\Http\Controllers\Login;
 |
 */
 
-Route::get('/', function () {
-    return view('pages/home');
-});
+Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index'])->name('front.index');
 
 // Route::get('login', [EcommerceController::class, 'loginPage']);
 
@@ -63,6 +61,10 @@ Route::get('customer-add-blog', [MyStayController::class, 'addBlogPage']);
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/email-verified', function (){
         return view('auth.email-verified');
+    });
+
+    Route::group(['prefix' => 'dashboard'], function () {
+        Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
     });
 });
 
