@@ -12,8 +12,8 @@
                             <h6>adhikari community</h6>
                             <h1>Experience<br>local lifestyle</h1>
                             <h4>From <span style="font-weight: 600;">$488</span></h4>
-                            <a href="{{ url('homestay') }}">book now</a>  
-                        </div>               
+                            <a href="{{ url('homestay') }}">book now</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-12">
@@ -32,7 +32,7 @@
                                 <a href="{{ url('homestay') }}">Book now</a>
                             </div>
                         </div>
-                    </div>                     
+                    </div>
                 </div>
             </div>
         @else
@@ -42,8 +42,8 @@
                         <h6>adhikari community</h6>
                         <h1>Experience<br>local lifestyle</h1>
                         <h4>From <span style="font-weight: 600;">$488</span></h4>
-                        <a href="{{ url('homestay') }}">book now</a>  
-                    </div>                               
+                        <a href="{{ url('homestay') }}">book now</a>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-sm-12">
                     <div class="signin-option pb-4">
@@ -79,7 +79,7 @@
                 <h6>Easy Booking</h6>
                 <p>Booking available from anywhere-anytime</p>
                 </div>
-                </div>            
+                </div>
             </div>
             <div class="col-xl-3">
             <div class="row">
@@ -142,10 +142,10 @@
                                 <li><a>Rating & Review</a></li>
                             </ul>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
-                @endfor          
-            </div>        
+                @endfor
+            </div>
         </div>
     </div>
 </section>
@@ -184,11 +184,11 @@
                 <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
                     @for($x=0; $x<6; $x++)
                     <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
+                        <div class="container" id="home-carousel-img">
+
                             <div class="row">
                                 <div class="col-xl-6">
-                                    <div class="home-item-status"> 
+                                    <div class="home-item-status">
                                         <p id="home-item-status-yellow">new</p>
                                     </div>
                                 </div>
@@ -197,8 +197,8 @@
                                         <p>-10%</p>
                                     </div> -->
                                 </div>
-                            </div>                                  
-                                                        
+                            </div>
+
                         </div>
                         <div class=" container home-carousel-details">
                             <ul>
@@ -216,10 +216,10 @@
                             </ul>
                         </div>
                     </div>
-                    @endfor                    
+                    @endfor
                 </div>
             </div>
-        </div>            
+        </div>
     </div>
 </div>
 </section>
@@ -256,11 +256,11 @@
                 <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
                     @for($x=0; $x<6; $x++)
                     <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
+                        <div class="container" id="home-carousel-img">
+
                             <div class="row">
                                 <div class="col-xl-6">
-                                    <div class="home-item-status"> 
+                                    <div class="home-item-status">
                                         <p id="home-item-status-yellow">new</p>
                                     </div>
                                 </div>
@@ -269,8 +269,8 @@
                                         <p>-10%</p>
                                     </div> -->
                                 </div>
-                            </div>                                  
-                                                        
+                            </div>
+
                         </div>
                         <div class=" container home-carousel-details">
                             {{-- hover buttons --}}
@@ -297,10 +297,10 @@
                             </ul>
                         </div>
                     </div>
-                    @endfor                        
+                    @endfor
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
 </div>
 </section>
@@ -328,18 +328,18 @@
 
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
                                                 <h6>100% Lottery Win Rate</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
+                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>
                                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
                                                 <a class="home-blog-read-more" href="{{ url('blog') }}">Read more</a>
                                             </div>
-                                        </div>                    
+                                        </div>
                                     </div>
                                     @endfor
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="row">   
-                                    @for($x=0; $x<2; $x++)                     
+                                <div class="row">
+                                    @for($x=0; $x<2; $x++)
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
@@ -348,11 +348,11 @@
 
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
                                                 <h6>Scam on Internet</h6>
-                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>    
+                                                <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">Oct 03, 2021</span>
                                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Toptio excepturi distinctio aspernatur unde...</p>
                                                 <a class="home-blog-read-more" href="{{ url('blog') }}">Read more</a>
                                             </div>
-                                        </div>                    
+                                        </div>
                                     </div>
                                     @endfor
                                 </div>
@@ -370,8 +370,8 @@
                         </button>
                     </div>
                 </div>
-            </div>  
-        </div> 
+            </div>
+        </div>
     </div>
 </section>
 

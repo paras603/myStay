@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('includes.head')
+    @include('includes.front.head')
 </head>
 <body>
     <div class="container-fluid">
@@ -30,15 +30,15 @@
                         </div>
                         <div class="col-lg-11 col-md-11 col-sm-12">
                             @yield('merchant')
-                
-                        </div>            
+
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
 
         <footer class="row">
-            @include('includes.footer')
+            @include('includes.front.footer')
         </footer>
 
     </div>

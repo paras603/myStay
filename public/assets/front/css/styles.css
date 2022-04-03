@@ -72,12 +72,12 @@ a{
 
 
 #banner-img{
-    background-image: url(../images/homestay1.jpg);
+    background-image: url(../../../images/homestay1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
- 
+
 .main-banner{
     /* background-color: rgba(29, 28, 28, 0.322); */
     /* background-color: gray; */
@@ -87,12 +87,12 @@ a{
 
 .main-banner h6, .main-banner h1, .main-banner h4{
     color: white;
-    font-family: 'Urbanist', sans-serif;       
+    font-family: 'Urbanist', sans-serif;
 }
 
 .main-banner h6{
     color: rgb(250, 206, 49);
-    text-transform: uppercase; 
+    text-transform: uppercase;
     font-weight: 700;
     font-size: 16px;
     padding-bottom: 10px;
@@ -100,8 +100,8 @@ a{
 
 .main-banner h1{
     font-weight: 300;
-    letter-spacing: 1px;   
-    font-size: 44px; 
+    letter-spacing: 1px;
+    font-size: 44px;
     padding-bottom: 5px;
 }
 
@@ -112,7 +112,7 @@ a{
 }
 
 .main-banner a{
-    font-family: 'Urbanist', sans-serif;    
+    font-family: 'Urbanist', sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
@@ -130,7 +130,7 @@ a{
 
 /* secondary home banners */
 #secondary-banner-1{
-    background-image: url(../images/homestay2.jpg);
+    background-image: url(../../../images/homestay2.jpg);
     margin-bottom: 20px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -138,16 +138,16 @@ a{
 }
 
 #secondary-banner-2{
-    background-image: url(../images/homestay3.jpg);
+    background-image: url(../../../images/homestay3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .secondary-banner{
-    border-radius: 3px;    
-    font-family: 'Urbanist', sans-serif;    
-    letter-spacing: 1px;   
+    border-radius: 3px;
+    font-family: 'Urbanist', sans-serif;
+    letter-spacing: 1px;
     margin-left: 5px;
 }
 
@@ -179,12 +179,12 @@ a{
 }
 
 .banner-services-text h6{
-    font-family: 'Urbanist', sans-serif; 
+    font-family: 'Urbanist', sans-serif;
     font-weight: 600;
 }
 
 .banner-services-text p{
-    font-family: 'Urbanist', sans-serif; 
+    font-family: 'Urbanist', sans-serif;
     font-size: 15px;
     color:rgb(83, 80, 80);
 }
@@ -246,7 +246,7 @@ a{
 
 /* deals of the day */
 .owl-carousel-wrapper{
-    border-top: 1px solid rgba(102, 96, 96, 0.473); 
+    border-top: 1px solid rgba(102, 96, 96, 0.473);
 }
 
 .home-carousel-item{
@@ -257,7 +257,7 @@ a{
 }
 
 #home-carousel-img{
-    background-image: url("../images/homestay4.jpg") ;
+    background-image: url("../../../images/homestay4.jpg") ;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -270,7 +270,7 @@ a{
 
 .home-item-status{
     line-height: 3px;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
 #home-item-status-blue{
@@ -331,7 +331,7 @@ a{
 
 /* showcase */
 #showcase-img{
-    background-image: url(../images/homestay3.jpg);
+    background-image: url(../../../images/homestay3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -425,7 +425,7 @@ a{
 }
 
 #second-showcase{
-    background-image: url(../images/homestay4.jpg);
+    background-image: url(../../../images/homestay4.jpg);
     background-position: center ;
     background-size: contain;
     background-size: cover;
@@ -492,7 +492,7 @@ a{
 }
 
 .home-blog-details{
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
 }
 
 .home-blog-details h6{
@@ -502,8 +502,8 @@ a{
 
 .home-blog-details p{
     margin-top: 10px;
-    font-size: 13px; 
-    color: gray;  
+    font-size: 13px;
+    color: gray;
 }
 
 .home-blog-details i{
@@ -533,13 +533,13 @@ a{
 .slider-btn{
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    padding: 5px 5px 5px 6px;    
+    padding: 5px 5px 5px 6px;
 }
 
 #slider-next-icon:hover, #slider-before-icon:hover{
     background-color: rgb(84,174,63);
     color: white;
-    border: none;    
+    border: none;
 }
 
 #slider-next-icon, #slider-before-icon{
@@ -555,7 +555,7 @@ a{
         top: -8%;
         bottom: 105%;
     }
-    
+
     #slider-before-icon{
         width: 6%;
         top: -8%;
@@ -572,7 +572,7 @@ a{
         bottom: 105%;
         right: 21%;
     }
-    
+
     #slider-before-icon{
         width: 4%;
         top: -8%;
@@ -590,7 +590,7 @@ a{
         bottom: 116%;
         left: 95%;
     }
-    
+
     #slider-before-icon{
         width: 4%;
         top: -28%;
@@ -606,7 +606,7 @@ a{
         top: -34%;
         bottom: 119%;
     }
-    
+
     #slider-before-icon{
         width: 3%;
         top: -34%;
@@ -622,7 +622,7 @@ a{
         top: -37%;
         bottom: 123%;
     }
-    
+
     #slider-before-icon{
         width: 2%;
         top: -37%;
@@ -664,7 +664,7 @@ a{
     z-index: 1;
     transition: all 800ms ease;
     transform: scale(1.1);
-    
+
 }
 
 .home-carousel-details .teamDiv {
@@ -691,7 +691,7 @@ a{
 .link-wrapper{
     font-family: 'Urbanist', sans-serif;
     background-color: rgb(239,239,239);
-    
+
 }
 
 .links{
@@ -726,7 +726,7 @@ a{
     border-bottom: 1px solid rgb(202, 200, 200);
 }
 
-.block-title h4{    
+.block-title h4{
     font-family: 'Poppins', sans-serif;
     padding-left: 20px;
     border-left: 4px solid rgb(84,174,63);
@@ -746,7 +746,7 @@ a{
 
 .category-top-menu li{
     padding: 8px 0px;
-    font-size: 15px;    
+    font-size: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: rgb(109, 107, 107);
@@ -773,7 +773,7 @@ a{
 .search-title h4{
     font-size: 18px;
 }
- 
+
 /* price filter */
 .price-range input{
     padding: 15px 0px;
@@ -791,7 +791,7 @@ a{
     font-size: 14px;
     margin-left: 5px;
     color: rgb(92, 89, 89);
-} 
+}
 
 /* filter seperator */
 .price-range,
@@ -840,7 +840,7 @@ a{
     padding-top: 8px;
 }
 
-.product-subnav-result span{  
+.product-subnav-result span{
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: rgb(110, 108, 108);
@@ -895,7 +895,7 @@ a{
 }
 
 .about-img img{
-    width: 100%;    
+    width: 100%;
 }
 
 /* our team */
@@ -936,7 +936,7 @@ a{
 
 #team-link-body .team-link{
     position:absolute;
-    bottom: 0px; 
+    bottom: 0px;
     left: 22px;
     height: 35%;
     width:73%;
@@ -950,7 +950,7 @@ a{
     z-index: 1;
     transition: all 600ms ease;
     transform: scale(1.1);
-    
+
 }
 
 .team-link ul li {
@@ -1252,7 +1252,7 @@ a{
 }
 
 .article-img img{
-    width: 100%; 
+    width: 100%;
     justify-content: center;
 }
 
@@ -1311,7 +1311,7 @@ a{
     margin-top: 15px;
     padding-top: 15px;
 }
- 
+
 .tags div{
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
@@ -1408,7 +1408,7 @@ a{
     font-family: 'Poppins', sans-serif;
     color: rgb(80, 78, 78);
     font-size: 15px;
-    
+
     box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
 }
 

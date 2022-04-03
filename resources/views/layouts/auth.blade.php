@@ -1,6 +1,6 @@
 <html class="no-js" lang="en">
 
-    @include('includes.head')
+    @include('includes.front.head')
 
 <body>
 <div>

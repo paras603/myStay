@@ -71,7 +71,7 @@
     text-align: center;
 }
 
-.signup-now h6, .signin-now h6{    
+.signup-now h6, .signin-now h6{
     font-size: 14px;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .signin-left{
-    background-image: url(../images/homestay1.jpg);
+    background-image: url(../../../images/homestay1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

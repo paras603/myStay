@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('includes.head')
+    @include('includes.front.head')
 </head>
 <body>
     <div class="container-fluid">
@@ -46,7 +46,7 @@
         </div>
 
         <footer class="row">
-            @include('includes.footer')
+            @include('includes.front.footer')
         </footer>
 
     </div>
