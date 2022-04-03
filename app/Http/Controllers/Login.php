@@ -23,7 +23,7 @@ class Login extends Controller
         $password = $request->password;
         $con_password = $request->confirmPassword;
         if ($password != $con_password){
-            return redirect()->back()->with('status','password and confirm password did not matched');
+            return redirect()->back()->with('password-unmatch','Password did not match');
         } else{
             $custRegister = new custRegister;
             $custRegister->name=$request->name;
@@ -32,7 +32,7 @@ class Login extends Controller
             $custRegister->confirmPassword=Hash::make($request->confirmPassword);
             $custRegister->Agree=$request->has('Agree');
             $custRegister->save();
-            return redirect()->back()->with('status','Successfully registered');
+            return redirect()->back()->with('register-success','Successfully registered');
        
         }
        
@@ -51,7 +51,7 @@ class Login extends Controller
         $password = $request->password;
         $con_password = $request->confirmPassword;
         if ($password != $con_password){
-            return redirect()->back()->with('status','password and confirm password did not matched');
+            return redirect()->back()->with('password-unmatch','Password did not match');
         } else{
             $merchantRegister = new merchantRegister;
             $merchantRegister->name=$request->name;
@@ -60,7 +60,7 @@ class Login extends Controller
             $merchantRegister->confirmPassword=Hash::make($request->confirmPassword);
             $merchantRegister->Agree=$request->has('Agree');
             $merchantRegister->save();
-            return redirect()->back()->with('status','Successfully registered');
+            return redirect()->back()->with('register-success','Successfully registered');
        
         }
        
@@ -75,11 +75,11 @@ class Login extends Controller
         $user = custRegister::where(['email'=>$request->email])->first();
         if ( !$user || !Hash::check($request->password,$user->password))
         {
-            return redirect()->back()->with('status','Email or password not correct');
+            return redirect()->back()->with('invalid-credentials','Email or Password incorrect');
         }
         else{
             $request->Session()->put('user',$user);
-            return redirect('/');
+            return redirect(url('customer'));
         }
     }
 
@@ -92,11 +92,11 @@ class Login extends Controller
         $user = merchantRegister::where(['email'=>$request->email])->first();
         if ( !$user || !Hash::check($request->password,$user->password))
         {
-            return redirect()->back()->with('status','Email or password not correct');
+            return redirect()->back()->with('invalid-credentials','Email or Password incorrect');
         }
         else{
             $request->Session()->put('user',$user);
-            return redirect('/');
+            return redirect(url('merchant'));
         }
     }
 

@@ -59,10 +59,18 @@ Route::get('merchant-view', [MyStayController::class, 'merchantViewPage']);
 
 Route::get('customer-add-blog', [MyStayController::class, 'addBlogPage']);
 
-Route::get('customer-signouts',[Login::class,'logout']);
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/email-verified', function (){
+        return view('auth.email-verified');
+    });
+});
+
+
+// Route::get('customer-signouts',[Login::class,'logout']);
 
 /*login*/
-Route::post('/customerRegister', [Login::class, 'customerRegister']);
-Route::post('/merchantRegister', [Login::class, 'merchantRegister']);
-Route::post('/merchantLogin', [Login::class, 'merchantLogin']);
+// Route::post('/customerRegister', [Login::class, 'customerRegister']);
+// Route::post('/merchantRegister', [Login::class, 'merchantRegister']);
+// Route::post('/merchantLogin', [Login::class, 'merchantLogin']);
 Route::post('/customerLogin', [Login::class, 'customerLogin']);

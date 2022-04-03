@@ -65,7 +65,7 @@
             <div class=" row">
                 {{-- website logo --}}
                 <div class="col-lg-3 col-md-3">
-                    <a href="/"><img src="\images\logo.png" alt="website logo"></a>
+                    {{-- <a href="customer"><img src="\images\logo.png" alt="website logo"></a> --}}
                 </div>
                 {{-- search bar --}}
                 <div class="col-lg-7 col-md-7">

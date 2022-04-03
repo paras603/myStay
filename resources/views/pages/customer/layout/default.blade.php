@@ -34,7 +34,7 @@
                                 <a href="customer-settings"><i class="bi bi-gear-fill"></i>Account Settings</a>
                             </div>
                             <div class="cust-profile-nav-item">
-                                <a href="{{ url('/') }}"><i class="bi bi-box-arrow-in-left"></i>Sign out</a>
+                                <a href="{{ url('customer-signouts') }}"><i class="bi bi-box-arrow-in-left"></i>Sign out</a>
                             </div>
                         </div>
                         <div class="col-lg-9">

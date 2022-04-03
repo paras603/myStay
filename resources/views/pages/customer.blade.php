@@ -1,6 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
+
+
     <!-- banner section -->
 <section>
     <div class="container">
@@ -35,7 +37,7 @@
             </div>
         </div>
 
-{{-- company features like easy booking, money return and so on --}}
+    {{-- company features like easy booking, money return and so on --}}
         <div class="row banner-services pt-4 pb-4">
             <div class="col-xl-3">
                 <div class="row">
@@ -139,157 +141,157 @@
 
 <!-- Top Homestays of the week-->
 <section>
-<div class="container pb-5">
-    <div class="row">
-        <div class="col-xl-5 home-section-title">
-            <h3>Top Homestays of the Week</h3>
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-xl-5 home-section-title">
+                <h3>Top Homestays of the Week</h3>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="container">
+                    <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
+                        @for($x=0; $x<6; $x++)
+                        <div class="item home-carousel-item pt-2" id="teamtxt">
+                            <div class="container" id="home-carousel-img">                               
+                                    
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="home-item-status"> 
+                                            <p id="home-item-status-yellow">new</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <!-- <div class="home-item-discount">
+                                            <p>-10%</p>
+                                        </div> -->
+                                    </div>
+                                </div>                                  
+                                                            
+                            </div>
+                            <div class=" container home-carousel-details">
+                                {{-- hover buttons --}}
+                                {{-- <div class="teamDiv">
+                                    <ul>
+                                        <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
+                                        <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
+                                        <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
+                                        <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
+                                    </ul>
+                                </div> --}}
+                                <ul>
+                                    <li>Home</li>
+                                    <li id="product-name"><a href="{{ url('homestay') }}">Afno Ghar</a></li>
+                                    <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
+                                    <li class="star-rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span>(3)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        @endfor                    
+                    </div>
+                </div>
+            </div>            
         </div>
     </div>
-    <div>
-        <div class="row">
-            <div class="container">
-                <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
-                    @for($x=0; $x<6; $x++)
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-10%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            {{-- hover buttons --}}
-                            {{-- <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div> --}}
-                            <ul>
-                                <li>Home</li>
-                                <li id="product-name"><a href="{{ url('homestay') }}">Afno Ghar</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(3)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    @endfor                    
-                </div>
-            </div>
-        </div>            
-    </div>
-</div>
 </section>
 
 <!-- showcase 2 (single homestay) -->
 <section>
-<div class="container pb-5 ">
-    <div class="row" style="overflow: hidden;">
-        <div id="second-showcase" class="showcase2-wrapper">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 second-showcase">
-                <span>
-                <h4>Feel like Home</h4>
-                <h3>Old Barkhe</h3>
-                <h5>Since 1999</h5>
-                <h6><a href="{{ url('homestay') }}">Book now</a></h6>
-                </span>
+    <div class="container pb-5 ">
+        <div class="row" style="overflow: hidden;">
+            <div id="second-showcase" class="showcase2-wrapper">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 second-showcase">
+                    <span>
+                    <h4>Feel like Home</h4>
+                    <h3>Old Barkhe</h3>
+                    <h5>Since 1999</h5>
+                    <h6><a href="{{ url('homestay') }}">Book now</a></h6>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- popular homestay -->
 <section>
-<div class="container pb-5">
-    <div class="row">
-        <div class="col-xl-5   home-section-title">
-            <h3>Popular Homestay</h3>
-        </div>
-        {{-- <div class="col-xl-7 section-nav">
-            <ul><!--
-                --><li><a id="section-nav-current" href="#">Best Seller</a></li><!--
-                --><li><a href="#">Men</a></li><!--
-                --><li><a href="#">Women</a></li><!--
-                --><li><a href="#">Girls</a></li><!--
-                --><li><a href="#">Boys</a></li><!--
-                --><li><a href="#">Baby</a></li><!--
-                --><li><a href="#">Sales $ Deals</a></li><!--                       
-            --></ul>
-        </div> --}}
-    </div>
-    <div>
+    <div class="container pb-5">
         <div class="row">
-            <div class="container">
-                <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
-                    @for($x=0; $x<6; $x++)
-                    <div class="item home-carousel-item pt-2" id="teamtxt">
-                        <div class="container" id="home-carousel-img">                               
-                                
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status"> 
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-10%</p>
-                                    </div> -->
-                                </div>
-                            </div>                                  
-                                                        
-                        </div>
-                        <div class=" container home-carousel-details">
-                            {{-- hover buttons --}}
-                            {{-- <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div> --}}
-                            <ul>
-                                <li>Home</li>
-                                <li id="product-name"><a href="{{ url('homestay') }}">Rajan Homestay</a></li>
-                                <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(3)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    @endfor                        
-                </div>
+            <div class="col-xl-5   home-section-title">
+                <h3>Popular Homestay</h3>
             </div>
-        </div>  
+            {{-- <div class="col-xl-7 section-nav">
+                <ul><!--
+                    --><li><a id="section-nav-current" href="#">Best Seller</a></li><!--
+                    --><li><a href="#">Men</a></li><!--
+                    --><li><a href="#">Women</a></li><!--
+                    --><li><a href="#">Girls</a></li><!--
+                    --><li><a href="#">Boys</a></li><!--
+                    --><li><a href="#">Baby</a></li><!--
+                    --><li><a href="#">Sales $ Deals</a></li><!--                       
+                --></ul>
+            </div> --}}
+        </div>
+        <div>
+            <div class="row">
+                <div class="container">
+                    <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
+                        @for($x=0; $x<6; $x++)
+                        <div class="item home-carousel-item pt-2" id="teamtxt">
+                            <div class="container" id="home-carousel-img">                               
+                                    
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="home-item-status"> 
+                                            <p id="home-item-status-yellow">new</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <!-- <div class="home-item-discount">
+                                            <p>-10%</p>
+                                        </div> -->
+                                    </div>
+                                </div>                                  
+                                                            
+                            </div>
+                            <div class=" container home-carousel-details">
+                                {{-- hover buttons --}}
+                                {{-- <div class="teamDiv">
+                                    <ul>
+                                        <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
+                                        <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
+                                        <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
+                                        <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
+                                    </ul>
+                                </div> --}}
+                                <ul>
+                                    <li>Home</li>
+                                    <li id="product-name"><a href="{{ url('homestay') }}">Rajan Homestay</a></li>
+                                    <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li>
+                                    <li class="star-rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span>(3)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        @endfor                        
+                    </div>
+                </div>
+            </div>  
+        </div>
     </div>
-</div>
 </section>
 
 
@@ -420,5 +422,7 @@
 
 
 @stop
+
+
 
 

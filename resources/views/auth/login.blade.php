@@ -34,7 +34,7 @@
                                 <div class="login-logo mb-5">
                                     <img src="../images/logo.png">
                                 </div>
-                                <form action="/customer" method="POST">
+                                <form action="{{ route('customerLogin') }}" method="POST">
                                     @csrf
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" name="email" id="floatingInput" placeholder="username">

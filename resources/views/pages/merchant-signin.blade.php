@@ -10,6 +10,11 @@
                     <div class="login-heading pt-4 pb-4">
                         <h3>Merchant Sign in</h3>
                     </div>
+                    @if (session('invalid-credentials'))
+                        <div class="alert alert-danger" role="alert" style="display: flex; justify-content:center;">
+                            <h5 style=" ">{{ session ('invalid-credentials')}}</h5>
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-0">
                             <div class="container">
@@ -31,9 +36,6 @@
                                 </div>
                                 <form action="/merchantLogin" method="POST">
                                     @csrf
-                                    @if (session('status'))
-                                        <h5 style="font-size: 13px;">{{ session ('status')}}</h5>
-                                    @endif
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" name="email" id="floatingInput" placeholder="username">
                                         <label for="floatingInput">email</label> 

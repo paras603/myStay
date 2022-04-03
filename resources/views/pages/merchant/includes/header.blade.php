@@ -9,29 +9,6 @@
             <div class="col-lg-4">
                 <div class="nav-li">
                     <ul>
-                        {{-- <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <li>
-                            <span>Account</span>
-                            <span class="material-icons-outlined expand-more">expand_more</span>
-                            </li>
-                        </button> --}}
-                        <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                            <li><a href="{{url('customer-signin')}}" class="dropdown-item">
-                                <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
-                                Sign out</a></li>
-                            <li><a href="{{ url('customer-details') }}" class="dropdown-item">
-                                <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
-                                My Account</a></li>
-                            <li><a href="{{ url('bookmark') }}" class="dropdown-item">
-                                <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
-                                Bookmark</a></li>
-                            <li><a href="{{url('blogs')}}" class="dropdown-item">
-                                <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
-                                Blogs</a></li>
-                            {{-- <li><a href="#" class="dropdown-item">
-                                <span class="material-icons-outlined" style="font-size: 18px ;">task_alt</span>
-                                Checkout</a></li>                                 --}}
-                        </ul>
                         <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <li>
                             <span>help</span>
@@ -42,17 +19,34 @@
                             <li><a href="{{ url('faq') }}" class="dropdown-item">
                             <span>FAQ</span></a></li>                        
                         </ul>
-                        <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <li>
-                            <span>Homestay</span>
-                            <span class="material-icons-outlined expand-more">expand_more</span>
-                            </li>
-                        </button>
-                        <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                            <li><a href="{{ url('customer-signin') }}" class="dropdown-item">
-                                <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
-                                Sign out</a></li>                              
-                        </ul>                        
+                        @if(Session::has('user'))
+                            <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <li>
+                                <span>{{ Session::get('user')['name'] }}</span>
+                                <span class="material-icons-outlined expand-more">expand_more</span>
+                                </li>
+                            </button>
+                            <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
+                                <li><a href="{{ url('customer-signouts') }}" class="dropdown-item">
+                                    <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
+                                    Log out</a></li>                               
+                            </ul>
+                        @else
+                            <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <li>
+                                <span>Homestay</span>
+                                <span class="material-icons-outlined expand-more">expand_more</span>
+                                </li>
+                            </button>
+                            <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
+                                <li><a href="{{ url('customer-signin') }}" class="dropdown-item">
+                                    <span class="material-icons-outlined" style="font-size: 18px ;">login</span>
+                                    Sign in</a></li>
+                                <li><a href="{{ url('customer-signup') }}" class="dropdown-item">
+                                    <span class="material-icons-outlined" style="font-size: 18px ;">how_to_reg</span>
+                                    Sign up</a></li>                               
+                            </ul>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -65,7 +59,7 @@
             <div class=" row">
                 {{-- website logo --}}
                 <div class="col-lg-3 col-md-3">
-                    <a href="/"><img src="\images\logo.png" alt="website logo"></a>
+                    <a href="merchant"><img src="\images\logo.png" alt="website logo"></a>
                 </div>
                 {{-- search bar --}}
                 <div class="col-lg-7 col-md-7">

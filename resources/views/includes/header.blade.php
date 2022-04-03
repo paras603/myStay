@@ -16,15 +16,17 @@
                         </li>
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{url('customer-signin')}}" class="dropdown-item">
+                        {{-- <li><a href="{{url('customer-signin')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">login</span>
-                            Sign in</a></li>
+                            Sign in</a></li> --}}
+                        @if(Session::has('user'))
                         <li><a href="{{ url('customer-details') }}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             My Account</a></li>
                         <li><a href="{{ url('bookmark') }}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
                             Bookmark</a></li>
+                        @endif
                         <li><a href="{{url('blogs')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
                             Blogs</a></li>
@@ -52,7 +54,7 @@
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
                         <li><a href="{{ url('customer-signouts') }}" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">how_to_reg</span>
+                            <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
                             Log out</a></li>                               
                     </ul>
 
@@ -72,6 +74,8 @@
                             Sign up</a></li>                               
                     </ul>
                     @endif
+
+                    
                     
                 </ul>
             </div>
