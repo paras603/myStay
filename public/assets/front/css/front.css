@@ -1,0 +1,40 @@
+.section-padding-top{
+    padding-top: 30px;
+}
+
+.hs_preview_image_container{
+    width: fit-content;
+    /*padding-top: 10px;*/
+    position: relative;
+}
+.hs_preview_image_container img{
+    max-width: 200px;
+    max-height: 200px;
+}
+.hs_preview_image_close{
+    background-color: rgba(0,0,0,.5);
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a.hs_preview_image_close:hover{
+    color: unset;
+}
+
+.hs_preview_image_container .hs_preview_image_close i{
+    margin-right: unset;
+}
+
+.h-min{
+    height: min-content;
+}
+
+.input-group{
+    gap: 10px;
+}

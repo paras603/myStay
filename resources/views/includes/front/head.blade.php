@@ -12,27 +12,6 @@
 {{-- favicon link --}}
 <link rel="shortcut icon" type="image/x-icon" href="..\images\favicon.png">
 
-{{-- css link --}}
-<link rel="stylesheet" href="{{asset('assets/front/css/styles.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/header.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/footer.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/signin_up.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/blogs.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/blog.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/faq.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/home.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/customer-profile.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/customer-details.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/customer-bookings.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/customer-blogs.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/customer-settings.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/homestay.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/customer-bookmarks.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/search.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/merchant.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/merchant-view.css')}}">
-<link rel="stylesheet" href="{{asset('assets/front/css/add-blog.css')}}">
-
 {{-- owl carousel --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -57,9 +36,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-
 {{-- bootstrap icon --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<!-- Common -->
+@include('includes.common.stylesheet')
+{{-- css link --}}
+<link rel="stylesheet" href="{{asset('assets/front/css/styles.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/header.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/footer.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/signin_up.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/blogs.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/blog.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/faq.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/home.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/customer-profile.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/customer-details.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/customer-bookings.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/customer-blogs.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/customer-settings.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/homestay.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/customer-bookmarks.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/search.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/merchant.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/merchant-view.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/add-blog.css')}}">
+<link rel="stylesheet" href="{{asset('assets/front/css/front.css')}}">
+
+
 
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
-  
+

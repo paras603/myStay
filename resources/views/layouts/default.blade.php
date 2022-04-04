@@ -20,5 +20,7 @@
     </div>
 @include('includes.front.foot')
 @yield('page_level_script')
+    @include('utils._toastify')
+    @include('utils._alertify')
 </body>
 </html>

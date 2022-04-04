@@ -13,10 +13,10 @@
                                 <div class="signin-left">
                                     <div class="singin-left-cont">
                                         <h1>Welcome to myStay</h1>
-                                        <h3>Are you a homestay owner?</h3>
-                                        <form method="get" action="{{ url('merchant-signin') }}">
-                                            <button type="submit">Merchant Sign In</button>
-                                        </form>
+{{--                                        <h3>Are you a homestay owner?</h3>--}}
+{{--                                        <form method="get" action="{{ url('merchant-signin') }}">--}}
+{{--                                            <button type="submit">Merchant Sign In</button>--}}
+{{--                                        </form>--}}
                                     </div>
                                 </div>
                             </div>

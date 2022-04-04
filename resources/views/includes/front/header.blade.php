@@ -3,9 +3,9 @@
 <div class="container-fluid top-nav">
     <div class="container pt-1 pb-1">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-7">
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
             <div class="nav-li">
                 <ul>
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -15,55 +15,38 @@
                         </li>
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        {{-- <li><a href="{{url('customer-signin')}}" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">login</span>
-                            Sign in</a></li> --}}
-{{--                        @if(Session::has('user'))--}}
-                        <li><a href="{{ url('customer-details') }}" class="dropdown-item">
+                        <li><a href="#" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             My Account</a></li>
-                        <li><a href="{{ url('bookmark') }}" class="dropdown-item">
+                        <li><a href="#" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
                             Bookmark</a></li>
 {{--                        @endif--}}
                         <li><a href="{{url('blogs')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
                             Blogs</a></li>
-                        {{-- <li><a href="#" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">task_alt</span>
-                            Checkout</a></li>                                 --}}
                     </ul>
-                    <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn-unstyle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
-                        <span>help</span>
+                        <span>Become merchant</span>
                         <span class="material-icons" style="font-size: 18px;">help_outline</span>
                         </li>
                     </button>
-                    <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{ url('faq') }}" class="dropdown-item">
-                        <span>FAQ</span></a></li>
-                    </ul>
-
-{{--                    @if(Session::has('user'))--}}
-                    <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
                         <li>
-                        <span>Test</span>
-                        <span class="material-icons-outlined expand-more">expand_more</span>
+                            <a href="{{ route('front.merchant') }}" class="dropdown-item">
+                                <span class="material-icons-outlined" style="font-size: 18px ;">c</span>
+                                Create Account
+                            </a>
                         </li>
-                    </button>
-                    <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{ url('customer-signouts') }}" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
-                            Log out</a></li>
                     </ul>
-
-                    <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn-unstyle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
                         <span>Homestay</span>
                         <span class="material-icons-outlined expand-more">expand_more</span>
                         </li>
                     </button>
-                    <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton3">
                         @auth
                             <li>
                                 <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -91,10 +74,6 @@
                         </li>
                         @endguest
                     </ul>
-
-
-
-
                 </ul>
             </div>
         </div>
