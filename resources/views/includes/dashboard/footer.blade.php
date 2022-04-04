@@ -6,9 +6,4 @@
       <b>Version</b> 3.2.0
     </div>
   </footer>
-</div>
 <!-- ./wrapper -->
-@include('includes.dashboard.foot')
-@yield('page_level_script')
-</body>
-</html>
