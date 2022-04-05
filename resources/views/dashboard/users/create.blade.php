@@ -10,7 +10,7 @@
         <form action="{{route('users.store', $user)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
-                @include('dashboard.users._form')
+                @include('dashboard.users._form', ['show' => true])
             </div>
             <!-- /.card-body -->
 

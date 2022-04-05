@@ -11,7 +11,7 @@
             {{ method_field('PUT') }}
             @csrf
             <div class="card-body">
-                @include('dashboard.users._form')
+                @include('dashboard.users._form', ['show' => false])
             </div>
             <!-- /.card-body -->
 
