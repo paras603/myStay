@@ -15,7 +15,7 @@ use App\Http\Controllers\Login;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index'])->name('front.index');
+
 
 // Route::get('login', [EcommerceController::class, 'loginPage']);
 
@@ -57,15 +57,13 @@ Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index'])->n
 //
 //Route::get('customer-add-blog', [MyStayController::class, 'addBlogPage']);
 
-
+Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index'])->name('front.index');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/email-verified', function (){
         return view('auth.email-verified');
     });
-
-    Route::get('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'index'])->name('front.merchant');
+    Route::get('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'index'])->name('front.merchant.index');
     Route::post('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'store'])->name('front.merchant.create');
-
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
@@ -82,4 +80,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 // Route::post('/customerRegister', [Login::class, 'customerRegister']);
 // Route::post('/merchantRegister', [Login::class, 'merchantRegister']);
 // Route::post('/merchantLogin', [Login::class, 'merchantLogin']);
-Route::post('/customerLogin', [Login::class, 'customerLogin']);
+//Route::post('/customerLogin', [Login::class, 'customerLogin']);

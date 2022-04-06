@@ -46,6 +46,7 @@
     </span>
     @enderror
 </div>
+@if($show)
 <div class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Enter Password" name="password">
@@ -64,4 +65,5 @@
     </span>
     @enderror
 </div>
+@endif
 

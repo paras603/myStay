@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Merchant extends Model
+class Homestay extends Model
 {
     use HasFactory;
-
     protected $guarded = ['id'];
-    const VERIFIED = ['yes', 'no'];
-    
-    public function user(){
+    protected $table = 'homestays';
+
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
+
 }

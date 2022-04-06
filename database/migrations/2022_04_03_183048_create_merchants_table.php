@@ -15,15 +15,10 @@ class CreateMerchantsTable extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->id();
-            $table->string('pan_number');
-            $table->enum('verified', ['yes', 'no'])->default('no');
-            $table->string('pp_image');
             $table->string('identity_front');
             $table->string('identity_back');
-            $table->string('homestay_name');
-            $table->string('homestay_address');
-            $table->string('homestay_telephone');
-            $table->string('registration_certificate');
+            $table->string('merchant_image');
+            $table->enum('verified', ['yes', 'no'])->default('no');
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

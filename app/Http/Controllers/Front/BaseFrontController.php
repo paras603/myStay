@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Merchant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 
-class HomeController extends BaseFrontController
+class BaseFrontController extends Controller
 {
-    public function index(){
-        return view('front.index');
+    public function __construct()
+    {
+
     }
 }

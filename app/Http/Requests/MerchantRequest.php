@@ -24,9 +24,14 @@ class MerchantRequest extends FormRequest
     public function rules()
     {
         return [
-            'pan_number'            =>          ['required', 'string', 'max:191'],
-            'identity_front'        =>          ['required','image', 'mimes:jpg,png,jepg', 'max:10240'],
-            'identity_back'        =>           ['required','image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'identity_front'                =>           ['required',  'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'identity_back'                 =>           ['required',  'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'pan_number'                    =>           ['required',  'string', 'max:191'],
+            'merchant_image'                =>           ['required',  'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'registration_certificate'      =>           ['required',  'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'homestay_name'                 =>           ['required',  'string', 'max:191'],
+            'homestay_address'              =>           ['required',  'string', 'max:191'],
+            'telephone'                     =>           ['required', 'numeric', 'digits:10'],
         ];
     }
 }
