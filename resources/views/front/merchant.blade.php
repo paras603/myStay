@@ -16,19 +16,19 @@
             </div>
             <div class="row account-settings-content align-items-center">
                 <div class="col-lg-2 col-md-3 col-sm-12">
-                    <h6><i class="bi bi-image-fill"></i>PP Size Image</h6>
+                    <h6><i class="bi bi-image-fill"></i>Merchant Image</h6>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control @error('pp_image') is-invalid @enderror h-min" aria-label="" aria-describedby="basic-addon1"
-                               name="pp_image" onchange="loadPreview(this, '#pp_image')">
-                        @error('pp_image')
+                        <input type="file" class="form-control @error('merchant_image') is-invalid @enderror h-min" aria-label="" aria-describedby="basic-addon1"
+                               name="merchant_image" onchange="loadPreview(this, '#merchant_image')">
+                        @error('merchant_image')s
                         <div class="invalid-feedback" role="alert">
                             {{$message}}
                         </div>
                         @enderror
                         <div class="hs_preview_image_container d-none">
-                            <img id="pp_image" src="" class="img-fluid "  alt=""/>
+                            <img id="merchant_image" src="" class="img-fluid "  alt=""/>
                             <a href="!#" class="hs_preview_image_close"><i class="fas fa-times"></i></a>
                         </div>
                     </div>
@@ -126,9 +126,9 @@
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control @error('homestay_telephone') is-invalid @enderror" placeholder="Telephone Number" aria-label="Telephone Number" aria-describedby="basic-addon1"
-                                   name="homestay_telephone" value="{{old('homestay_telephone')}}">
-                            @error('homestay_telephone')
+                            <input type="text" class="form-control @error('telephone') is-invalid @enderror" placeholder="Telephone Number" aria-label="Telephone Number" aria-describedby="basic-addon1"
+                                   name="telephone" value="{{old('telephone')}}">
+                            @error('telephone')
                             <div class="invalid-feedback" role="alert">
                                 {{$message}}
                             </div>
@@ -162,10 +162,10 @@
                 <div class="col-lg-8 col-md-7 col-sm-12">
                     <div class="input-group mb-3">
                         <input type="file" class="form-control @error('registration_certificate') is-invalid @enderror h-min"
-                               placeholder="" aria-label="registration_certificate"
+                               placeholder="" aria-label="registration_certificate" name="registration_certificate"
                                aria-describedby="basic-addon1" name="registration_certificate"  onchange="loadPreview(this, '#registration_certificate')">
-                        @error('identity_back')
-                        <div class="registration_certificate" role="alert">
+                        @error('registration_certificate')
+                        <div class="invalid-feedback" role="alert">
                             {{$message}}
                         </div>
                         @enderror

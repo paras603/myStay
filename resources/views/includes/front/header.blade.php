@@ -26,6 +26,7 @@
                             <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
                             Blogs</a></li>
                     </ul>
+                    @if(!$GLOBAL_MERCHANT)
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
                         <span>Become merchant</span>
@@ -34,12 +35,29 @@
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
                         <li>
-                            <a href="{{ route('front.merchant') }}" class="dropdown-item">
+                            <a href="{{ route('front.merchant.index') }}" class="dropdown-item">
                                 <span class="material-icons-outlined" style="font-size: 18px ;">c</span>
                                 Create Account
                             </a>
                         </li>
                     </ul>
+                    @endif
+                    @if($GLOBAL_MERCHANT)
+                        <button class="btn-unstyle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li>
+                                <span>Home stay</span>
+                                <span class="material-icons" style="font-size: 18px;">help_outline</span>
+                            </li>
+                        </button>
+                        <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
+                            <li>
+                                <a href="" class="dropdown-item">
+                                    <span class="material-icons-outlined" style="font-size: 18px ;">c</span>
+                                    Homestay Details
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
                         <span>Homestay</span>

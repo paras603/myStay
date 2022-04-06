@@ -15,11 +15,13 @@ class CreateHomestaysTable extends Migration
     {
         Schema::create('homestays', function (Blueprint $table) {
             $table->id();
-            $table->string('hs_name');
-            $table->string('hs_imgs');
-            $table->longText('hs_services');
-            $table->longText('nearby_places');
-            $table->string('iframe');
+            $table->string('pan_number');
+            $table->string('homestay_name');
+            $table->string('homestay_address');
+            $table->string('telephone');
+            $table->string('registration_certificate');
+            $table->unsignedBigInteger('merchant_id')->index();
+            $table->foreign('merchant_id')->references('id')->on('merchants')->onDelete('cascade');
             $table->timestamps();
         });
     }
