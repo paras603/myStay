@@ -12,6 +12,34 @@
             <h3>The Bhedigoth</h3>
         </div>
 
+        <div class="col-lg-12 col-md-12 col-sm-12 mt-5 mb-5">
+            <div class="merchant-profile-subhead">
+                <h6>Slogan</h6>
+            </div>
+            <div class="add-homestay-services">
+                {{-- @for($x=0; $x<2; $x++) --}}
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <ul>
+                        <li><i class="bi bi-check2"></i>
+                        Feel like heaven
+                        </li>
+                    </ul>
+                </div>
+                {{-- @endfor  --}}
+            </div>
+            <div class="row add-homestay-services-input">
+                <div class="col-lg-10 col-md-10 col-sm-12">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Homestay slogan" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Slogan</label>
+                        </div>
+                </div>
+                {{-- <div class="col-lg-2 col-md-2 col-sm-12">
+                    <button>Add</button>
+                </div> --}}
+            </div>
+        </div>
+
         <div class="col-lg-12 col-sm-12 mt-5 mb-5">
             <div class="merchant-profile-subhead">
                 <h6>Homestay Images</h6>
