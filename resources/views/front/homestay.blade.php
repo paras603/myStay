@@ -31,9 +31,9 @@
                     <input class="form-control" type="file" id="formFile">
                 </div>
             </div>
-            <div class="add-homestay-img-btn">
+            {{-- <div class="add-homestay-img-btn">
                 <button type="button" class="btn btn-success">Add</button>
-            </div>
+            </div> --}}
         </div>
 
         <div class="col-lg-12 col-md-12 col-sm-12 mt-5 mb-5">
@@ -58,9 +58,9 @@
                         <label for="floatingTextarea">New Service</label>
                         </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-12">
+                {{-- <div class="col-lg-2 col-md-2 col-sm-12">
                     <button>Add</button>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -81,9 +81,9 @@
                         <label for="floatingTextarea">Nearby Place</label>
                         </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-12">
+                {{-- <div class="col-lg-2 col-md-2 col-sm-12">
                     <button>Add</button>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -98,9 +98,9 @@
                         <label for="floatingTextarea">iframe from google map</label>
                         </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-12">
+                {{-- <div class="col-lg-2 col-md-2 col-sm-12">
                     <button>Add</button>
-                </div>
+                </div> --}}
             </div>
         </div>
 
