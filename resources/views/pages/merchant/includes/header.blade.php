@@ -19,10 +19,10 @@
                             <li><a href="{{ url('faq') }}" class="dropdown-item">
                             <span>FAQ</span></a></li>                        
                         </ul>
-                        @if(Session::has('user'))
+                        
                             <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <li>
-                                <span>{{ Session::get('user')['name'] }}</span>
+                                <span>sdfkjask</span>
                                 <span class="material-icons-outlined expand-more">expand_more</span>
                                 </li>
                             </button>
@@ -31,7 +31,7 @@
                                     <span class="material-icons-outlined" style="font-size: 18px ;">logout</span>
                                     Log out</a></li>                               
                             </ul>
-                        @else
+                        
                             <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <li>
                                 <span>Homestay</span>
@@ -46,7 +46,7 @@
                                     <span class="material-icons-outlined" style="font-size: 18px ;">how_to_reg</span>
                                     Sign up</a></li>                               
                             </ul>
-                        @endif
+                        
                     </ul>
                 </div>
             </div>

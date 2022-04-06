@@ -4,7 +4,7 @@
     <!-- banner section -->
 <section>
     <div class="container mt-5">
-        @if(Session::has('user'))
+        @auth
             <div class="row" style="margin: 20px 20px 20px 20px;">
                 <div class="col-lg-8 col-sm-12 home-banner" id="banner-img">
                     <div class="col-lg-6">
@@ -35,7 +35,8 @@
                     </div>
                 </div>
             </div>
-        @else
+        @endauth
+        @guest
             <div class="row" style="margin: 20px 20px 20px 20px;">
                 <div class="col-lg-9 col-sm-12 home-banner" id="banner-img">
                     <div class="main-banner mb-5 pb-4">
@@ -54,19 +55,19 @@
                             <h3>Welcome to myStay!</h3>
                         </div>
                         <div class="signin-option-btn">
-                            <form method="GET" action="{{ url('merchant-signin') }}">
-                                <button>Merchant SignIn</button>
+                            <form method="GET" action="{{ url('login') }}">
+                                <button>Log in</button>
                             </form>
                         </div>
                         <div class="signin-option-btn">
-                            <form method="get" action="{{ url('customer-signin') }}">
-                                <button>Customer SignIn</button>
+                            <form method="get" action="{{ url('register') }}">
+                                <button>Register</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        @endif
+        @endguest
 
 {{-- company features like easy booking, money return and so on --}}
         <div class="row banner-services pt-4 pb-4">

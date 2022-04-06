@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     @include('includes.front.head')
+    <link href="{{asset('assets/front/css/bootstrap/bootstrap.min.css')}}" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
     <div class="container-fluid">

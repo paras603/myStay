@@ -72,24 +72,24 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" style="display: flex; flex-direction:column;">
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title mb-0">Merchant Identity</h4>
                     </div>
                     <hr>
-                    <div class="row">
-                        <h2>Merchant Identity Photo</h2>
+                    <div class="row mt-4 mb-4">
+                        <h6>Merchant Image</h6>
                         <div class="col-md-12">
-                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_front)}}">
-                        </div>
-                        <div class="col-md-12">
-                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}">
+                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->merchant_image)}}" width="240" height="240">
                         </div>
                     </div>
-                    <div class="row">
-                        <h2>Merchant Image</h2>
-                        <div class="col-md-12">
-                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->merchant_image)}}">
+                    <div class="row mb-4 mt-4">
+                        <h6>Merchant Identity Photo</h6>
+                        <div class="col-md-12 mt-3 mb-3">
+                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_front)}}"width="800" height="400">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}"width="800" height="400">
                         </div>
                     </div>
                 </div>

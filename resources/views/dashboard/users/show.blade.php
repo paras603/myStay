@@ -32,6 +32,14 @@
                                 <th scope="row">Created at :</th>
                                 <td>{{\Carbon\Carbon::parse($user->created_at)->format('Y-m-d')}}</td>
                             </tr>
+                            <tr>
+                                <th scope="row">Verified at :</th>
+                                @if($user->email_verified_at == '')                                
+                                <td>not verified</td>                                
+                                @else
+                                <td>{{\Carbon\Carbon::parse($user->email_verified_at)->format('Y-m-d')}}</td>
+                                @endif
+                            </tr>
 {{--                            <tr>--}}
 {{--                                <th scope="row">Image: </th>--}}
 {{--                                @php--}}

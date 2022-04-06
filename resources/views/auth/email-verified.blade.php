@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <div class="mb-5 text-muted logo-small mx-auto">
+            <div class=" mt-5 mb-5 text-muted logo-small mx-auto">
                 <img class="img-fluid" src="{{asset('storage/uploads/settings/logo.png')}}">
             </div>
         </div>

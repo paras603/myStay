@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="login mt-5 mb-5">
                     <div class="login-heading pt-4 pb-4">
-                        <h3>Customer Sign up</h3>
+                        <h3>Sign up</h3>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-0 mt-4 ">
