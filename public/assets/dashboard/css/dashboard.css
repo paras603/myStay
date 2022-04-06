@@ -1,0 +1,8 @@
+.update_form{
+    display: flex;
+    gap: 10px;
+}
+
+.custom-select{
+    width: 100px;
+}

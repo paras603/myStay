@@ -28,6 +28,28 @@
                                 <th scope="row">Created at :</th>
                                 <td>{{\Carbon\Carbon::parse($merchant->created_at)->format('Y-m-d')}}</td>
                             </tr>
+                            <tr>
+                                <th scope="row">Verified: </th>
+                                <td>
+                                    <form action="{{route('merchants.update', $merchant->id)}}" method="POST" name="merchant_update" class="update_form">
+                                        {{ method_field('PUT') }}
+                                        @csrf
+                                    <select class="custom-select" name="verified">
+                                        @foreach (\App\Models\Merchant::VERIFIED as $k => $v)
+                                            <?php
+                                            if (old('verified', $merchant->verified) == $v) {
+                                                $selected = 'selected';
+                                            } else {
+                                                $selected = '';
+                                            }
+                                            ?>
+                                            <option value="{{ $v }}" {{ $selected }}>{{ ucwords($v) }}</option>
+                                        @endforeach
+                                    </select>
+                                    <button type="submit" class="btn btn-secondary">Submit</button>
+                                    </form>
+                                </td>
+                            </tr>
 {{--                            <tr>--}}
 {{--                                <th scope="row">Image: </th>--}}
 {{--                                @php--}}
@@ -42,6 +64,33 @@
 {{--                            </tr>--}}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">Merchant Identity</h4>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <h2>Merchant Identity Photo</h2>
+                        <div class="col-md-12">
+                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_front)}}">
+                        </div>
+                        <div class="col-md-12">
+                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h2>Merchant Image</h2>
+                        <div class="col-md-12">
+                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->merchant_image)}}">
+                        </div>
                     </div>
                 </div>
             </div>
