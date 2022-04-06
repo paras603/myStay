@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
         Route::resource('merchants', \App\Http\Controllers\Dashboard\MerchantController::class);
+        Route::resource('homestays', \App\Http\Controllers\Dashboard\HomestayController::class);
     });
 });
 

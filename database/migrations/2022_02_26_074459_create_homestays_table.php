@@ -16,6 +16,7 @@ class CreateHomestaysTable extends Migration
         Schema::create('homestays', function (Blueprint $table) {
             $table->id();
             $table->string('hs_name');
+            
             $table->string('hs_imgs');
             $table->longText('hs_services');
             $table->longText('nearby_places');
