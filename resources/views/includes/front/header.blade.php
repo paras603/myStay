@@ -51,7 +51,7 @@
                         </button>
                         <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
                             <li>
-                                <a href="" class="dropdown-item">
+                                <a href="{{route('front.homestay.index')}}" class="dropdown-item">
                                     <span class="material-icons-outlined" style="font-size: 18px ;">c</span>
                                     Homestay Details
                                 </a>
