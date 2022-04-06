@@ -68,6 +68,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
+<<<<<<< HEAD
+=======
+        Route::resource('merchants', \App\Http\Controllers\Dashboard\MerchantController::class);
+>>>>>>> 4afe52a1e60d083559b7b4a57c27c88795a7b55c
     });
 });
 
