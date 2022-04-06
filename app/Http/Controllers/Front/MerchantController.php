@@ -75,4 +75,6 @@ class MerchantController extends BaseFrontController
         });
         return redirect()->route('front.index')->with('toast.success', 'Merchant Successfully Registered !!');
     }
+
+
 }

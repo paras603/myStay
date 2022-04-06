@@ -4,17 +4,19 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MerchantRequest;
+use App\Models\Report;
 use App\Models\Role;
 use App\Models\Merchant;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MerchantController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index(Request $request)
     {
@@ -93,14 +95,14 @@ class MerchantController extends Controller
      */
     public function store(MerchantRequest $request)
     {
-       
+
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show($id)
     {
@@ -125,11 +127,17 @@ class MerchantController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'verified' => 'in:yes,no',
+        ]);
+       Merchant::where('id', $id)->update([
+           'verified'           =>          $request->input('verified'),
+       ]);
+        return redirect()->back()->with('toast.success', 'Merchant status updated successfully');
     }
 
     /**
