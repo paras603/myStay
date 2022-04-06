@@ -20,8 +20,8 @@ class MerchantSeeder extends Seeder
                 'identity_front'            => 'citizenship.png',
                 'identity_back'             => 'back.png',
                 'merchant_image'            =>  'profile.png',
-                'verified'                  => 'no',
-                'user_id'                   =>  1,
+                'verified'                  => 'yes',
+                'user_id'                   =>  3,
                 'created_at'                => now(),
             ],
             [
@@ -30,16 +30,7 @@ class MerchantSeeder extends Seeder
                 'identity_back'             => 'screenshot_2021_12_22_113919_20220406032019.png',
                 'merchant_image'            =>  'screenshot_2021_12_22_113919_20220406032019.png',
                 'verified'                  => 'no',
-                'user_id'                   =>  2,
-                'created_at'                => now(),
-            ],
-            [
-                'id'                        =>  3,
-                'identity_front'            => 'screenshot_2021_12_22_113919_20220406032019.png',
-                'identity_back'             => 'screenshot_2021_12_22_113919_20220406032019.png',
-                'merchant_image'            =>  'screenshot_2021_12_22_113919_20220406032019.png',
-                'verified'                  => 'no',
-                'user_id'                   =>  3,
+                'user_id'                   =>  4,
                 'created_at'                => now(),
             ],
         ],[''],[]);

@@ -37,8 +37,8 @@ class UserSeeder extends Seeder
                 'remember_token'            => Str::random(10),
             ],
             [
-                'first_name'                => 'parass',
-                'last_name'                 => 'raii',
+                'first_name'                => 'merchant',
+                'last_name'                 => '1',
                 'email'                     => 'merchant@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -46,9 +46,27 @@ class UserSeeder extends Seeder
                 'remember_token'            => Str::random(10),
             ],
             [
-                'first_name'                => 'parass',
-                'last_name'                 => 'raii',
+                'first_name'                => 'merchant',
+                'last_name'                 => '2',
+                'email'                     => 'merchant2@gmail.com',
+                'email_verified_at'         => now(),
+                'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'role_id'                   => 2,
+                'remember_token'            => Str::random(10),
+            ],
+            [
+                'first_name'                => 'customer',
+                'last_name'                 => '1',
                 'email'                     => 'customer@gmail.com',
+                'email_verified_at'         => now(),
+                'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'role_id'                   => 3,
+                'remember_token'            => Str::random(10),
+            ],
+            [
+                'first_name'                => 'customer',
+                'last_name'                 => '2',
+                'email'                     => 'customer2@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => 3,
