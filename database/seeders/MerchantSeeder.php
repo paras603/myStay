@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Merchant;
 use Illuminate\Database\Seeder;
 
 class MerchantSeeder extends Seeder
@@ -13,6 +14,34 @@ class MerchantSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Merchant::upsert([
+            [
+                'id'                        =>  1,
+                'identity_front'            => 'sfsfsf.jpg',
+                'identity_back'             => 'sfsfsf.png',
+                'merchant_image'            =>  'sfsfsf.jpg',
+                'verified'                  => 'no',
+                'user_id'                   =>  1,
+                'created_at'                => now(),
+            ],
+            [
+                'id'                        =>  2,
+                'identity_front'            => 'sfsfsf.jpg',
+                'identity_back'             => 'sfsfsf.png',
+                'merchant_image'            =>  'sfsfsf.jpg',
+                'verified'                  => 'no',
+                'user_id'                   =>  2,
+                'created_at'                => now(),
+            ],
+            [
+                'id'                        =>  3,
+                'identity_front'            => 'sfsfsf.jpg',
+                'identity_back'             => 'sfsfsf.png',
+                'merchant_image'            =>  'sfsfsf.jpg',
+                'verified'                  => 'no',
+                'user_id'                   =>  3,
+                'created_at'                => now(),
+            ],
+        ],[''],[]);
     }
 }

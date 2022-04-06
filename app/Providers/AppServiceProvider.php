@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
             $is_merchant = false;
             if (Schema::hasTable('merchants') && Schema::hasTable('users')) {
                 if($user){
-                    $merchant = Merchant::where('user_id', $user->id);
+                    $merchant = Merchant::where('user_id', $user->id)->first();
                     if($merchant){
                         $is_merchant = true;
                     }

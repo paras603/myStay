@@ -18,9 +18,9 @@ class MerchantController extends BaseFrontController
         $merchant = Merchant::where('user_id', $user->id)->first();
         if($merchant){
             if($merchant->verified === Merchant::VERIFIED[0]){
-                return redirect()->back()->with('toast.success', 'You are already a merchant');
+                return redirect()->route('front.homestay.index')->with('toast.success', 'You are already a merchant');
             }else{
-                return redirect()->back()->with('toast.success', 'Please wait until we verify your merchant detail');
+                return redirect()->route('front.index')->with('toast.success', 'Please wait until we verify your merchant detail');
             }
         }
         return view('front.merchant');
