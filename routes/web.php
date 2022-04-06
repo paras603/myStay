@@ -70,7 +70,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
-
+        Route::resource('merchants', \App\Http\Controllers\Dashboard\MerchantController::class);
     });
 });
 
