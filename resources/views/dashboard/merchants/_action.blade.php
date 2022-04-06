@@ -4,6 +4,7 @@
 {{-- <a href="{{route('merchants.edit', $r->id)}}" class="btn btn-primary">
     <i class="fas fa-pencil-alt"></i>
 </a> --}}
+<dd>{{$r->id}}</dd>
 <button class="btn btn-primary" onclick="confirmDelete(() => {deleteMerchant({{$r->id}})})" >
     <i class="fas fa-trash"></i>
 </button>

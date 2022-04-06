@@ -150,7 +150,7 @@ class MerchantController extends Controller
     {
         Merchant::where('id', $id)->delete();
         return response()->json([
-            'message' => 'Merchant1 Successfully Deleted',
+            'message' => 'Merchant Successfully Deleted',
         ], 200);
     }
 }

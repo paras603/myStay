@@ -9,6 +9,7 @@
                         <div class="d-flex flex-wrap">
                             <a type="button" href="{{route('merchants.index')}}" class="btn btn-secondary mr-2">Back</a>
                             {{-- <a type="button" href="{{route('merchants.edit', $merchant->id)}}" class="btn btn-info mr-2">Edit</a> --}}
+                            <dd>{{$merchant->id}}</dd>
                             <button type="button" onclick="confirmDelete(() => {deleteMerchant({{$merchant->id}}, true)})" class="btn btn-light">Delete</button>
                         </div>
                     </div>
