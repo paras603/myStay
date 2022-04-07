@@ -34,8 +34,12 @@ class AppServiceProvider extends ServiceProvider
             if (Schema::hasTable('merchants') && Schema::hasTable('users')) {
                 if($user){
                     $merchant = Merchant::where('user_id', $user->id)->first();
-                    if($merchant){
+                    if($merchant && $merchant->verified === Merchant::VERIFIED[0]){
                         $is_merchant = true;
+                        if($merchant->homestay){
+                            $home_stay = $merchant->homestay->homestay_name;
+                            \View::share('GLOBAL_HOMESTAY', $home_stay);
+                        }
                     }
                 }
             }

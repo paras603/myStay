@@ -15,7 +15,7 @@
                         </li>
                     </button>
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{ route('merchant-settings') }}" class="dropdown-item">
+                        <li><a href="" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             Account Settings</a></li>
                         <li><a href="#" class="dropdown-item">
@@ -25,9 +25,9 @@
                         <li><a href="{{url('blogs')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
                             Blogs</a></li>
-                        <li><a href="{{ route('homestay-settings') }}" class="dropdown-item">
-                            <span class="material-icons-outlined" style="font-size: 18px ;">settings</span>
-                            Homestay Settings</a></li>
+{{--                        <li><a href="{{ route('homestay-settings') }}" class="dropdown-item">--}}
+{{--                            <span class="material-icons-outlined" style="font-size: 18px ;">settings</span>--}}
+{{--                            Homestay Settings</a></li>--}}
                     </ul>
                     @if(!$GLOBAL_MERCHANT)
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,9 +55,14 @@
                         <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
                             <li>
                                 <a href="{{route('front.homestay.index')}}" class="dropdown-item">
-                                    <span class="material-icons-outlined" style="font-size: 18px ;">c</span>
+                                    <span class="material-icons-outlined" style="font-size: 18px ;"></span>
                                     Homestay Details
                                 </a>
+                            </li>
+                            <li>
+                                <a href="{{route('front.homestay.edit',$GLOBAL_HOMESTAY)}}" class="dropdown-item">
+                                    <span class="material-icons-outlined" style="font-size: 18px ;">settings</span>
+                                    Homestay Settings</a>
                             </li>
                         </ul>
                     @endif

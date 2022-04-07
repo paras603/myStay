@@ -17,7 +17,7 @@ class MerchantController extends BaseFrontController
         $user = Auth::user();
         $merchant = Merchant::where('user_id', $user->id)->first();
         if($merchant){
-            if($merchant->verified === Merchant::VERIFIED[0]){
+            if($merchant->verified === Merchant::VERIFIED[0] ){
                 return redirect()->route('front.homestay.index')->with('toast.success', 'You are already a merchant');
             }else{
                 return redirect()->route('front.index')->with('toast.success', 'Please wait until we verify your merchant detail');
@@ -28,16 +28,17 @@ class MerchantController extends BaseFrontController
 
     public function store(MerchantRequest $request){
         $user = Auth::user();
+        if($user->isAdmin()){
+            return redirect()->route('front.index')->with('toast.error', 'An admin cannot become a merchant');
+        }
         DB::transaction(function () use ($request, $user){
             $identity_front = $request->file('identity_front');
             $identity_back = $request->file('identity_back');
             $merchant = $request->file('merchant_image');
 
-            $pan_number = $request->input('pan_number');
             $identity_front_image = HomestayHelper::renameImageFileUpload($identity_front);
             $identity_back_image = HomestayHelper::renameImageFileUpload($identity_back);
             $merchant_image = HomestayHelper::renameImageFileUpload($merchant);
-
             $identity_front->storeAs(
                 'public/uploads/users/' . $user->id, $identity_front_image
             );
@@ -47,14 +48,15 @@ class MerchantController extends BaseFrontController
             $merchant->storeAs(
                 'public/uploads/users/' . $user->id, $merchant_image
             );
+//            dd($identity_front_image, $identity_back_image, $merchant_image);
 
+            $pan_number = $request->input('pan_number');
             $registration = $request->file('registration_certificate');
             $registration_image = HomestayHelper::renameImageFileUpload($registration);
 
             $registration->storeAs(
                 'public/uploads/homestay', $registration_image
             );
-
             /** Merchant::VERIFIED[1]  =>  'now' */
             $merchant = Merchant::create([
                 'identity_front'                =>           $identity_front_image,

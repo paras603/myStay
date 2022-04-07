@@ -38,3 +38,7 @@ a.hs_preview_image_close:hover{
 .input-group{
     gap: 10px;
 }
+
+.ck-editor__editable_inline {
+    min-height: 200px;
+}

@@ -11,7 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class MerchantController extends Controller
+class MerchantController extends BaseDashboardController
 {
     /**
      * Display a listing of the resource.
@@ -108,7 +108,8 @@ class MerchantController extends Controller
     {
         $merchant = Merchant::where('id', $id)->first();
         $merchant->load('user');
-        return view('dashboard.merchants.show', compact('merchant'));
+        $is_admin = $merchant->user->isAdmin();
+        return view('dashboard.merchants.show', compact('merchant', 'is_admin'));
     }
 
     /**
@@ -134,9 +135,14 @@ class MerchantController extends Controller
         $request->validate([
             'verified' => 'in:yes,no',
         ]);
-       Merchant::where('id', $id)->update([
-           'verified'           =>          $request->input('verified'),
-       ]);
+        $merchant = Merchant::where('id', $id)->first();
+        $merchant->verified = $request->input('verified');
+        $merchant->save();
+
+        $user = User::where('id', $merchant->user_id)->first();
+        $role = Role::where('name', 'merchant')->first();
+        $user->role_id =  $role->id;
+        $user->save();
         return redirect()->back()->with('toast.success', 'Merchant status updated successfully');
     }
 
@@ -144,7 +150,7 @@ class MerchantController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {

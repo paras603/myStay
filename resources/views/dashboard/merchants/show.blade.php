@@ -28,7 +28,8 @@
                                 <th scope="row">Created at :</th>
                                 <td>{{\Carbon\Carbon::parse($merchant->created_at)->format('Y-m-d')}}</td>
                             </tr>
-                            <tr>
+                            @if(!$is_admin)
+                                <tr>
                                 <th scope="row">Verified: </th>
                                 <td>
                                     <form action="{{route('merchants.update', $merchant->id)}}" method="POST" name="merchant_update" class="update_form">
@@ -50,7 +51,8 @@
                                     </form>
                                 </td>
                             </tr>
-{{--                            <tr>--}}
+                            @endif
+                            {{--                            <tr>--}}
 {{--                                <th scope="row">Image: </th>--}}
 {{--                                @php--}}
 {{--                                    $img_src = asset('assets/images/common/blank_user.png');--}}

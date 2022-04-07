@@ -14,7 +14,7 @@ class Role extends Model
     protected $dates = ['created_at','updated_at'];
 
     /** @const */
-    const ADMIN_ROLE = ['superAdmin', 'merchant'];
+    const ADMIN_ROLE = ['superAdmin', 'admin'];
 
     public static function getDefaultRoleId()
     {

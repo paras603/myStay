@@ -8,8 +8,9 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class UserController extends BaseDashboardController
 {
     /**
      * Display a listing of the resource.
@@ -104,7 +105,7 @@ class UserController extends Controller
             'email'             => $request->input('email'),
             'role_id'           => $request->input('role_id'),
             'email_verified_at' => now(),
-            'password'          => $request->input('password')
+            'password'          => Hash::make($request->input('password'))
         ]);
         return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Created !!');
     }

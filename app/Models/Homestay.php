@@ -17,4 +17,13 @@ class Homestay extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function merchant(){
+        return $this->belongsTo(Merchant::class, 'merchant_id', 'id');
+    }
+
+    public function homestayImages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(HomestayImage::class, 'homestay_id', 'id');
+    }
+
 }

@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $role = Role::where('name','superAdmin')->first();
+        $merchant_role = Role::where('name', 'merchant')->first();
         User::upsert([
             [
                 'first_name'                => 'Paras',
@@ -37,26 +38,35 @@ class UserSeeder extends Seeder
                 'remember_token'            => Str::random(10),
             ],
             [
-                'first_name'                => 'merchant',
-                'last_name'                 => '1',
-                'email'                     => 'merchant@gmail.com',
+                'first_name'                => 'Sanjeev',
+                'last_name'                 => 'Bhandari',
+                'email'                     => 'sanjeevvsanjeev11@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'role_id'                   => 2,
+                'role_id'                   => 4,
                 'remember_token'            => Str::random(10),
             ],
             [
                 'first_name'                => 'merchant',
-                'last_name'                 => '2',
+                'last_name'                 => 'Rai',
+                'email'                     => 'merchant@gmail.com',
+                'email_verified_at'         => now(),
+                'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'role_id'                   => $merchant_role->id,
+                'remember_token'            => Str::random(10),
+            ],
+            [
+                'first_name'                => 'merchant',
+                'last_name'                 => 'Bhandari',
                 'email'                     => 'merchant2@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'role_id'                   => 2,
+                'role_id'                   => $merchant_role->id,
                 'remember_token'            => Str::random(10),
             ],
             [
                 'first_name'                => 'customer',
-                'last_name'                 => '1',
+                'last_name'                 => 'rai',
                 'email'                     => 'customer@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -65,7 +75,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'first_name'                => 'customer',
-                'last_name'                 => '2',
+                'last_name'                 => 'Bhandari',
                 'email'                     => 'customer2@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

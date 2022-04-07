@@ -23,6 +23,13 @@ class RoleSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
+                'name' => 'admin',
+                'label' => 'Admin',
+                'description' => 'Could Manage any thing',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
                 'name' => 'merchant',
                 'label' => 'Merchant',
                 'description' => 'Owner and could manage all data related to the homestay contents',

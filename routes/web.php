@@ -64,11 +64,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
     // Route::get('homestay', [\App\Http\Controllers\Front\HomestayController::class, 'update'])->name('front.homestay.update');
     Route::get('homestay', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
+    Route::get('homestay/edit/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'edit'])->name('front.homestay.edit');
+    Route::put('homestay/update/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'update'])->name('front.homestay.update');
     Route::get('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'index'])->name('front.merchant.index');
     Route::post('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'store'])->name('front.merchant.create');
 
-    Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
-    Route::get('homestay-setting', [\App\Http\Controllers\Front\HomestayController::class, 'homestaySettings'])->name('homestay-settings');
+//    Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
+//    Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
