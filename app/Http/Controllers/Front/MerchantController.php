@@ -76,5 +76,19 @@ class MerchantController extends BaseFrontController
         return redirect()->route('front.index')->with('toast.success', 'Merchant Successfully Registered !!');
     }
 
+    public function merchantSettings(){
+        $user = \auth()->user();
+        $merchant = Merchant::where('user_id', $user->id)->first();
+        if($merchant){
+            if($merchant->verified === Merchant::VERIFIED[0]){
+                return view('front.merchant-settings');
+            }else{
+                return redirect()->back()->with('toast.success', 'Please wait until we verify your merchant detail');
+            }
+        }else{
+            abort(401);
+        }
+    }
+
 
 }
