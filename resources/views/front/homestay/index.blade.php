@@ -4,17 +4,13 @@
     <section>
         <div class="container">
             <div class="row homestay-img">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="padding: 0;">
                     <div class="carousel-inner">
+                        @foreach($homestay->homestayImages as $image)
                       <div class="carousel-item active">
-                        <img src="images/homestay1.jpg" class="d-block w-100" alt="..." height="600px" width="100%">
+                        <img src="{{asset('storage/uploads/homestay/'.$image->image)}}" class="d-block w-100" alt="..." height="600px" width="100%">
                       </div>
-                      <div class="carousel-item">
-                        <img src="images/homestay2.jpg" class="d-block w-100" alt="..." height="600px" width="100%">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="images/homestay3.jpg" class="d-block w-100" alt="..." height="600px" width="100%">
-                      </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,17 +30,17 @@
                 <div class="col-lg-6 col-sm-12 homestay-intro">
                     <div class="row mt-3 mb-3 " style="border-bottom: 1px solid gray;">
                         <div class="col-lg-12 col-sm-12 mb-4">
-                            <h3>Homestay Name</h3>
-                            <ul>
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span>(3)</span>
-                                </li>
-                            </ul>
+                            <h3>{{ucwords($homestay->homestay_name)}}</h3>
+{{--                            <ul>--}}
+{{--                                <li class="star-rating">--}}
+{{--                                    <span class="fa fa-star checked"></span>--}}
+{{--                                    <span class="fa fa-star checked"></span>--}}
+{{--                                    <span class="fa fa-star checked"></span>--}}
+{{--                                    <span class="fa fa-star"></span>--}}
+{{--                                    <span class="fa fa-star"></span>--}}
+{{--                                    <span>(3)</span>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
                             <h6><i class="bi bi-geo-alt"></i>Kathmandu, Nepal</h6>
                             <h6><i class="bi bi-telephone"></i>025-343533</h6>
                             <h6><i class="bi bi-inbox"></i>homestay@gmail.com</h6>
@@ -55,11 +51,7 @@
                     <div class="row">
                         <div class="col-lg-12 homestay-services  mt-3 mb-3">
                             <h3>Our Services</h3>
-                            <ul>
-                                <li><i class="bi bi-check2"></i>Nepali cusine food</li>
-                                <li><i class="bi bi-check2"></i>Good hospitality</li>
-                                <li><i class="bi bi-check2"></i>Tour Guide</li>
-                            </ul>
+                            {!!  $homestay->services  !!}
                         </div>
 
                     </div>

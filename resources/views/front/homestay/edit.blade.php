@@ -71,7 +71,7 @@
                         <div class="row">
                             @foreach($homestay->homestayImages as $image)
                                 <div class="col-lg-3 col-md-4 col-sm-12">
-                                    <img src="images/homestay2.jpg">
+                                    <img src="{{asset('storage/uploads/homestay/'.$image->image)}}">
                                 </div>
                             @endforeach
                         </div>
@@ -138,7 +138,7 @@
 {{--                    </div>--}}
 {{--                </div>--}}
                     <textarea class="form-control @error('nearby_places') is-invalid @enderror" name="nearby_places" id="nearby-places">
-                           {{htmlspecialchars_decode(old('nearby_places', $homestay->nerarby_places)) }}
+                           {{htmlspecialchars_decode(old('nearby_places', $homestay->nearby_places)) }}
                     </textarea>
                     @error('nearby_places')
                     <span style="font-size:13px;color:red;">

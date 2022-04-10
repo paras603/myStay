@@ -22,7 +22,7 @@
                     <div class="input-group mb-3">
                         <input type="file" class="form-control @error('merchant_image') is-invalid @enderror h-min" aria-label="" aria-describedby="basic-addon1"
                                name="merchant_image" onchange="loadPreview(this, '#merchant_image')">
-                        @error('merchant_image')s
+                        @error('merchant_image')
                         <div class="invalid-feedback" role="alert">
                             {{$message}}
                         </div>
