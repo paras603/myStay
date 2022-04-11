@@ -43,7 +43,7 @@
                         <h6>adhikari community</h6>
                         <h1>Experience<br>local lifestyle</h1>
                         <h4>From <span style="font-weight: 600;">$488</span></h4>
-                        <a href="{{ url('homestay') }}">book now</a>
+                        <a href="{{ url('booking') }}">book now</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-12">

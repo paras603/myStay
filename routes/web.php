@@ -39,3 +39,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
 });
 
+
+Route::get('booking', function(){
+    return view('front.booking.booking');
+});
+
+Route::get('payment', function(){
+    return view('front.booking.payment');
+});
