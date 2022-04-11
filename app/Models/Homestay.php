@@ -27,6 +27,10 @@ class Homestay extends Model
         return $this->hasMany(HomestayImage::class, 'homestay_id', 'id');
     }
 
+    public function homestayImage(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(HomestayImage::class);
+    }
 
     public function rooms(){
         return $this->hasMany(Room::class);

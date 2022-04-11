@@ -129,27 +129,26 @@
             </div>
             {{-- search bar --}}
             <div class="col-lg-7 col-md-7">
-                <form class="search-form">
+                <form class="search-form" id="search-form" action="{{route('front.search')}}">
                 <div class="wrapper">
                     <div class="row">
-                        <div class="col-sm-3">
-                            <div class="dropdown">
-                                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    All Categories
-                                </a>
+{{--                        <div class="col-sm-3">--}}
+{{--                            <div class="dropdown">--}}
+{{--                                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">--}}
+{{--                                    All Categories--}}
+{{--                                </a>--}}
 
-                                <ul class="dropdown-menu nav-dropdown dropdown-scroll" aria-labelledby="dropdownMenuLink">
-                                    <li><a id="mid-nav-current" class="dropdown-item" href="#">All Categories</a></li>
-                                    <li><a class="dropdown-item" href="#">Location</a></li>
-                                    <li><a class="dropdown-item" href="#">Name</a></li>
-                                    <li><a class="dropdown-item" href="#">Rating</a></li>
-                                </ul>
-                            </div>
-                        </div>
+{{--                                <ul class="dropdown-menu nav-dropdown dropdown-scroll" aria-labelledby="dropdownMenuLink">--}}
+{{--                                    <li><a id="mid-nav-current" class="dropdown-item" href="#">All Categories</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="#">Location</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="#">Name</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="#">Rating</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="col-sm-7">
                             <div class="search-field">
-                                <input type="text" class="form-control" required placeholder="Search">
-
+                                <input type="text" class="form-control"  name="search" required placeholder="Search">
                             </div>
                         </div>
                     </div>
@@ -159,7 +158,7 @@
             {{-- search btn --}}
             <div class="col-lg-2">
                 <form method="get" action="{{ url('search') }}">
-                    <button class="btn nav-search-btn">Search</button>
+                    <button type="submit" class="btn nav-search-btn" form="search-form">Search</button>
                 </form>
             </div>
 
