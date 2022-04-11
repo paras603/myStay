@@ -11,8 +11,9 @@ class Room extends Model
     protected $guarded = ['id'];
 
     const ROOM_TYPE = ['normal', 'standard', 'premium'];
+    const STATUS = ['active', 'inactive'];
 
     public function homestay(){
-        $this->belongsTo(Homestay::class);
+       return $this->belongsTo(Homestay::class);
     }
 }

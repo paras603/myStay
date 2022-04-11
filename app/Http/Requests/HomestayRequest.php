@@ -40,10 +40,10 @@ class HomestayRequest extends FormRequest
         return [
             'homestay_name'                 =>              ['required', 'string', 'max:191', 'unique:homestays,homestay_name,'.$homestay->id],
             'telephone'                     =>              ['required', 'numeric', 'digits:10'],
-            'slogan'                        =>              ['required', 'string', 'max:191'],
+            'slogan'                        =>              ['nullable','string', 'max:191'],
             'services'                      =>              ['required', 'string'],
-            'nearby_places'                 =>              ['required', 'string'],
-            'iframe'                        =>              ['required', 'string'],
+            'nearby_places'                 =>              ['nullable','string'],
+            'iframe'                        =>              ['nullable','string'],
             'homestay_image'                =>              [$image_rule],
             'homestay_image.*'              =>              [ 'image', 'mimes:jpg,png,jepg', 'max:10240'],
             'description'                   =>              ['required', 'string']

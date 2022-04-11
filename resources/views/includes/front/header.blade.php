@@ -54,20 +54,20 @@
                         </button>
                         <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
                             <li>
-                                <a href="{{route('front.room.create')}}" class="dropdown-item">
+                                <a href="{{route('rooms.create')}}" class="dropdown-item">
                                     <span class="material-icons-outlined" style="font-size: 18px ;"></span>
                                     Add Room
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('front.room.show')}}" class="dropdown-item">
+                                <a href="{{route('rooms.index')}}" class="dropdown-item">
                                     <span class="material-icons-outlined" style="font-size: 18px ;"></span>
                                     My Rooms
                                 </a>
                             </li>
                             <li>
 
-                                <a href="{{route('front.homestay.index',$GLOBAL_HOMESTAY)}}" class="dropdown-item">
+                                <a href="{{route('front.homestay.show',$GLOBAL_HOMESTAY)}}" class="dropdown-item">
                                     <span class="material-icons-outlined" style="font-size: 18px ;"></span>
                                     Homestay Details
                                 </a>

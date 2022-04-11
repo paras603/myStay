@@ -21,15 +21,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         return view('auth.email-verified');
     });
 
-    Route::get('room', [\App\Http\Controllers\Front\RoomController::class, 'index'])->name('front.room.index');
-    Route::get('room/create', [\App\Http\Controllers\Front\RoomController::class, 'create'])->name('front.room.create');
-    Route::post('room/store', [\App\Http\Controllers\Front\RoomController::class, 'store'])->name('front.room.store');
-    Route::post('room/show', [\App\Http\Controllers\Front\RoomController::class, 'store'])->name('front.room.show');
-    Route::get('homestay/{slug}', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
+    Route::resource('rooms', \App\Http\Controllers\Front\RoomController::class);
+    Route::get('homestay/{slug}', [\App\Http\Controllers\Front\HomestayController::class, 'show'])->name('front.homestay.show');
     Route::get('homestay/edit/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'edit'])->name('front.homestay.edit');
     Route::put('homestay/update/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'update'])->name('front.homestay.update');
     Route::get('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'index'])->name('front.merchant.index');
-    Route::post('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'store'])->name('front.merchant.create');
+    Route::post('merchant/store', [\App\Http\Controllers\Front\MerchantController::class, 'store'])->name('front.merchant.create');
 
 //    Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
 //    Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');

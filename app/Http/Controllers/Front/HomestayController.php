@@ -12,25 +12,20 @@ use App\Models\Merchant;
 class HomestayController extends Controller
 {
 
-    public function index(){
+    public function show($homestay_name){
         $user = \auth()->user();
-        $merchant = Merchant::where('user_id', $user->id)->first();
-        if($merchant){
-            if($merchant->verified === Merchant::VERIFIED[0]){
-                // $Merchant = Merchant::where('user_id',$user->id)->first();
-                return view('front.homestay.index');
-            }else{
+        if(HomestayHelper::isMerchant($user)) {
+            if (HomestayHelper::isVerifiedMerchant($user)) {
+                $homestay = Homestay::with('rooms')->where('homestay_name', $homestay_name)->first();
+                abort_if(!$homestay, 404);
+                return view('front.homestay.detail', compact('homestay'));
+            } else {
                 return redirect()->back()->with('toast.success', 'Please wait until we verify your merchant detail');
             }
         }else{
             return redirect()->route('front.merchant.index')->with('toast.error', 'First become a merchant to add homestay');
         }
     }
-    // public function index($slug){
-    //     $homestay = Homestay::with('homestayImages')->where('homestay_name', $slug)->first();
-    //     return view('front.homestay.index', compact('homestay'));
-
-    // }
 
     public function edit($homestay){
         $user = \auth()->user();

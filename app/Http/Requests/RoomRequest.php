@@ -23,11 +23,16 @@ class RoomRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'room_image'                        =>              ['required',  'image', 'mimes:jpg,png,jepg', 'max:10240'],
-            'description'                       =>             ['required',  'string'],
-            'room_type'                         =>              ['required', 'in:normal,standard,premium'],
+        $rules =  [
+            'image'                             =>              ['required_without:image_hidden_value', 'nullable', 'image', 'mimes:jpg,png,jepg', 'max:10240'],
+            'description'                       =>              ['required',  'string'],
+            'type'                              =>              ['required', 'in:normal,standard,premium'],
             'price'                             =>              ['required', 'numeric'],
         ];
+        if (!$this->isMethod('POST')) {
+            $rules['status'] = ['required', 'in:active,inactive'];
+        }
+
+        return $rules;
     }
 }
