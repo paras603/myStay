@@ -13,7 +13,10 @@
                 @forelse($homestays as $homestay)
                     <div class="col-lg-3 col-md-4 col-sm-12">
                         <div class="searched-homestay">
-                            <img src="{{asset('storage/uploads/homestay/'.$homestay->homestayImage->image)}}">
+                            <?php
+                                $src = $homestay->homestayImage ?  asset('storage/uploads/homestay/'.$homestay->homestayImage->image) : asset('assets/images/placeholder.jpg');
+                            ?>
+                            <img src="{{$src}}">
                             <ul>
                                 <li>Home</li>
                                 <li id="homestay-name"><a href="{{ route('front.homestay.show', $homestay->homestay_name) }}">{{$homestay->homestay_name}}</a></li>

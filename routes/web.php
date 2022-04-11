@@ -23,6 +23,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         return view('auth.email-verified');
     });
 
+//    Route::get('booking', [\App\Http\Controllers\Front\BookingController::class, 'index']);
     Route::resource('rooms', \App\Http\Controllers\Front\RoomController::class);
     Route::get('homestay/{slug}', [\App\Http\Controllers\Front\HomestayController::class, 'show'])->name('front.homestay.show');
     Route::get('homestay/edit/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'edit'])->name('front.homestay.edit');
