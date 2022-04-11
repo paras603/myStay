@@ -17,7 +17,8 @@ class Homestay extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function merchant(){
+    public function merchant(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Merchant::class, 'merchant_id', 'id');
     }
 
@@ -25,5 +26,11 @@ class Homestay extends Model
     {
         return $this->hasMany(HomestayImage::class, 'homestay_id', 'id');
     }
+
+
+    public function rooms(){
+        return $this->hasMany(Room::class);
+    }
+
 
 }

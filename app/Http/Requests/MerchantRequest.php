@@ -29,9 +29,9 @@ class MerchantRequest extends FormRequest
             'pan_number'                    =>           ['required',  'string', 'max:191'],
             'merchant_image'                =>           ['required',  'image', 'mimes:jpg,png,jepg', 'max:10240'],
             'registration_certificate'      =>           ['required',  'image', 'mimes:jpg,png,jepg', 'max:10240'],
-            'homestay_name'                 =>           ['required',  'string', 'max:191'],
+            'homestay_name'                 =>           ['required',  'string', 'max:191', 'unique:homestays,homestay_name'],
             'homestay_address'              =>           ['required',  'string', 'max:191'],
-            'telephone'                     =>           ['required', 'numeric', 'digits:10'],
+            'telephone'                     =>           ['required',   'numeric', 'digits:10'],
         ];
     }
 }
