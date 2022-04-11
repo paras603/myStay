@@ -35,13 +35,17 @@ class HomestayController extends BaseDashboardController
                 ->join('users as u', 'u.id', 'm.user_id')
                 ->select(
                     'h.id',
+                    'h.homestay_name',
+                    'h.homestay_address',
                     'h.created_at',
                     'u.first_name',
                     'u.last_name'
                 );
             $query->where('u.first_name', 'like', $search . '%')
                 ->orWhere('u.last_name', 'like', $search . '%')
-                ->orWhere('h.created_at', 'like', $search . '%');
+                ->orWhere('h.created_at', 'like', $search . '%')
+                ->orWhere('h.homestay_name', 'like', $search, '%')
+                ->orWhere('h.homestay_address', 'like', $search, '%');
             $totalData = $query->count();
             $query->orderBy($order, $dir);
             if ($limit != '-1') {
@@ -53,6 +57,8 @@ class HomestayController extends BaseDashboardController
             if (isset($records)) {
                 foreach ($records as $k => $v) {
                     $nestedData['id'] = $v->id;
+                    $nestedData['homestay_name'] = $v->homestay_name;
+                    $nestedData['homestay_address'] = $v->homestay_address;
                     $nestedData['first_name'] = $v->first_name;
                     $nestedData['last_name'] = $v->last_name;
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');

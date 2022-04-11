@@ -7,9 +7,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title mb-0">Homestay Details</h4>
                         <div class="d-flex flex-wrap">
-                            <a type="button" href="{{route('merchants.index')}}" class="btn btn-secondary mr-2">Back</a>
+                            <a type="button" href="{{route('homestays.index')}}" class="btn btn-secondary mr-2">Back</a>
                             {{-- <a type="button" href="{{route('merchants.edit', $merchant->id)}}" class="btn btn-info mr-2">Edit</a> --}}
-                            <button type="button" onclick="confirmDelete(() => {deleteMerchant({{$merchant->id}}, true)})" class="btn btn-light">Delete</button>
+                            <button type="button" onclick="confirmDelete(() => {deleteHomestay({{$homestay->id}}, true)})" class="btn btn-light">Delete</button>
                         </div>
                     </div>
                     <hr>
@@ -18,7 +18,7 @@
                             <tbody>
                             <tr>
                                 <th scope="row">Full Name :</th>
-                                <td>{{$merchant->user->first_name. ' '. $merchant->user->last_name}}</td>
+                                <td>{{$homestay->user->first_name. ' '. $homestay->user->last_name}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Verified :</th>
@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Created at :</th>
-                                <td>{{\Carbon\Carbon::parse($merchant->created_at)->format('Y-m-d')}}</td>
+                                <td>{{\Carbon\Carbon::parse($homestay->created_at)->format('Y-m-d')}}</td>
                             </tr>
                             @if(!$is_admin)
                                 <tr>

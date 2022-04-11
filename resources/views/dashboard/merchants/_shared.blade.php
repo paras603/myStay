@@ -9,7 +9,6 @@
             "type":"DELETE",
             "data":{"_token":CSRF_TOKEN},
             beforeSend: function(){
-                console.log('sfsf');
                 removeRowFromTable(table,id);
                 // $form.addClass("sp-loading");
             },

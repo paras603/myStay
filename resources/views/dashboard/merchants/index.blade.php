@@ -58,7 +58,7 @@
                 },
                 "columns": [{
                     "data": "first_name",
-                },
+                    },
                     {
                         "data": "last_name"
                     },

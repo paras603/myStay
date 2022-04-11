@@ -8,7 +8,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="merchantDatatable" class="table table-bordered table-hover">
+                    <table id="homestayDatatable" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>Homestay Name</th>
@@ -34,6 +34,7 @@
     @include('dashboard.homestays._shared')
     <script>
         $(document).ready(function($) {
+        
             let table = $('#homestayDatatable').DataTable({
                 "serverSide": true,
                 "ajax": {
@@ -57,14 +58,15 @@
                         }
                     }
                 },
-                "columns": [{
+                "columns": [
                     {
                         "data": "homestay_name"
                     },
                     {
                         "data": "homestay_address"
                     },
-                        "data": "first_name",
+                    {
+                        "data": "first_name"
                     },
                     {
                         "data": "last_name"
