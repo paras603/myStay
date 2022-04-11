@@ -16,6 +16,8 @@ use App\Http\Controllers\Login;
 */
 
 Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'index'])->name('front.index');
+Route::get('/search', [\App\Http\Controllers\Front\HomeController::class , 'search'])->name('front.search');
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/email-verified', function (){
         return view('auth.email-verified');
