@@ -4,8 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-sm-12 print-search-result">
-                    <h3>"Pradip homestay" 3 search results have been found</h3>
+                    <h4>"Pradip homestay" 3 search results have been found</h4>
+                    <h3>Showing 1 out of 1 result</h3>
                 </div>
+
             </div>
             <div class="row mt-5 mb-5">
                 @forelse($homestays as $homestay)
