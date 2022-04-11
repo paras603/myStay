@@ -18,7 +18,7 @@ class CreateRoomsTable extends Migration
             $table->enum('type', ['normal', 'standard', 'premium'])->default('normal');
             $table->string('image');
             $table->longText('description');
-            $table->float('price');
+            $table->bigInteger('price');
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->unsignedBigInteger('homestay_id');
             $table->foreign('homestay_id')->references('id')->on('homestays')->onDelete('cascade');
