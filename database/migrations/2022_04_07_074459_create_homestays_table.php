@@ -25,7 +25,7 @@ class CreateHomestaysTable extends Migration
             $table->string('slogan')->nullable();
             $table->longText('services')->nullable();
             $table->longText('nearby_places')->nullable();
-            $table->string('iframe')->nullable();
+            $table->longText('iframe')->nullable();
             $table->longText('description')->nullable();
 
             $table->unsignedBigInteger('merchant_id')->index();

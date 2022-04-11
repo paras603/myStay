@@ -1,8 +1,8 @@
 <script>
-    function deleteMerchant(id,redirect = false)
+    function deleteHomestay(id,redirect = false)
     {
-        let table = 'merchantDatatable';
-        let action = BASE_URL+"/dashboard/merchants/"+id;
+        let table = 'homestayDatatable';
+        let action = BASE_URL+"/dashboard/homestays/"+id;
         $.ajax({
             "url": action,
             "dataType":"json",
@@ -16,7 +16,7 @@
             success:function(resp){
                 // $form.removeClass("sp-loading");
                 if(redirect){
-                    alertifySuccessAndRedirect(resp.message, "{{route('merchants.index')}}");
+                    alertifySuccessAndRedirect(resp.message, "{{route('homestays.index')}}");
                 }else{
                     alertifySuccess(resp.message);
                 }

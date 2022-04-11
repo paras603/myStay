@@ -4,17 +4,18 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">User Details</h3>
+                    <h3 class="card-title">Homestay Details</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table id="merchantDatatable" class="table table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>First Name</th>
+                            <th>Homestay Name</th>
+                            <th>Address</th>
+                            <th>First Name</th> 
                             <th>Last Name</th>
-                            <th>Verified</th> 
-                            <th>Create at</th>
+                            <th>Created At</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -30,13 +31,13 @@
     </div>
 @endsection
 @section('page_level_script')
-    @include('dashboard.merchants._shared')
+    @include('dashboard.homestays._shared')
     <script>
         $(document).ready(function($) {
-            let table = $('#merchantDatatable').DataTable({
+            let table = $('#homestayDatatable').DataTable({
                 "serverSide": true,
                 "ajax": {
-                    "url": BASE_URL + '/dashboard/merchants',
+                    "url": BASE_URL + '/dashboard/homestays',
                     "dataType": "json",
                     "type": "GET",
                     "data": {
@@ -57,13 +58,16 @@
                     }
                 },
                 "columns": [{
-                    "data": "first_name",
-                },
                     {
-                        "data": "last_name"
+                        "data": "homestay_name"
                     },
                     {
-                        "data": "verified"
+                        "data": "homestay_address"
+                    },
+                        "data": "first_name",
+                    },
+                    {
+                        "data": "last_name"
                     },
                     {
                         "data": "created_at"

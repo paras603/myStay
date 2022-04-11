@@ -38,12 +38,12 @@ class UserSeeder extends Seeder
                 'remember_token'            => Str::random(10),
             ],
             [
-                'first_name'                => 'Sanjeev',
-                'last_name'                 => 'Bhandari',
-                'email'                     => 'sanjeevvsanjeev11@gmail.com',
+                'first_name'                => 'admin',
+                'last_name'                 => 'admin',
+                'email'                     => 'admin@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'role_id'                   => 4,
+                'role_id'                   => 2,
                 'remember_token'            => Str::random(10),
             ],
             [
@@ -56,30 +56,30 @@ class UserSeeder extends Seeder
                 'remember_token'            => Str::random(10),
             ],
             [
-                'first_name'                => 'merchant',
-                'last_name'                 => 'Bhandari',
-                'email'                     => 'merchant2@gmail.com',
+                'first_name'                => 'mandip',
+                'last_name'                 => 'gurung',
+                'email'                     => 'mandip@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => $merchant_role->id,
                 'remember_token'            => Str::random(10),
             ],
             [
-                'first_name'                => 'customer',
-                'last_name'                 => 'rai',
-                'email'                     => 'customer@gmail.com',
+                'first_name'                => 'rishi',
+                'last_name'                 => 'shrestha',
+                'email'                     => 'rishi@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'role_id'                   => 3,
+                'role_id'                   => $merchant_role->id,
                 'remember_token'            => Str::random(10),
             ],
             [
-                'first_name'                => 'customer',
-                'last_name'                 => 'Bhandari',
-                'email'                     => 'customer2@gmail.com',
+                'first_name'                => 'anish',
+                'last_name'                 => 'kc',
+                'email'                     => 'customer@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'role_id'                   => 3,
+                'role_id'                   => 4,
                 'remember_token'            => Str::random(10),
             ],
             ],['email'],[]);

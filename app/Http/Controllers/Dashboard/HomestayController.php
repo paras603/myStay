@@ -4,6 +4,7 @@ namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Homestay;
 
 class HomestayController extends BaseDashboardController
 {
@@ -16,11 +17,12 @@ class HomestayController extends BaseDashboardController
     {
         if ($request->ajax()) {
             $columns = array(
-                0 => 'first_name',
-                1 => 'last_name',
-                2 => 'verified',
-                3 => 'created_at',
-                4 => 'action',
+                0 => 'homestay_name',
+                1 => 'homestay_address',
+                2 => 'first_name',
+                3 => 'last_name',
+                4 => 'created_at',
+                5 => 'action'
             );
             $limit  = $request->input('length') ?? '-1';
             $start  = $request->input('start') ?? 0;
@@ -28,18 +30,18 @@ class HomestayController extends BaseDashboardController
             $dir    = $request->input('order.0.dir') ?? 'asc';
             $search = $request->input('search.value') ?? '';
 
-            $query = \DB::table('merchants as m')
+            $query = \DB::table('homestays as h')
+                ->join('merchants as m', 'm.id', 'h.merchant_id')
                 ->join('users as u', 'u.id', 'm.user_id')
                 ->select(
-                    'm.id',
+                    'h.id',
+                    'h.created_at',
                     'u.first_name',
-                    'u.last_name',
-                    'm.verified',
-                    'm.created_at'
+                    'u.last_name'
                 );
             $query->where('u.first_name', 'like', $search . '%')
                 ->orWhere('u.last_name', 'like', $search . '%')
-                ->orWhere('m.created_at', 'like', $search . '%');
+                ->orWhere('h.created_at', 'like', $search . '%');
             $totalData = $query->count();
             $query->orderBy($order, $dir);
             if ($limit != '-1') {
@@ -53,9 +55,8 @@ class HomestayController extends BaseDashboardController
                     $nestedData['id'] = $v->id;
                     $nestedData['first_name'] = $v->first_name;
                     $nestedData['last_name'] = $v->last_name;
-                    $nestedData['verified'] = $v->verified;
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
-                    $nestedData['action'] = \View::make('dashboard.merchants._action')->with('r',$v)->render();
+                    $nestedData['action'] = \View::make('dashboard.homestays._action')->with('r',$v)->render();
                     $data[] = $nestedData;
                 }
             }
@@ -66,7 +67,7 @@ class HomestayController extends BaseDashboardController
                 "data" => $data
             ], 200);
         }
-        return view('dashboard.merchants.index');
+        return view('dashboard.homestays.index');
     }
 
     /**
@@ -98,7 +99,10 @@ class HomestayController extends BaseDashboardController
      */
     public function show($id)
     {
-        //
+        $homestay = Homestay::where('id', $id)->first();
+        $homestay->load('user');
+        $is_admin = $homestay->user->isAdmin();
+        return view('dashboard.homestays.show', compact('homestay', 'is_admin'));
     }
 
     /**
@@ -132,6 +136,9 @@ class HomestayController extends BaseDashboardController
      */
     public function destroy($id)
     {
-        //
+        Homestay::where('id', $id)->delete();
+        return response()->json([
+            'message' => 'Merchant Successfully Deleted',
+        ], 200);
     }
 }

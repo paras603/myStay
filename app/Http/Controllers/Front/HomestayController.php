@@ -17,6 +17,7 @@ class HomestayController extends Controller
         $merchant = Merchant::where('user_id', $user->id)->first();
         if($merchant){
             if($merchant->verified === Merchant::VERIFIED[0]){
+                // $Merchant = Merchant::where('user_id',$user->id)->first();
                 return view('front.homestay.index');
             }else{
                 return redirect()->back()->with('toast.success', 'Please wait until we verify your merchant detail');

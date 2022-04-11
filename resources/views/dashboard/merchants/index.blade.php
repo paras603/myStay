@@ -90,7 +90,7 @@
                 "searchable": false,
                 "processing": false,
                 "language": {
-                    "emptyTable": " ",
+                    "emptyTable": "no record found",
                 },
             });
         });
