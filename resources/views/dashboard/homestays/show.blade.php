@@ -16,54 +16,55 @@
                     <div class="table-responsive">
                         <table class="table mb-0 table-borderless">
                             <tbody>
-                            <tr>
+                                <tr>
+                                    <th scope="row">PAN Number :</th>
+                                    <td>{{ucwords($homestay->pan_number)}}</td>
+                                </tr>
+                            {{-- <tr>
                                 <th scope="row">Full Name :</th>
-                                <td>{{$homestay->user->first_name. ' '. $homestay->user->last_name}}</td>
+                                <td>{{$merchant->user->first_name. ' '. $merchant->user->last_name}}</td>
+                            </tr> --}}
+                            <tr>
+                                <th scope="row">Homestay Name :</th>
+                                <td>{{ucwords($homestay->homestay_name)}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Verified :</th>
-                                <td>{{ucwords($merchant->verified)}}</td>
+                                <th scope="row">Homestay Address :</th>
+                                <td>{{ucwords($homestay->homestay_address)}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Telephone :</th>
+                                <td>{{ucwords($homestay->telephone)}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Slogan :</th>
+                                <td>{{ucwords($homestay->slogan)}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Services :</th>
+                                <td>{{ucwords($homestay->services)}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nearby Places :</th>
+                                <td>{{ucwords($homestay->nearby_places)}}</td>
+                            </tr>
+                            {{-- <tr>
+                                <th scope="row">iframe (Map) :</th>
+                                <td>{{ucwords($homestay->iframe)}}</td>
+                            </tr> --}}
+                            <tr>
+                                <th scope="row">Homestay Description :</th>
+                                <td>{{ucwords($homestay->description)}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Homestay Owner :</th>
+                                <td>{{$homestay->merchant->user->first_name. ' '. $homestay->merchant->user->last_name}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Created at :</th>
                                 <td>{{\Carbon\Carbon::parse($homestay->created_at)->format('Y-m-d')}}</td>
                             </tr>
-                            @if(!$is_admin)
-                                <tr>
-                                <th scope="row">Verified: </th>
-                                <td>
-                                    <form action="{{route('merchants.update', $merchant->id)}}" method="POST" name="merchant_update" class="update_form">
-                                        {{ method_field('PUT') }}
-                                        @csrf
-                                    <select class="custom-select" name="verified">
-                                        @foreach (\App\Models\Merchant::VERIFIED as $k => $v)
-                                            <?php
-                                            if (old('verified', $merchant->verified) == $v) {
-                                                $selected = 'selected';
-                                            } else {
-                                                $selected = '';
-                                            }
-                                            ?>
-                                            <option value="{{ $v }}" {{ $selected }}>{{ ucwords($v) }}</option>
-                                        @endforeach
-                                    </select>
-                                    <button type="submit" class="btn btn-secondary">Submit</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endif
-                            {{--                            <tr>--}}
-{{--                                <th scope="row">Image: </th>--}}
-{{--                                @php--}}
-{{--                                    $img_src = asset('assets/images/common/blank_user.png');--}}
-{{--                                    if ($user->avatar) {--}}
-{{--                                        $img_src = asset('storage/uploads/users/' . $user->id.'/'.$user->userDetail->avatar);--}}
-{{--                                    }--}}
-{{--                                @endphp--}}
-{{--                                <td>--}}
-{{--                                    <img class="rounded avatar-md" src="{{$img_src}}" data-holder-rendered="true">--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
+                        
                             </tbody>
                         </table>
                     </div>
@@ -76,24 +77,50 @@
             <div class="card">
                 <div class="card-body" style="display: flex; flex-direction:column;">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title mb-0">Merchant Identity</h4>
+                        <h4 class="card-title mb-0">Homestay Images</h4>
                     </div>
                     <hr>
                     <div class="row mt-4 mb-4">
-                        <h6>Merchant Image</h6>
+                        <h6>Homestay Map(iframe)</h6>
                         <div class="col-md-12">
-                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->merchant_image)}}" width="240" height="240">
+                            <img src="{{asset('storage/uploads/users/'.$homestay->homestay_id.'/'.$homestay->homestay_image)}}" width="240" height="240">
                         </div>
                     </div>
                     <div class="row mb-4 mt-4">
-                        <h6>Merchant Identity Photo</h6>
+                        <h6>Homestay Images</h6>
                         <div class="col-md-12 mt-3 mb-3">
-                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_front)}}"width="800" height="400">
+                            {{-- <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_front)}}"width="800" height="400"> --}}
                         </div>
                         <div class="col-md-12 mb-3">
-                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}"width="800" height="400">
+                            {{-- <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}"width="800" height="400"> --}}
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body" style="display: flex; flex-direction:column;">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-0">Homestay Rooms</h4>
+                    </div>
+                    <hr>
+                    <div class="row mt-4 mb-4">
+                        <div class="col-lg-12 col-sm-12 col-md-12">
+                        <h6>Room Type: ........</h6>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-lg-4">
+                            <img src="{{asset('storage/uploads/users/'.$homestay->homestay_id.'/'.$homestay->homestay_image)}}" width="240" height="240">
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-lg-8">
+                            <h6>Price: .........</h6>
+                            <h6>Status: ........</h6>
+                            <h6>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellendus excepturi est incidunt nam. Soluta quam veniam tenetur optio nobis accusantium inventore! Nesciunt?</h6>
+                        </div>
+                    </div>
+                    <hr>
                 </div>
             </div>
         </div>
