@@ -1,8 +1,19 @@
 @extends('layouts.default')
-
 @section('content')
+    <?php
+    $khaltiPubKey = config('services.khalti.public_key');
+    $amt_total = $total;
+    ?>
 <section>
     <div class="container mb-5">
+        @if(session("failureMsg"))
+            <div class="alert alert-danger fade mt-1" id="paymentErrorAlert" role="alert">
+                <span>{{ session("failureMsg") }}</span>
+            </div>
+        @endif
+        <div class="alert alert-danger fade  mt-1" id="validationErrorAlert" role="alert" style="display:none;">
+            <span id="validationErrorText"></span>
+        </div>
         <div class="row">
             <div class="col-lg-6">
                 <h6>Homestay Name </h6>
@@ -19,14 +30,16 @@
                 <h6>${{$total}} </h6>
             </div>
         </div>
-
-        <div class="row">
-            <div class="">
-                <form action="">
-                <button type="submit">Pay Now</button>
-                </form>
+        <button class="btn btn-outline-primary btn-order btn-block" id="payment-button">
+            <span class="d-inline-block">Pay with Khalti</span>
+            <div class="ml-3 spinner-border" role="status" id="payStartSpinner" style="display: none;">
             </div>
-        </div>
+        </button>
     </div>
 </section>
 @endsection
+@section('page_level_script')
+    @include('front.booking.khalti-script')
+    @include('front.booking.checkout-script')
+@endsection
+
