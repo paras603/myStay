@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             MerchantSeeder::class,
             HomestaySeeder::class,
+            RoomSeeder::class,
+            HomestayImageSeeder::class
         ]);
     }
 }
