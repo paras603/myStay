@@ -8,6 +8,7 @@
 
 <link href="{{asset('assets/front/css/bootstrap/bootstrap.min.css')}}" rel="stylesheet" crossorigin="anonymous">
 <link href="{{asset('assets/front/css/image-uploader.min.css')}}" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
 
 
 {{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>--}}

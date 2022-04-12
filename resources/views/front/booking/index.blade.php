@@ -72,12 +72,25 @@
                 </div>
             </div>
         </div>
-        <div class="container mb-5">
-            <div class="row">
-                <div class="">
-                    <form action="{{ url('payment') }}">
-                        <button type="submit">Next</button>
-                    </form>
+        <div class="ui form">
+            <div class="two fields">
+                <div class="field">
+                    <label>Start date</label>
+                    <div class="ui calendar" id="rangestart">
+                        <div class="ui input left icon">
+                            <i class="calendar icon"></i>
+                            <input type="text" placeholder="Start">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>End date</label>
+                    <div class="ui calendar" id="rangeend">
+                        <div class="ui input left icon">
+                            <i class="calendar icon"></i>
+                            <input type="text" placeholder="End">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,7 +99,14 @@
 @section('page_level_script')
     <script>
         $(document).ready(function(){
-
+            $('#rangestart').calendar({
+                type: 'date',
+                endCalendar: $('#rangeend')
+            });
+            $('#rangeend').calendar({
+                type: 'date',
+                startCalendar: $('#rangestart')
+            });
         })
     </script>
 @endsection
