@@ -31,6 +31,9 @@
                         </div>
                     </div>
                 @empty
+                    <div class="alert alert-danger">
+                        No search results found
+                    </div>
                 @endforelse
             </div>
         </div>

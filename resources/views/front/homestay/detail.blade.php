@@ -115,8 +115,9 @@
                                 {!! $room->description !!}
                             </div>
                             <div class="col-lg-6 col-sm-6 book-room-btn">
-                                <form>
-                                    <button type="button" class="btn btn-success">Book</button>
+                                <form method="get" action="{{route('front.booking.index')}}">
+                                    <input type="hidden" name="room" value="{{$room->id}}">
+                                    <button type="submit" class="btn btn-success">Book</button>
                                 </form>
                             </div>
                         </div>
