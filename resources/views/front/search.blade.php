@@ -3,9 +3,19 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-sm-12 print-search-result">
-                    <h3>"Pradip homestay" 3 search results have been found</h3>
+                <div class="col-lg-6 col-sm-12 print-search-result">
+                    <h5>Showing 1 out of 1 result</h5>
                 </div>
+                <div class="col-lg-6 col-sm-12 print-search-result" style="display:flex; flex-flow:row-reverse;">
+                    <select class="" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    <h5>Sort by:</h5>
+                </div>
+
             </div>
             <div class="row mt-5 mb-5">
                 @forelse($homestays as $homestay)
