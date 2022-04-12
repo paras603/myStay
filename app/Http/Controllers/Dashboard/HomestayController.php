@@ -5,6 +5,7 @@ namespace App\Http\Controllers\dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Homestay;
+use App\Models\HomestayImage;
 use App\Models\Merchant;
 use App\Models\User;
 
@@ -107,9 +108,11 @@ class HomestayController extends BaseDashboardController
      */
     public function show($id)
     {
-        $homestay = Homestay::where('id', $id)->first();
+        $homestay = Homestay::with('homestayImages','rooms')->where('id', $id)->first();
         // $is_admin = $homestay->user->isAdmin();
         // return view('dashboard.homestays.show', compact('homestay', 'is_admin'));
+
+        // $homestay_image = HomestayImage::where('homestay_id', $id)->first();
         
         return view('dashboard.homestays.show', compact('homestay'));
     }

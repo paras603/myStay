@@ -48,10 +48,6 @@
                                 <th scope="row">Nearby Places :</th>
                                 <td>{{ucwords($homestay->nearby_places)}}</td>
                             </tr>
-                            {{-- <tr>
-                                <th scope="row">iframe (Map) :</th>
-                                <td>{{ucwords($homestay->iframe)}}</td>
-                            </tr> --}}
                             <tr>
                                 <th scope="row">Homestay Description :</th>
                                 <td>{{ucwords($homestay->description)}}</td>
@@ -80,17 +76,18 @@
                         <h4 class="card-title mb-0">Homestay Images</h4>
                     </div>
                     <hr>
-                    <div class="row mt-4 mb-4">
+                    {{-- <div class="row mt-4 mb-4">
                         <h6>Homestay Map(iframe)</h6>
                         <div class="col-md-12">
                             <img src="{{asset('storage/uploads/users/'.$homestay->homestay_id.'/'.$homestay->homestay_image)}}" width="240" height="240">
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row mb-4 mt-4">
-                        <h6>Homestay Images</h6>
+                        @foreach ($homestay->homestayImages as $hs_img)
                         <div class="col-md-12 mt-3 mb-3">
-                            {{-- <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_front)}}"width="800" height="400"> --}}
+                            <img src="{{asset('storage/uploads/homestay/'.$hs_img->image)}}" width="240" height="240">
                         </div>
+                        @endforeach
                         <div class="col-md-12 mb-3">
                             {{-- <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}"width="800" height="400"> --}}
                         </div>
@@ -107,12 +104,14 @@
                         <h4 class="card-title mb-0">Homestay Rooms</h4>
                     </div>
                     <hr>
+                    @foreach($homestay->rooms as $room)
                     <div class="row mt-4 mb-4">
                         <div class="col-lg-12 col-sm-12 col-md-12">
                         <h6>Room Type: ........</h6>
                         </div>
+                        
                         <div class="col-md-6 col-sm-12 col-lg-4">
-                            <img src="{{asset('storage/uploads/users/'.$homestay->homestay_id.'/'.$homestay->homestay_image)}}" width="240" height="240">
+                            <img src="{{asset('storage/uploads/rooms/'.$room->image)}}" width="240" height="240">
                         </div>
                         <div class="col-md-6 col-sm-12 col-lg-8">
                             <h6>Price: .........</h6>
@@ -120,6 +119,7 @@
                             <h6>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellendus excepturi est incidunt nam. Soluta quam veniam tenetur optio nobis accusantium inventore! Nesciunt?</h6>
                         </div>
                     </div>
+                    @endforeach
                     <hr>
                 </div>
             </div>

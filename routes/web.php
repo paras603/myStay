@@ -52,3 +52,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 Route::get('payment', function(){
     return view('front.booking.payment');
 });
+
+Route::get('payment-success', function(){
+    return view('front.booking.payment-success');
+});
