@@ -12,11 +12,11 @@
                 <h6>Total </h6>
             </div>
             <div class="col-lg-6">
-                <h6>mero ghar </h6>
-                <h6>primium </h6>
-                <h6>300 </h6>
-                <h6>2 nights</h6>
-                <h6>600 </h6>
+                <h6>{{$room->homestay->homestay_name}}</h6>
+                <h6>{{$room->type}}</h6>
+                <h6>${{$room->price}} </h6>
+                <h6>{{$days_count}} nights</h6>
+                <h6>${{$total}} </h6>
             </div>
         </div>
 

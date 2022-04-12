@@ -2,17 +2,6 @@
 
 @section('content')
     <section>
-        {{-- <div class="container mb-1 mt-1">
-            <div class="row" style="margin: 20px 20px 20px 20px;">
-                <div class="col-lg-12 col-sm-12 home-banner" id="banner-img">
-                    <div class="main-banner mb-5 pb-4">
-                        <h6>adhikari community</h6>
-                        <h1>Experience<br>local lifestyle</h1>
-                        <h4>From <span style="font-weight: 600;">$488</span></h4>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         <div class="container mb-1 mt-1">
             <div class="container">
                 <div class="homestay-rooms">
@@ -27,7 +16,10 @@
                                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img src="images/homestay4.jpg">
+                                                <?php
+                                                $src = $room->image ?  asset('storage/uploads/rooms/'.$room->image) : asset('assets/images/placeholder.jpg');
+                                                ?>
+                                                <img src="{{$src}}">
                                                 {{-- <img src="{{asset('storage/uploads/rooms/'.$room->image)}}" class="d-block w-100" alt="..."> --}}
                                             </div>
                                         </div>
@@ -36,16 +28,16 @@
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12">
                                 <div class="room-details">
-                                    <p>hOmestay ko name</p>
+                                    <p>{{$room->homestay->homestay_name}}</p>
                                     <br>
                                     <h6>Description</h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, magnam!</p>
+                                    <p>{!!$room->description!!}</p>
                                     <br>
-                                    <p>Room Type:</p>
-                                    <p>Premium</p>
+                                    <p><b>Room Type:</b></p>
+                                    <p>{{ucwords($room->type)}}</p>
                                     <br>
-                                    <p>Price:</p>
-                                    <p>Rs. 200 per night</p>
+                                    <p><b>Price:</b></p>
+                                    <p>Rs. {{$room->price}} per night</p>
                                     {{-- {!! $room->description !!} --}}
                                 </div>
                                 <div class="col-lg-6 col-sm-6 book-room-btn">
@@ -53,47 +45,47 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- @empty --}}
-                        {{-- <div class="alert alert-danger"> --}}
-                        {{-- <span> No rooms available to show s</span> --}}
-                        {{-- </div> --}}
-                        {{-- @endforelse --}}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container mb-4">
-            <div class="row">
-                <div class=" mb-3 col-lg-6">
-                    <input type="text" class="form-control" placeholder="check in" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class=" mb-3 col-lg-6">
-                    <input type="text" class="form-control" placeholder="check out" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-            </div>
-        </div>
-        <div class="ui form">
-            <div class="two fields">
-                <div class="field">
-                    <label>Start date</label>
-                    <div class="ui calendar" id="rangestart">
-                        <div class="ui input left icon">
-                            <i class="calendar icon"></i>
-                            <input type="text" placeholder="Start">
+        <form action="{{route('front.booking.checkout')}}" method="post">
+            @csrf
+            <input type="hidden" value="{{$room->id}}" name="room">
+            <div class="ui form">
+                <div class="two fields">
+                    <div class="field">
+                        <label>Start date</label>
+                        <div class="ui calendar" id="rangestart">
+                            <div class="ui input left icon">
+                                <i class="calendar icon"></i>
+                                <input type="text" placeholder="Start" name="start_date" class="@error('start_date') is-invalid @enderror">
+                                @error('start_date')
+                                <span style="font-size:13px;color:red;">
+                                    {{$message}}
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>End date</label>
+                        <div class="ui calendar" id="rangeend">
+                            <div class="ui input left icon">
+                                <i class="calendar icon"></i>
+                                <input type="text" placeholder="End" name="end_date" class="@error('end_date') is-invalid @enderror">
+                                @error('end_date')
+                                <span style="font-size:13px;color:red;">
+                                    {{$message}}
+                                </span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="field">
-                    <label>End date</label>
-                    <div class="ui calendar" id="rangeend">
-                        <div class="ui input left icon">
-                            <i class="calendar icon"></i>
-                            <input type="text" placeholder="End">
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
+            <button type="submit">Go to payment page</button>
+        </form>
     </section>
 @endsection
 @section('page_level_script')

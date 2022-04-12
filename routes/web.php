@@ -24,6 +24,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
 
     Route::get('booking', [\App\Http\Controllers\Front\BookingController::class, 'index'])->name('front.booking.index');
+    Route::post('booking/checkout', [\App\Http\Controllers\Front\BookingController::class, 'checkout'])->name('front.booking.checkout');
+
     Route::resource('rooms', \App\Http\Controllers\Front\RoomController::class);
     Route::get('homestay/{slug}', [\App\Http\Controllers\Front\HomestayController::class, 'show'])->name('front.homestay.show');
     Route::get('homestay/edit/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'edit'])->name('front.homestay.edit');
