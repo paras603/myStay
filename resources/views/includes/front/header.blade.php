@@ -8,14 +8,16 @@
         <div class="col-lg-5">
             <div class="nav-li">
                 <ul>
+                    @auth
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
                         <span>Account</span>
                         <span class="material-icons-outlined expand-more">expand_more</span>
                         </li>
                     </button>
+                    @endauth
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="" class="dropdown-item">
+                        <li><a href="{{ route('front.profile.edit') }}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             Account Settings</a></li>
                         <li><a href="#" class="dropdown-item">

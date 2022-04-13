@@ -100,13 +100,7 @@
                     <div class="row homestay-room">
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="room-img">
-                                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="{{asset('storage/uploads/rooms/'.$room->image)}}" class="d-block w-100" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
+                                <img src="{{asset('storage/uploads/rooms/'.$room->image)}}" class="d-block w-100" alt="...">                               
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12">

@@ -134,6 +134,13 @@ class UserController extends BaseDashboardController
         return view('dashboard.users.edit', compact('user', 'roles'));
     }
 
+    public function editProfile(User $user)
+    {
+        $roles = Role::pluck('label', 'id');
+
+        return view('front.users.edit', compact('user', 'roles'));
+    }
+
     /**
      * Update the specified resource in storage.
      *

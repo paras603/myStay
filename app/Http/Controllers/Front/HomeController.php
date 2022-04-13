@@ -4,13 +4,16 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Homestay;
+use App\Models\HomestayImage;
 use App\Models\Merchant;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('front.index');
+        $homestays = Homestay::with('homestayImages');
+        return view('front.index', compact('homestays'));
+        
     }
 
     public function search(Request $request){
@@ -42,4 +45,6 @@ class HomeController extends Controller
         ];
         return view('front.search',compact('homestays','metaData'));
     }
+
+    
 }

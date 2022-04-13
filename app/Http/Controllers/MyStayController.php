@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace App\Http\Controllers;
 
@@ -85,4 +85,4 @@ class MyStayController extends Controller
         return view('pages.merchant.pages.merchant-view');
     }
 
-}
+} -->

@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'index'])->name('front.merchant.index');
     Route::post('merchant/store', [\App\Http\Controllers\Front\MerchantController::class, 'store'])->name('front.merchant.create');
 
+    Route::get('account-settings', [\App\Http\Controllers\Front\UserController::class, 'editProfile'])->name('front.profile.edit');
+
 //    Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
 //    Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
 

@@ -4,7 +4,7 @@
     <!-- banner section -->
 <section>
     <div class="container mt-5">
-        {{-- @auth
+        @auth
             <div class="row" style="margin: 20px 20px 20px 20px;">
                 <div class="col-lg-8 col-sm-12 home-banner" id="banner-img">
                     <div class="col-lg-6">
@@ -35,8 +35,8 @@
                     </div>
                 </div>
             </div>
-        @endauth --}}
-        {{-- @guest --}}
+        @endauth
+        @guest
             <div class="row" style="margin: 20px 20px 20px 20px;">
                 <div class="col-lg-9 col-sm-12 home-banner" id="banner-img">
                     <div class="main-banner mb-5 pb-4">
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-        {{-- @endguest --}}
+        @endguest
 
 {{-- company features like easy booking, money return and so on --}}
         <div class="row banner-services pt-4 pb-4">

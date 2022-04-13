@@ -135,6 +135,7 @@ a{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 200px;
 }
 
 #secondary-banner-2{
@@ -142,6 +143,7 @@ a{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 200px;
 }
 
 .secondary-banner{
@@ -153,8 +155,8 @@ a{
 
 .secondary-banner-text{
     background-color: rgba(197, 194, 211, 0.315);
-    padding-top: 34px;
-    padding-bottom: 34px;
+    padding-top: 54px;
+    padding-bottom: 54px;
     padding-left: 30px;
     border-radius: 3px;
 }

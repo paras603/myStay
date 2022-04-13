@@ -1,5 +1,6 @@
 @extends('layouts.default')
 @section('content')
+<section>
     <div class="container">
         <div class="homestay-rooms">
             <div class="row">
@@ -37,4 +38,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection
