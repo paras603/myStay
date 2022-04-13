@@ -1,8 +1,10 @@
 <script>
     function deleteHomestay(id,redirect = false)
     {
+
         let table = 'homestayDatatable';
         let action = BASE_URL+"/dashboard/homestays/"+id;
+
         $.ajax({
             "url": action,
             "dataType":"json",

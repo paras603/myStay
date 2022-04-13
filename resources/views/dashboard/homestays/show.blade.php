@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Homestay Owner :</th>
-                                <td>{{$homestay->merchant->user->first_name. ' '. $homestay->merchant->user->last_name}}</td>
+                                <td>{{ucwords($homestay->merchant->user->first_name. ' '. $homestay->merchant->user->last_name)}}</td>
                             </tr>
                             <tr>
                                 <th scope="row">Created at :</th>
@@ -84,13 +84,15 @@
                     </div> --}}
                     <div class="row mb-4 mt-4">
                         @foreach ($homestay->homestayImages as $hs_img)
-                        <div class="col-md-12 mt-3 mb-3">
-                            <img src="{{asset('storage/uploads/homestay/'.$hs_img->image)}}" width="240" height="240">
+                        <div class="col-md-6 col-lg-4 col-sm-12 mt-3 mb-3">
+                            <div class="dashboard-hs-img">
+                                <img src="{{asset('storage/uploads/homestay/'.$hs_img->image)}}">
+                            </div>
                         </div>
                         @endforeach
-                        <div class="col-md-12 mb-3">
-                            {{-- <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}"width="800" height="400"> --}}
-                        </div>
+                        {{-- <div class="col-md-12 mb-3">
+                            <img src="{{asset('storage/uploads/users/'.$merchant->user_id.'/'.$merchant->identity_back)}}"width="800" height="400">
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -107,16 +109,16 @@
                     @foreach($homestay->rooms as $room)
                     <div class="row mt-4 mb-4">
                         <div class="col-lg-12 col-sm-12 col-md-12">
-                        <h6>Room Type: ........</h6>
+                        <h6>Room Type: {{ ucwords($room->type) }}</h6>
                         </div>
                         
                         <div class="col-md-6 col-sm-12 col-lg-4">
-                            <img src="{{asset('storage/uploads/rooms/'.$room->image)}}" width="240" height="240">
+                            <img src="{{asset('storage/uploads/rooms/'.$room->image)}}" width="320" height="240">
                         </div>
-                        <div class="col-md-6 col-sm-12 col-lg-8">
-                            <h6>Price: .........</h6>
-                            <h6>Status: ........</h6>
-                            <h6>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellendus excepturi est incidunt nam. Soluta quam veniam tenetur optio nobis accusantium inventore! Nesciunt?</h6>
+                        <div class="col-md-6 col-sm-12 col-lg-8 pt-4">
+                            <h6>Price: {{ ucwords($room->price) }}</h6>
+                            <h6>Status: {{ ucwords($room->status) }}</h6>
+                            <h6>Description: {{ ucwords($room->description) }}</h6>
                         </div>
                     </div>
                     @endforeach
@@ -127,5 +129,5 @@
     </div>
 @endsection
 @section('page_level_script')
-    @include('dashboard.merchants._shared')
+    @include('dashboard.homestays._shared')
 @endsection

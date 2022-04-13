@@ -47,8 +47,8 @@ class HomestayController extends BaseDashboardController
             $query->where('u.first_name', 'like', $search . '%')
                 ->orWhere('u.last_name', 'like', $search . '%')
                 ->orWhere('h.created_at', 'like', $search . '%')
-                ->orWhere('h.homestay_name', 'like', $search, '%')
-                ->orWhere('h.homestay_address', 'like', $search, '%');
+                ->orWhere('h.homestay_name', 'like', $search. '%')
+                ->orWhere('h.homestay_address', 'like', $search. '%');
             $totalData = $query->count();
             $query->orderBy($order, $dir);
             if ($limit != '-1') {
