@@ -32,7 +32,7 @@
         </div>
         <button class="btn btn-outline-primary btn-order btn-block" id="payment-button">
             <span class="d-inline-block">Pay with Khalti</span>
-            <div class="ml-3 spinner-border" role="status" id="payStartSpinner" style="display: none;">
+            <div class="ml-3 spinner-border" role="status" id="payStartSpinner" style="display: none; height: 1rem; width: 1rem; margin-left: 5px;">
             </div>
         </button>
     </div>

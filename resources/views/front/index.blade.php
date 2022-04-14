@@ -127,25 +127,22 @@
         </div>
         <div>
             <div class="row mt-3" style="margin-left: 10px;">
-                @for ($x = 0; $x < 6; $x++)
+              @foreach($new_homestays as $homestay)
                 <div class="col-xl-4 col-md-6">
                     <div class="row home-top-cate-card mt-3 pt-4 pb-3">
                         <div class="col-md-6">
-                            <img src="../images/homestay5.jpg" style="width:100%;">
+                            <?php
+                            $src = $homestay->homestayImage ? asset('assets/images/placeholder.jpg') : asset('storage/uploads/homestay/'.$homestay->homestayImage->image);
+                            ?>
+                            <img src="{{$src}}" style="width:100%;">
                         </div>
                         <div class="col-md-6 home-top-cate-items">
-                            <h6><a href="{{ url('homestay') }}">Niraj Homestay</a></h6>
-                            <ul>
-                                <li><a>Services</a></li>
-                                <li><a>Nearby Places</a></li>
-                                <li><a>Gallery</a></li>
-                                <li><a>Nearby Places</a></li>
-                                <li><a>Rating & Review</a></li>
-                            </ul>
+                            <h6><a href="{{ route('front.homestay.show', $homestay->homestay_name) }}">{{$homestay->homestay_name}}</a></h6>
+                                {{$homestay->services}}
                         </div>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </div>

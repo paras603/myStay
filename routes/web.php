@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('booking', [\App\Http\Controllers\Front\BookingController::class, 'index'])->name('front.booking.index');
     Route::post('booking/checkout', [\App\Http\Controllers\Front\BookingController::class, 'checkout'])->name('front.booking.checkout');
     Route::post('booking/checkout/verify',[App\Http\Controllers\Front\BookingController::class,'verify'])->name('front.checkout.verify');
+    Route::get('booking/success', [\App\Http\Controllers\Front\BookingController::class, 'success'])->name('front.booking.success');
 
 
     Route::resource('rooms', \App\Http\Controllers\Front\RoomController::class);
@@ -53,9 +54,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 //    return view('front.booking.booking');
 //});
 
-Route::get('payment', function(){
-    return view('front.booking.payment');
-});
+//Route::get('payment', function(){
+//    return view('front.booking.payment');
+//});
 
 Route::get('payment-success', function(){
     return view('front.booking.payment-success');

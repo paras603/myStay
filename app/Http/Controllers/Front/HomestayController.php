@@ -13,18 +13,22 @@ class HomestayController extends Controller
 {
 
     public function show($homestay_name){
-        $user = \auth()->user();
-        if(HomestayHelper::isMerchant($user)) {
-            if (HomestayHelper::isVerifiedMerchant($user)) {
-                $homestay = Homestay::with('rooms')->where('homestay_name', $homestay_name)->first();
-                abort_if(!$homestay, 404);
-                return view('front.homestay.detail', compact('homestay'));
-            } else {
-                return redirect()->back()->with('toast.success', 'Please wait until we verify your merchant detail');
-            }
-        }else{
-            return redirect()->route('front.merchant.index')->with('toast.error', 'First become a merchant to add homestay');
-        }
+        abort_if(!$homestay_name, 404);
+        $homestay = Homestay::with('rooms')->where('homestay_name', $homestay_name)->first();
+        abort_if(!$homestay, 404);
+        return view('front.homestay.detail', compact('homestay'));
+//        $user = \auth()->user();
+//        if(HomestayHelper::isMerchant($user)) {
+//            if (HomestayHelper::isVerifiedMerchant($user)) {
+//
+//
+//                return view('front.homestay.detail', compact('homestay'));
+//            } else {
+//                return redirect()->back()->with('toast.success', 'Please wait until we verify your merchant detail');
+//            }
+//        }else{
+//            return redirect()->route('front.merchant.index')->with('toast.error', 'First become a merchant to add homestay');
+//        }
     }
 
     public function edit($homestay){

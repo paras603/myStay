@@ -35,11 +35,10 @@ class BookingController extends Controller
         $total = (float)$days_count * $per_night_price;
         if($total == 0 || $total < 0) return redirect()->back()->with('toast.error', 'Invalid date selected');
         $booking = [
-         'start_date'           =>          $start_date,
-         'end_date'             =>          $end_date,
-         'room_id'              =>          $room,
-        'created_at'        =>               now(),
-        'updated_at'        =>              now(),
+         'start_date'           =>          $start_date->format('Y-m-d'),
+         'end_date'             =>          $end_date->format('Y-m-d'),
+         'room_id'              =>          $room->id,
+            'total'              =>         $total,
         ];
        if(session('booking')){
            session()->forget('booking');
@@ -61,38 +60,16 @@ class BookingController extends Controller
         $resp = Http::acceptJson()->withHeaders($header)->post( $url, $args);
         if($resp->getStatusCode() === 200){
             $resp_body = collect(json_decode($resp->body()));
-            \DB::transaction(function () {
+            \DB::transaction(function () use($resp_body) {
                 $booking = session('booking');
-                Booking::insert($booking);
-//                $order = Order::create([
-//                    'code'                      =>      str_replace(' ', '', config('app.name')).'-'.\Illuminate\Support\Str::random(18),
-//                    'transaction_id'            =>      $resp_body['idx'],
-//                    'user_id'                   =>      $user->id,
-//                    'total'                     =>      $total,
-//                    'shipping_charge'           =>      $shipping_price,
-//                ]);
-//                $order_details = [];
-//                foreach($cart->cartItems as $k => $v){
-//                    $per_unit_price = $v->product->sale_price_per_unit;
-//                    $sub_total = $per_unit_price * $v->quantity;
-//                    $order_details[] = [
-//                        'product_id'    =>  $v->product->id,
-//                        'quantity'      =>  $v->quantity,
-//                        'unit_price'    =>  $per_unit_price,
-//                        'sub_total'     =>  $sub_total,
-//                        'order_id'      =>  $order->id,
-//                        'created_at'    =>  date('Y-m-d H:i:s'),
-//                        'updated_at'    =>  date('Y-m-d H:i:s')
-//                    ];
-//                }
-//                OrderDetail::insert($order_details);
-//                Cart::where('id',$cart->id)->delete();
+                $booking['transaction_id']= $resp_body['idx'];
+                $booking['created_at'] = Carbon::now();
+                $booking['updated_at'] = Carbon::now();
+                $bookings = Booking::insert($booking);
             });
-
-
             return response()->json([
                 'success'       =>      1,
-                'redirect'      =>  route('front.index'),
+                'redirect'      =>  route('front.booking.success'),
             ],200);
         }else{
             return response()->json([
@@ -103,6 +80,12 @@ class BookingController extends Controller
         }
     }
 
+    public function success(Request $request){
+        if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === "http://mystay.test/booking/checkout"){
+            return view('front.booking.success');
+        }
+        abort(404);
+    }
 
     public function setArgs($token, $amount){
         return [

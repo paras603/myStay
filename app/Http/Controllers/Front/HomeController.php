@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $homestays = Homestay::with('homestayImages');
-        return view('front.index', compact('homestays'));
-        
+        $new_homestays = Homestay::with('homestayImage')->latest()->take(8)->get();
+        return view('front.index', compact('new_homestays'));
+
     }
 
     public function search(Request $request){
@@ -46,5 +46,5 @@ class HomeController extends Controller
         return view('front.search',compact('homestays','metaData'));
     }
 
-    
+
 }
