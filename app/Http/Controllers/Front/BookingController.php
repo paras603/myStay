@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\Room;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -37,6 +38,8 @@ class BookingController extends Controller
          'start_date'           =>          $start_date,
          'end_date'             =>          $end_date,
          'room_id'              =>          $room,
+        'created_at'        =>               now(),
+        'updated_at'        =>              now(),
         ];
        if(session('booking')){
            session()->forget('booking');
@@ -57,8 +60,10 @@ class BookingController extends Controller
         $header = self::getApiHeader();
         $resp = Http::acceptJson()->withHeaders($header)->post( $url, $args);
         if($resp->getStatusCode() === 200){
-//            $resp_body = collect(json_decode($resp->body()));
-//            \DB::transaction(function () use(){
+            $resp_body = collect(json_decode($resp->body()));
+            \DB::transaction(function () {
+                $booking = session('booking');
+                Booking::insert($booking);
 //                $order = Order::create([
 //                    'code'                      =>      str_replace(' ', '', config('app.name')).'-'.\Illuminate\Support\Str::random(18),
 //                    'transaction_id'            =>      $resp_body['idx'],
@@ -82,7 +87,8 @@ class BookingController extends Controller
 //                }
 //                OrderDetail::insert($order_details);
 //                Cart::where('id',$cart->id)->delete();
-//            });
+            });
+
 
             return response()->json([
                 'success'       =>      1,
