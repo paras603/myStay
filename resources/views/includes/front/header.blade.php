@@ -17,7 +17,7 @@
                     </button>
                     @endauth
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{ route('front.profile.edit') }}" class="dropdown-item">
+                        <li><a href="{{ route('front.user.edit')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
                             Account Settings</a></li>
                         <li><a href="#" class="dropdown-item">
@@ -41,7 +41,7 @@
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
                         <li>
                             <a href="{{ route('front.merchant.index') }}" class="dropdown-item">
-                                <span class="material-icons-outlined" style="font-size: 18px ;">c</span>
+                                <i class="bi bi-person-plus-fill" style="font-size: 15px"></i>
                                 Create Account
                             </a>
                         </li>
@@ -50,27 +50,27 @@
                     @if($GLOBAL_MERCHANT)
                         <button class="btn-unstyle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                             <li>
-                                <span>Home stay</span>
+                                <span>Homestay</span>
                                 <span class="material-icons" style="font-size: 18px;">help_outline</span>
                             </li>
                         </button>
                         <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
                             <li>
                                 <a href="{{route('rooms.create')}}" class="dropdown-item">
-                                    <span class="material-icons-outlined" style="font-size: 18px ;"></span>
+                                    <i class="bi bi-plus-circle-fill" style="font-size: 15px"></i>
                                     Add Room
                                 </a>
                             </li>
                             <li>
                                 <a href="{{route('rooms.index')}}" class="dropdown-item">
-                                    <span class="material-icons-outlined" style="font-size: 18px ;"></span>
+                                    <i class="bi bi-door-closed-fill" style="font-size: 15px;"></i>
                                     My Rooms
                                 </a>
                             </li>
                             <li>
 
                                 <a href="{{route('front.homestay.show',$GLOBAL_HOMESTAY)}}" class="dropdown-item">
-                                    <span class="material-icons-outlined" style="font-size: 18px ;"></span>
+                                    <i class="bi bi-house-door-fill"  style="font-size: 15px"></i>
                                     Homestay Details
                                 </a>
                             </li>
@@ -83,7 +83,7 @@
                     @endif
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
-                        <span>Homestay</span>
+                        <span>Log In/Out</span>
                         <span class="material-icons-outlined expand-more">expand_more</span>
                         </li>
                     </button>

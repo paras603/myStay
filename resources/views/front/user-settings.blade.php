@@ -33,13 +33,13 @@
                     </form>
                 </div>
             </div>
-            {{-- <div class="col-lg-2 col-md-2 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-sm-12">
                 <form action="{{ url('') }}" method="post">
                 <button>Save</button>
                 </form>
-            </div> --}}
+            </div>
         </div>
-        {{-- <div class="row account-settings-content">
+        <div class="row account-settings-content">
             <div class="col-lg-2 col-md-3 col-sm-12">
                 <h6><i class="bi bi-person"></i>Username</h6>
             </div>
@@ -57,7 +57,7 @@
                 <button>Save</button>
                 </form>
             </div>
-        </div> --}}
+        </div>
         <div class="row account-settings-content">
             <div class="col-lg-2 col-md-3 col-sm-12">
                 <h6><i class="bi bi-geo-alt-fill"></i>Address</h6>
@@ -71,11 +71,11 @@
                     </form>
                 </div>
             </div>
-            {{-- <div class="col-lg-2 col-md-2 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-sm-12">
                 <form action="{{ url('') }}" method="post">
                 <button>Save</button>
                 </form>
-            </div> --}}
+            </div>
         </div>
         <div class="row account-settings-content">
             <div class="col-lg-2 col-md-3 col-sm-12">
@@ -90,19 +90,33 @@
                     </form>
                 </div>
             </div>
-        
-            {{-- <div class="col-lg-2 col-md-2 col-sm-12">
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                {{-- <h6><i class="bi bi-telephone-fill"></i>Contact no.</h6> --}}
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                {{-- <h6><i class="bi bi-telephone-fill"></i>Contact no.</h6> --}}
+            </div>
+            <div class="col-lg-8 col-md-7 col-sm-12">
+                <div>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Phone number" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12">
                 <form action="{{ url('') }}" method="post">
                 <button>Save</button>
                 </form>
-            </div> --}}
+            </div>
         </div>
-        {{-- <div class="row">
+        <div class="row">
             <div class="col-lg-12 col-sm-12 account-settings-title">
                 <h6>Homestay Information</h6>
             </div>
-        </div> --}}
-        {{-- <div class="row account-settings-content">
+        </div>
+        <div class="row account-settings-content">
             <div class="col-lg-2 col-md-3 col-sm-12">
                 <h6><i class="bi bi-person"></i>Homestay Name</h6>
             </div>
@@ -120,8 +134,8 @@
                 <button>Save</button>
                 </form>
             </div>
-        </div> --}}
-        {{-- <div class="row account-settings-content">
+        </div>
+        <div class="row account-settings-content">
             <div class="col-lg-2 col-md-3 col-sm-12">
                 <h6><i class="bi bi-geo-alt-fill"></i>Address</h6>
             </div>
@@ -139,8 +153,8 @@
                 <button>Save</button>
                 </form>
             </div>
-        </div> --}}
-        {{-- <div class="row account-settings-content">
+        </div>
+        <div class="row account-settings-content">
             <div class="col-lg-2 col-md-3 col-sm-12">
                 <h6><i class="bi bi-telephone-fill"></i>Contact no.</h6>
             </div>
@@ -158,9 +172,9 @@
                 <button>Save</button>
                 </form>
             </div>
-        </div> --}}
+        </div>
 
-        {{-- <div class="row account-settings-content">
+        <div class="row account-settings-content">
             <div class="col-lg-12 col-sm-12 account-settings-title">
                 <h6>Email</h6>
             </div>
@@ -183,9 +197,9 @@
                 <button>Save</button>
                 </form>
             </div>
-        </div> --}}
+        </div>
 
-        {{-- <div class="row account-settings-content">
+        <div class="row account-settings-content">
             <div class="col-lg-12 col-sm-12 account-settings-title">
                 <h6>Account Password</h6>
             </div>
@@ -212,16 +226,6 @@
             <div class="col-lg-2 col-md-2 col-sm-12">
                 <form action="{{ url('') }}" method="post">
                 <button>Save</button>
-                </form>
-            </div>
-        </div> --}}
-        <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-12">
-            </div>
-            <div class="col-lg-8 col-md-7 col-sm-12">
-                <form action="{{ url('') }}" method="post">
-                    @csrf
-                    <button class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>

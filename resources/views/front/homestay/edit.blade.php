@@ -37,17 +37,6 @@
                     <div class="merchant-profile-subhead">
                         <h6>Slogan</h6>
                     </div>
-{{--                    @if($homestay->slogan)--}}
-{{--                    <div class="add-homestay-services">--}}
-{{--                        <div class="col-lg-3 col-md-4 col-sm-12">--}}
-{{--                            <ul>--}}
-{{--                                <li><i class="bi bi-check2"></i>--}}
-{{--                                   {{$homestay->slogan}}--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    @endif--}}
                     <div class="row add-homestay-services-input">
                         <div class="col-lg-10 col-md-10 col-sm-12">
                             <div class="form-floating">
@@ -93,15 +82,6 @@
                     <div class="merchant-profile-subhead">
                         <h6>Homestay Services</h6>
                     </div>
-{{--                    <div class="add-homestay-services">--}}
-{{--                        <div class="col-lg-3 col-md-4 col-sm-12">--}}
-{{--                            <ul>--}}
-{{--                                <li><i class="bi bi-check2"></i>Nepali cusine food</li>--}}
-{{--                                <li><i class="bi bi-check2"></i>Good hospitality</li>--}}
-{{--                                <li><i class="bi bi-check2"></i>Tour Guide</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                     <textarea name="services" class="form-control @error('services') is-invalid @enderror" id="services">
                              {{htmlspecialchars_decode(old('services', $homestay->services)) }}
                     </textarea>
@@ -110,33 +90,11 @@
                                          {{ $message }}
                                 </span>
                     @enderror
-{{--                    <div class="row add-homestay-services-input">--}}
-{{--                        <div class="col-lg-10 col-md-10 col-sm-12">--}}
-{{--                            <div class="form-floating">--}}
-{{--                                <textarea class="form-control" placeholder="Leave a comment here"></textarea>--}}
-{{--                                <label for="floatingTextarea">New Service</label>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
                     <div class="merchant-profile-subhead">
                         <h6>Nearby Places</h6>
                     </div>
-{{--                <div class="add-nearby-places">--}}
-{{--                    @for($x=0; $x<2; $x++)--}}
-{{--                        <h6><i class="bi bi-geo-alt-fill"></i>Tinjure Hill</h6>--}}
-{{--                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum quaerat vero ipsa?</p>--}}
-{{--                    @endfor--}}
-{{--                </div>--}}
-{{--                <div class="row add-nearby-places-input">--}}
-{{--                    <div class="col-lg-10 col-md-10 col-sm-12">--}}
-{{--                        <div class="form-floating">--}}
-{{--                            <textarea class="form-control" placeholder="Leave a comment here"></textarea>--}}
-{{--                            <label for="floatingTextarea">Nearby Place</label>--}}
-{{--                            </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
                     <textarea class="form-control @error('nearby_places') is-invalid @enderror" name="nearby_places" id="nearby-places">
                            {{htmlspecialchars_decode(old('nearby_places', $homestay->nearby_places)) }}
                     </textarea>
@@ -182,24 +140,6 @@
                         </div>
                     </div>
                 </div>
-{{--                <div class="col-lg-12 col-sm-12 mt-5 mb-5">--}}
-{{--                    <div class="merchant-profile-subhead">--}}
-{{--                        <h6>Add Room</h6>--}}
-{{--                    </div>--}}
-{{--                    <div class="add-homestay-img">--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-lg-3 col-md-4 col-sm-12">--}}
-{{--                                <img src="images/homestay2.jpg">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="add-homestay-img-input">--}}
-{{--                        <div class="mb-3">--}}
-{{--                            <label for="formFile" class="form-label">Add Image</label>--}}
-{{--                            <input class="form-control" type="file" id="formFile">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
                 <div class="col-lg-12 col-sm-12 mt-5 mb-5">
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
