@@ -187,7 +187,7 @@
 
 /* homestay rooms */
 .homestay-rooms{
-    margin: 60px 0px;
+    margin: 60px 0px 0px 0px;
 }
 
 .homestay-room-heading h3{
@@ -200,7 +200,7 @@
 }
 
 .homestay-room{
-    margin: 30px 0px;
+    margin: 30px 0px 30px 0px;
 }
 
 .room-details{
@@ -242,6 +242,36 @@
     max-height: 450px;
 }
 
-.room-img{
+.room-img img{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.room-details{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.room-details span{
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.room-details p{
+    font-weight: 500;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.date-book label{
+    font-family: 'Roboto', sans-serif;
+}
+
+.date-book{
+    padding-top: 100px;
+    border: 1px solid rgba(128, 128, 128, 0.349);
+    border-radius: 6px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }

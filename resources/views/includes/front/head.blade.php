@@ -66,7 +66,7 @@
 <link rel="stylesheet" href="{{asset('assets/front/css/merchant-view.css')}}">
 <link rel="stylesheet" href="{{asset('assets/front/css/add-blog.css')}}">
 <link rel="stylesheet" href="{{asset('assets/front/css/front.css')}}">
-
+<link rel="stylesheet" href="{{asset('assets/front/css/payment.css')}}">
 
 
 

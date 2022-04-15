@@ -1,0 +1,26 @@
+.booking-details{
+    margin: 80px 10px;
+    padding: 50px 60px;
+    border-radius: 5px;
+    background-color: rgba(175, 174, 174, 0.137);
+    border: 1px solid rgba(175, 174, 174, 0.137);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.booking-details h3{
+    margin: 20px 0px 50px 0px;
+    font-size: 30px;
+    border-left: 3px solid rgb(84,174,63);
+    padding-left: 6px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.booking-details h6{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    margin: 15px 0px;
+}
+
+.booking-details button{
+    margin: 35px 0px 20px 0px;
+}
