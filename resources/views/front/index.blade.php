@@ -131,16 +131,16 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="row home-top-cate-card mt-3 pt-4 pb-3">
                         <div class="col-md-6">
-                            {{-- <?php
-                            $src = $homestay->homestayImage ? asset('assets/images/placeholder.jpg') : asset('storage/uploads/homestay/'.$homestay->homestayImage->image);
+                            <?php
+                            $src = $homestay->homestayImage ? asset('storage/uploads/homestay/'.$homestay->homestayImage->image) : asset('assets/images/placeholder.jpg');
                             ?>
-                            <img src="{{$src}}" style="width:100%;"> --}}
+                            <img src="{{$src}}" style="width:100%;">
                             
                            
                         </div>
                         <div class="col-md-6 home-top-cate-items">
                             <h6><a href="{{ route('front.homestay.show', $homestay->homestay_name) }}">{{$homestay->homestay_name}}</a></h6>
-                                {{$homestay->services}}
+                                {!! $homestay->services !!}
                         </div>
                     </div>
                 </div>

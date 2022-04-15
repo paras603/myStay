@@ -5,9 +5,15 @@
         <div class="container">
             <div class="row homestay-img">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="padding: 0;">
+                    <?php 
+                    $i=0;
+                    ?>
                     <div class="carousel-inner">
                         @foreach($homestay->homestayImages as $image)
-                      <div class="carousel-item active">
+                      <div class="carousel-item {{ $i == '0' ? 'active': '' }}">
+                        <?php 
+                        $i++;
+                        ?>
                         <img src="{{asset('storage/uploads/homestay/'.$image->image)}}" class="d-block w-100" alt="..." height="600px" width="100%">
                       </div>
                         @endforeach

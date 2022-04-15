@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('merchant/store', [\App\Http\Controllers\Front\MerchantController::class, 'store'])->name('front.merchant.create');
 
     Route::get('user/edit', [\App\Http\Controllers\Front\UserController::class, 'edit'])->name('front.user.edit');
+    Route::put('user/update/{id}', [\App\Http\Controllers\Front\UserController::class, 'update'])->name('user-setting.update');
 
 //    Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
 //    Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
@@ -60,4 +61,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 Route::get('payment-success', function(){
     return view('front.booking.payment-success');
+});
+
+Route::get('blogs', function(){
+    return view('front.blog.blogs');
+});
+Route::get('blog', function(){
+    return view('front.blog.view');
 });

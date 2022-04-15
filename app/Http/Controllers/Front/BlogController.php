@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Helpers\HomestayHelper;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use App\Http\Requests\ProfileRequest;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 
-class UserController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -59,12 +55,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        $user = \auth()->user();
-        $is_merchant = HomestayHelper::isVerifiedMerchant($user);
-       
-        return View('front.user.edit', compact('user','is_merchant'));
+        //
     }
 
     /**
@@ -74,20 +67,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProfileRequest $request,  $id)
+    public function update(Request $request, $id)
     {
-        $user=User::findOrFail($id);
-        // dd($request->all());
-        User::where('id', $id)->update([
-            'first_name'        => $request->input('first_name'),
-            'last_name'         => $request->input('last_name'),
-            'password'          => Hash::make($request->input('password')),
-            // 'email'             => $request->input('email'),
-            // 'role_id'           => $request->input('role_id'),
-            // 'updated_at'        => now(),
-
-        ]);
-        return redirect()->route('front.user.edit', compact('user'))->with('alert.success', 'User Successfully Updated !!');
+        //
     }
 
     /**
