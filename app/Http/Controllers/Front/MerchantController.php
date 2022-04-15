@@ -27,6 +27,9 @@ class MerchantController extends BaseFrontController
     }
 
     public function store(MerchantRequest $request){
+
+/** TODO: IMAGES UPDATE */
+
         $user = Auth::user();
         if($user->isAdmin()){
             return redirect()->route('front.index')->with('toast.error', 'An admin cannot become a merchant');
