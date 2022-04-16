@@ -21,7 +21,8 @@ class CreateHomestaysTable extends Migration
             $table->string('homestay_address');
             $table->string('telephone');
             $table->string('registration_certificate');
-
+            $table->integer('rating')->default(0);
+//            $table->unsignedBigInteger('user_count')->default(0);
             $table->string('slogan')->nullable();
             $table->longText('services')->nullable();
             $table->longText('nearby_places')->nullable();

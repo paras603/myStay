@@ -32,7 +32,7 @@
                             window.location.replace(data.redirect);
                         },
                         error: function (){
-                            toastr.error("Something went wrong!!!");
+                            toastr.error("Something wednt wrong!!!");
                             resetFieldsAfterPayFail();
                         },
                     })

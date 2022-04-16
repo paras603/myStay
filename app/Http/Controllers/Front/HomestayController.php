@@ -8,6 +8,9 @@ use App\Http\Requests\HomestayRequest;
 use App\Models\Homestay;
 use App\Models\HomestayImage;
 use App\Models\Merchant;
+use App\Models\Room;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomestayController extends Controller
 {
@@ -76,5 +79,31 @@ class HomestayController extends Controller
                 $homestay->save();
         });
         return redirect()->route('front.index')->with('toast.success', 'Home stay details updated');
+    }
+
+    public function rate(Request $request, $id){
+        $request->validate([
+            'rating' => ["required","numeric","max:5","min:1"],
+        ]);
+        $homestay = Homestay::findorFail($id);
+        $user = Auth::user();
+        $can_rate = false;
+        if($user->points >= 100){
+            $user_bookings = $user->bookings;
+            $homestay_arr = [];
+            foreach ($user_bookings as $booking){
+                $homestay_arr[]= $booking->room->homestay_id;
+            }
+            if(in_array($homestay->id, $homestay_arr))  $can_rate = true;
+        }
+        if($can_rate){
+            $current_homestay_rating = $homestay->rating;
+            $homestay->rating = ceil(($current_homestay_rating + $request->input('rating'))/2);
+            $homestay->save();
+            $user->points = $user->points - 100;
+            $user->save();
+            return redirect()->back()->with('toast.success', 'Rated');
+        }
+        return redirect()->back()->with('toast.error', 'Unauthorized');
     }
 }

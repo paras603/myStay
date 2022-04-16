@@ -60,11 +60,13 @@ class BookingController extends Controller
         $resp = Http::acceptJson()->withHeaders($header)->post( $url, $args);
         if($resp->getStatusCode() === 200){
             $resp_body = collect(json_decode($resp->body()));
+
             \DB::transaction(function () use($resp_body) {
                 $booking = session('booking');
                 $booking['transaction_id']= $resp_body['idx'];
                 $booking['created_at'] = Carbon::now();
                 $booking['updated_at'] = Carbon::now();
+                $booking['user_id'] = Auth::user()->id;
                 $bookings = Booking::insert($booking);
             });
             return response()->json([
