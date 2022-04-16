@@ -18,7 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = \auth()->user();
+        return view('front.user.index', compact('user'));
     }
 
     /**

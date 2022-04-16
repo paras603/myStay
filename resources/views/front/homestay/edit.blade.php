@@ -3,7 +3,7 @@
   <h1><marquee>Edit this page</marquee></h1>
 @endsection --}}
 
-@extends('layouts.default')
+@extends('layouts.user_dashboard')
 
 @section('content')
 <section>

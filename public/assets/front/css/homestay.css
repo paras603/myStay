@@ -20,6 +20,7 @@
     letter-spacing: 0.1px;
     border-left: 3px solid  rgb(84,174,63);
     padding-left: 10px;
+    margin-bottom: 10px;
 }
 
 .homestay-intro h6{
@@ -49,6 +50,8 @@
 
 .homestay-nearby-places{
     margin: 40px 0px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid gray;
 }
 
 .homestay-nearby-places h3{
@@ -58,6 +61,29 @@
     border-left: 3px solid  rgb(84,174,63);
     padding-left: 10px;
     margin: 20px 0px;
+}
+
+.rate-homestay{
+    margin: 40px 0px;
+}
+
+.rate-homestay h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    border-left: 3px solid  rgb(84,174,63);
+    padding-left: 10px;
+    margin: 20px 0px;
+}
+
+.rate-homestay button{
+    margin: 20px 10px;
+    padding: 10px 60px;
+    background-color: rgb(84,174,63);
+    border: 1px solid rgb(84,174,63);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.4px;
 }
 
 .nearby-places h6{

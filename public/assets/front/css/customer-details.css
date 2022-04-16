@@ -1,6 +1,6 @@
 .customer-details{
-    background-color: white;
-    box-shadow: 0 0 10px 3px rgb(108 98 98 / 20%);
+    /* background-color: white;
+    box-shadow: 0 0 10px 3px rgb(108 98 98 / 20%); */
     padding: 45px 20px;
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -43,7 +43,7 @@
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
-    margin: 20px 0px;
+    margin: 40px 0px;
 }
 
 .customer-details button:hover{

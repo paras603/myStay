@@ -17,20 +17,27 @@
                     </button>
                     @endauth
                     <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton1">
-                        <li><a href="{{ route('front.user.edit')}}" class="dropdown-item">
+                        <li><a href="{{ route('front.user.index')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">person</span>
-                            Account Settings</a></li>
-                        <li><a href="#" class="dropdown-item">
+                            My Account</a></li>
+                        {{-- <li><a href="#" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">bookmark</span>
-                            Bookmark</a></li>
+                            Bookmark</a></li> --}}
 {{--                        @endif--}}
-                        <li><a href="{{url('blogs')}}" class="dropdown-item">
+                        {{-- <li><a href="{{url('blogs')}}" class="dropdown-item">
                             <span class="material-icons-outlined" style="font-size: 18px ;">library_books</span>
-                            Blogs</a></li>
+                            Blogs</a></li> --}}
 {{--                        <li><a href="{{ route('homestay-settings') }}" class="dropdown-item">--}}
 {{--                            <span class="material-icons-outlined" style="font-size: 18px ;">settings</span>--}}
 {{--                            Homestay Settings</a></li>--}}
+                    
                     </ul>
+                    @guest
+                    <button class="btn-unstyle" type="submit" aria-expanded="false">
+                        <a href="{{url('blogs')}}" style="color: rgb(121, 115, 115);">
+                            Blogs</a>
+                    </button>
+                    @endguest
                     @if(!$GLOBAL_MERCHANT)
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                         <li>
@@ -55,30 +62,30 @@
                             </li>
                         </button>
                         <ul class="dropdown-menu nav-dropdown mt-1" aria-labelledby="dropdownMenuButton2">
-                            <li>
+                            {{-- <li>
                                 <a href="{{route('rooms.create')}}" class="dropdown-item">
                                     <i class="bi bi-plus-circle-fill" style="font-size: 15px"></i>
                                     Add Room
                                 </a>
-                            </li>
-                            <li>
+                            </li> --}}
+                            {{-- <li>
                                 <a href="{{route('rooms.index')}}" class="dropdown-item">
                                     <i class="bi bi-door-closed-fill" style="font-size: 15px;"></i>
                                     My Rooms
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
 
                                 <a href="{{route('front.homestay.show',$GLOBAL_HOMESTAY)}}" class="dropdown-item">
                                     <i class="bi bi-house-door-fill"  style="font-size: 15px"></i>
-                                    Homestay Details
+                                    My Homestay
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="{{route('front.homestay.edit',$GLOBAL_HOMESTAY)}}" class="dropdown-item">
                                     <span class="material-icons-outlined" style="font-size: 18px ;">settings</span>
                                     Homestay Settings</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     @endif
                     <button class="btn-unstyle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">

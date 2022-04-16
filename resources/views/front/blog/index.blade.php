@@ -1,6 +1,6 @@
-@extends('pages.customer.layout.default')
+@extends('layouts.user_dashboard')
 
-@section('customer-details')
+@section('content')
     <section>
         <div class="container">
             <div class="row">

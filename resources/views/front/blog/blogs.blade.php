@@ -61,6 +61,18 @@
                                 </div>
                             </form>
                         </aside>
+                        @auth
+                        <aside class="single-sidebar-widget create-blog--widget">
+                            <form action="{{route('front.blog.create-blog')}}" method="GET">
+                                <div class="form-group m-0">
+                                    <h3>Create your own blog?</h3>
+                                    <div class="input-group-append d-flex">
+                                        <button class="boxed-btn2" type="submit">Create</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </aside>
+                        @endauth
                         {{-- category tags for blog --}}
                         {{-- <aside class="single-sidebar-widget post-category-widget">
                             <h2 class="widget-title">Category</h2>
