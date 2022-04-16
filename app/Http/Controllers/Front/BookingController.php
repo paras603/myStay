@@ -103,4 +103,10 @@ class BookingController extends Controller
         ];
     }
 
+    public function show(){
+        $user = \auth()->user();
+        $bookings = Booking::where('user_id', $user->id)->get();
+        return view('front.booking.show', compact('bookings'));
+    }
+
 }

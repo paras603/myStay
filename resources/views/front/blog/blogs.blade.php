@@ -7,30 +7,27 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog-left-sidebar">
-                        @for($x=0; $x<3; $x++)
-                        {{-- @foreach($blogs as $blog) --}}
+                        @foreach($blogs as $blog)
                         <article class="blog-item">
                             <div class="blog-item-img">
-                                {{-- <img src="{{asset('images/'.$blog->image)}}"> --}}
-                                <img src="{{asset('images/homestay1.jpg')}}">
+                                {{-- <img src="{{asset('images/'.$blogs->blog_image)}}"> --}}
+                                {{-- <img src="{{asset('images/homestay1.jpg')}}"> --}}
                                 <span class="blog-item-date">
-                                    {{-- <h3>{{$blog->published_date}}</h3> --}}
-                                    <h3>23 August 2021</h3>
+                                    <h3>{{$blog->published_date}}</h3>
+                                    {{-- <h3>23 August 2021</h3> --}}
                                     <!-- <p>Jun</p> -->
                                 </span>
                             </div>
                             <div class="blog-details">
-                                <a class="d-inline-block" href="{{ url('blog') }}">
-                                    {{-- <h2 class="blog-head">{{$blog->title}}</h2> --}}
-                                    <h2 class="blog-head">Reproductive Rights and Health Care Are Deal Breakers in 2021 Midterm Elections</h2>
+                                <a class="d-inline-block" href="{{ route('front.blog',$blog->id) }}">
+                                    <h2 class="blog-head">{{$blog->blog_title}}</h2>
                                 </a>
-                                {{-- <p>{{$blog->description}}</p> --}}
-                                <p>I walk in a lonely road</p>
+                                <p>{{$blog->blog_detail}}</p>
                                 <ul class="blog-info-link">
                                     <li><a href="#">
                                         <i class="fa fa-user"></i>
                                         {{-- {{$blog->category}} --}}
-                                        Hitch-hiking
+                                        {{ $blog->blog_author }}
                                     </a></li>
                                     {{-- <li><a href="#">
                                         <i class="fa fa-comments"></i>02 comments
@@ -38,13 +35,13 @@
                                 </ul>
                             </div>
                         </article>
-                        {{-- @endforeach --}}
+                        @endforeach
 
                         {{-- <div class="container">
                             {{$blogs->links('pagination::bootstrap-4')}}
 
                         </div> --}}
-                        @endfor
+                        {{-- @endfor --}}
                     </div>                        
                 </div>
                 <div class="col-lg-4">

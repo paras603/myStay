@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('booking/checkout', [\App\Http\Controllers\Front\BookingController::class, 'checkout'])->name('front.booking.checkout');
     Route::post('booking/checkout/verify',[App\Http\Controllers\Front\BookingController::class,'verify'])->name('front.checkout.verify');
     Route::get('booking/success', [\App\Http\Controllers\Front\BookingController::class, 'success'])->name('front.booking.success');
+    Route::get('booking/show', [\App\Http\Controllers\Front\BookingController::class, 'show'])->name('front.user.bookings');
 
     Route::post('homestay/rate/{id}', [\App\Http\Controllers\Front\HomestayController::class, 'rate'])->name('front.homestay.rate');
 
@@ -41,8 +42,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('user/edit', [\App\Http\Controllers\Front\UserController::class, 'edit'])->name('front.user.edit');
     Route::put('user/update/{id}', [\App\Http\Controllers\Front\UserController::class, 'update'])->name('user-setting.update');
 
+    Route::get('user/bookmark', [\App\Http\Controllers\Front\UserController::class, 'bookmark'])->name('front.user.bookmark');
+
   
     Route::get('blog/index', [\App\Http\Controllers\Front\BlogController::class, 'index'])->name('front.blog.index');
+    Route::get('blog/create', [\App\Http\Controllers\Front\BlogController::class, 'create'])->name('front.blog.create');
+    Route::post('blog/store', [\App\Http\Controllers\Front\BlogController::class, 'store'])->name('front.blog.store');
 
 //    Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
 //    Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
@@ -68,9 +73,12 @@ Route::get('payment-success', function(){
     return view('front.booking.payment-success');
 });
 
-Route::get('blogs', function(){
-    return view('front.blog.blogs');
-});
-Route::get('blog', function(){
-    return view('front.blog.view');
-});
+// Route::get('blogs', function(){
+//     return view('front.blog.blogs');
+// });
+// Route::get('blog', function(){
+//     return view('front.blog.view');
+// });
+
+Route::get('blogs', [\App\Http\Controllers\Front\BlogController::class, 'blogs'])->name('front.blogs');
+Route::get('blog/{id}', [\App\Http\Controllers\Front\BlogController::class, 'blog'])->name('front.blog');

@@ -101,4 +101,8 @@ class UserController extends Controller
     {
         //
     }
+
+    public function bookmark(){
+        return view('front.user.bookmark');
+    }
 }

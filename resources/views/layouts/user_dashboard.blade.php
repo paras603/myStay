@@ -23,10 +23,10 @@
                             </div>
                             @if(!$GLOBAL_MERCHANT)
                             <div class="cust-profile-nav-item">
-                                <a href="{{ url('customer-bookings') }}"><i class="bi bi-cart-check-fill"></i>My bookings</a>
+                                <a href="{{ route('front.user.bookings') }}"><i class="bi bi-cart-check-fill"></i>My bookings</a>
                             </div>
                             <div class="cust-profile-nav-item">
-                                <a href="{{ url('bookmark') }}"><i class="bi bi-bookmark-check-fill"></i>Bookmark</a>
+                                <a href="{{ route('front.user.bookmark') }}"><i class="bi bi-bookmark-check-fill"></i>Bookmark</a>
                             </div>
                             @endif
                             <div class="cust-profile-nav-item">

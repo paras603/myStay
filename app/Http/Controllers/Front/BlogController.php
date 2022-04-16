@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Blog;
 
 class BlogController extends Controller
 {
@@ -14,7 +15,19 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('front.blog.index');
+        $user = \auth()->user();
+        $blogs = Blog::where('blog_author',$user->id)->get();
+        return view('front.blog.index', compact('blogs'));
+    }
+
+    public function blogs(){
+        $blogs = Blog::all();
+        return view('front.blog.blogs', compact('blogs'));
+    }
+
+    public function blog($id){
+        $blog = Blog::where('id',$id)->first();
+        return view('front.blog.view', compact('blog'));
     }
 
     /**
@@ -35,7 +48,21 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $author = auth()->user();
+        $image = $request->file('blog_image');
+        $imageName = HomestayHelper::renameImageFileUpload($image);
+        $image->storeAs(
+            'public/uploads/blogs/',$imageName
+        );
+        Blog::create([
+            'blog_title'            => $request->input('blog_title'),
+            'blog_detail'           => $request->input('blog_detail'),
+            'blog_image'            => $imageName,
+            'blog_author'           => $author,
+            'published_date'        => now(),
+        ]);
+
+        return redirect()->route('front.index')->with('toast.success', 'Room added');
     }
 
     /**

@@ -34,7 +34,7 @@
                     </ul>
                     @guest
                     <button class="btn-unstyle" type="submit" aria-expanded="false">
-                        <a href="{{url('blogs')}}" style="color: rgb(121, 115, 115);">
+                        <a href="{{route('front.blogs')}}" style="color: rgb(121, 115, 115);">
                             Blogs</a>
                     </button>
                     @endguest

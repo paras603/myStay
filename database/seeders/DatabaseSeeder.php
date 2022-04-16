@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             MerchantSeeder::class,
             HomestaySeeder::class,
             RoomSeeder::class,
-            HomestayImageSeeder::class
+            HomestayImageSeeder::class,
+            BookingSeeder::class,
+            BlogSeeder::class
         ]);
     }
 }

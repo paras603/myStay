@@ -8,26 +8,25 @@
                     <h3>Blogs</h3>
                 </div>
                 <div class="col-lg-6 col-sm-12 customer-write-blog">
-                    <form action="{{ url('customer-add-blog') }}">
+                    <form action="{{ route('front.blog.create') }}">
                         <button>Add blog</button>
                     </form>
                 </div>
             </div>
             <div class="row customer-blogs">
-                @for($x=0; $x<5; $x++)
+                @foreach($blogs as $blog)
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="customer-blog">
                         <div>
                             <img src="images/homestay5.jpg">
                         </div>
                         <div class="customer-blog-details">
-                            <a href="{{ url('blog') }}"><h6>Corona fights back</h6></a>
-                            <p>Lorem g elit. Fuga, dicta atque aspernatur magni repellat asperiores labore non esse dolor dolore nisi ut saepe quaerat ipsum ea impedit, iste quasi vel odit maxime reprehenderit ipsa.
-                            </p>
+                            <a href="{{ route('front.blog', $blog->id) }}"><h6>{{ $blog->blog_title }}</h6></a>
+                            <p>{{ $blog->blog_detail }}</p>
                         </div>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </section>
