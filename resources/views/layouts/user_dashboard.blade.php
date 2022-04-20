@@ -42,6 +42,9 @@
                             <div class="cust-profile-nav-item">
                                 <a href="{{route('front.homestay.edit',$GLOBAL_HOMESTAY)}}"><i class="bi bi-gear-fill"></i>Update Homestay</a>
                             </div>
+                            <div class="cust-profile-nav-item">
+                                <a href="{{route('front.homestay.feature',$GLOBAL_HOMESTAY)}}"><i class="bi bi-gear-fill"></i>Feature Homestay</a>
+                            </div>
                             @endif
                             <div class="cust-profile-nav-item">
                                 <a href="{{ route('front.user.edit') }}"><i class="bi bi-gear-fill"></i>Account Settings</a>

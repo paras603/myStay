@@ -28,7 +28,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('booking/checkout/verify',[App\Http\Controllers\Front\BookingController::class,'verify'])->name('front.checkout.verify');
     Route::get('booking/success', [\App\Http\Controllers\Front\BookingController::class, 'success'])->name('front.booking.success');
     Route::get('booking/show', [\App\Http\Controllers\Front\BookingController::class, 'show'])->name('front.user.bookings');
-
     Route::post('homestay/rate/{id}', [\App\Http\Controllers\Front\HomestayController::class, 'rate'])->name('front.homestay.rate');
 
     Route::resource('rooms', \App\Http\Controllers\Front\RoomController::class);
@@ -37,6 +36,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::put('homestay/update/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'update'])->name('front.homestay.update');
     Route::get('merchant', [\App\Http\Controllers\Front\MerchantController::class, 'index'])->name('front.merchant.index');
     Route::post('merchant/store', [\App\Http\Controllers\Front\MerchantController::class, 'store'])->name('front.merchant.create');
+    Route::post('homestay/feature/verify',[App\Http\Controllers\Front\HomestayController::class,'verify'])->name('front.homestay.featuredVerify');
+    Route::get('/homestay/feature/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'feature'])->name('front.homestay.feature');
+    Route::post('/homestay/feature/{homestay}', [\App\Http\Controllers\Front\HomestayController::class, 'featureStore'])->name('front.homestay.featureStore');
+
+
 
     Route::get('user/index', [\App\Http\Controllers\Front\UserController::class, 'index'])->name('front.user.index');
     Route::get('user/edit', [\App\Http\Controllers\Front\UserController::class, 'edit'])->name('front.user.edit');
@@ -44,13 +48,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('user/bookmark', [\App\Http\Controllers\Front\UserController::class, 'bookmark'])->name('front.user.bookmark');
 
-  
+
     Route::get('blog/index', [\App\Http\Controllers\Front\BlogController::class, 'index'])->name('front.blog.index');
     Route::get('blog/create', [\App\Http\Controllers\Front\BlogController::class, 'create'])->name('front.blog.create');
     Route::post('blog/store', [\App\Http\Controllers\Front\BlogController::class, 'store'])->name('front.blog.store');
 
-//    Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
-//    Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
+    //Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
+    //Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');

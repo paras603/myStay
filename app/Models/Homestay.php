@@ -32,9 +32,14 @@ class Homestay extends Model
         return $this->hasOne(HomestayImage::class);
     }
 
-    public function rooms(){
+    public function rooms(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Room::class);
     }
 
+    public function featured(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Feature::class);
+    }
 
 }

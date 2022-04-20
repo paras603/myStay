@@ -3,14 +3,20 @@
 namespace App\Http\Controllers\Front;
 
 use App\Helpers\HomestayHelper;
+use App\Helpers\SamanHarayoHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\HomestayRequest;
+use App\Models\Booking;
+use App\Models\Feature;
 use App\Models\Homestay;
 use App\Models\HomestayImage;
 use App\Models\Merchant;
 use App\Models\Room;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class HomestayController extends Controller
 {
@@ -106,4 +112,91 @@ class HomestayController extends Controller
         }
         return redirect()->back()->with('toast.error', 'Unauthorized');
     }
+
+    public function feature($homestay){
+        $homestay = Homestay::where('homestay_name', $homestay)->first();
+        abort_if(!$homestay, 404);
+        $user = Auth::user();
+        if($homestay->merchant->user_id != $user->id){
+            abort(401);
+        }
+        return view('front.homestay.feature', compact('homestay'));
+    }
+
+    public function featureStore(Request $request,$homestay){
+        $request->validate([
+           'duration'           =>          ['required','numeric', 'min:1'],
+           'featured_image'     =>          ['required','image', 'mimes:png,jpg,jepg'],
+        ]);
+        $homestay = Homestay::where('homestay_name', $homestay)->first();
+        abort_if(!$homestay, 404);
+        $user = Auth::user();
+        if($homestay->merchant->user_id != $user->id){
+            abort(401);
+        }
+        $featured_image = $request->file('featured_image');
+        $imageName = HomestayHelper::renameImageFileUpload($featured_image);
+        $featured_image->storeAs(
+            'public/uploads/temp/', $imageName
+        );
+        $duration = $request->input('duration');
+        if(session('featuredData')) {
+            $request->session()->forget('featuredData');
+        }
+        session(['featuredData' => [
+            'homestay_id'           =>          $homestay->id,
+            'expiry_date'           =>           Carbon::today()->addDays($duration),
+            'featured_image'            =>      $imageName,
+        ]]);
+        return view('front.homestay.checkout', compact('duration', 'homestay'));
+    }
+
+    public function verify(Request $request){
+        $total = (float)session('total');
+        $args = self::setArgs($request->token,$total*100);
+        $url = "https://khalti.com/api/v2/payment/verify/";
+        $header = self::getApiHeader();
+        $resp = Http::acceptJson()->withHeaders($header)->post( $url, $args);
+        $featudredData = session('featuredData');
+        if($resp->getStatusCode() === 200){
+            \DB::transaction(function () use($featudredData) {
+                    Storage::makeDirectory('/public/uploads/featuredImage');
+                    Storage::move('public/uploads/temp/'.$featudredData['featured_image'], '/public/uploads/featuredImage'.$featudredData['featured_image']);
+                    Feature::create($featudredData);
+            });
+            return response()->json([
+                'success'       =>      1,
+                'redirect'      =>  route('front.booking.success'),
+            ],200);
+        }else{
+            return response()->json([
+                'error'         =>      1,
+                'message'       =>      'Failed',
+                'code'          =>      200
+            ]);
+        }
+    }
+
+    public function success(Request $request){
+        if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === "http://mystay.test/booking/checkout"){
+            return view('front.booking.success');
+        }
+        abort(404);
+    }
+
+    public function setArgs($token, $amount){
+        return [
+            'token' => $token,
+            'amount'  => $amount,
+        ];
+    }
+
+    public function getApiHeader(): array
+    {
+        return [
+            'Authorization'    =>  'Key '.config('services.khalti.private_key'),
+        ];
+    }
+
+
 }
