@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Helpers\HomestayHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\Homestay;
 use App\Models\Room;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -69,9 +71,11 @@ class BookingController extends Controller
                 $booking['user_id'] = Auth::user()->id;
                 $bookings = Booking::insert($booking);
             });
+            $request->session()->flash('toast.success', 'Payemnt Done!');
+        
             return response()->json([
                 'success'       =>      1,
-                'redirect'      =>  route('front.booking.success'),
+                'redirect'      =>  route('front.index'),
             ],200);
         }else{
             return response()->json([
@@ -82,12 +86,12 @@ class BookingController extends Controller
         }
     }
 
-    public function success(Request $request){
-        if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === "http://mystay.test/booking/checkout"){
-            return view('front.booking.success');
-        }
-        abort(404);
-    }
+    // public function success(Request $request){
+    //     if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] === url('/booking/checkout')){
+    //         return view('front.booking.success');
+    //     }
+    //     abort(404);
+    // }
 
     public function setArgs($token, $amount){
         return [

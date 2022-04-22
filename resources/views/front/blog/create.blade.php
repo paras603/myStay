@@ -47,9 +47,7 @@
                         </div>
                     </div>
                     <div class="publish-blog-button">
-                    
                             <button type="submit" class="btn btn-success">Publish</button>
-                        
                     </div>
                 </div>
             </form>

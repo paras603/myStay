@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Feature;
 use App\Models\Homestay;
 use App\Models\HomestayImage;
 use App\Models\Merchant;
@@ -12,7 +13,9 @@ class HomeController extends Controller
 {
     public function index(){
         $new_homestays = Homestay::with('homestayImage')->latest()->take(8)->get();
-        return view('front.index', compact('new_homestays'));
+        $featured_homestays   = Feature::whereHas('homestay')->where('expiry_date','>',now())->get();
+        
+        return view('front.index', compact('new_homestays', 'featured_homestays'));
 
     }
 

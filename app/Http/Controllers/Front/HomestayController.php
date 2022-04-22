@@ -146,7 +146,7 @@ class HomestayController extends Controller
         session(['featuredData' => [
             'homestay_id'           =>          $homestay->id,
             'expiry_date'           =>           Carbon::today()->addDays($duration),
-            'featured_image'            =>      $imageName,
+            'feature_image'            =>      $imageName,
         ]]);
         return view('front.homestay.checkout', compact('duration', 'homestay'));
     }
@@ -161,12 +161,14 @@ class HomestayController extends Controller
         if($resp->getStatusCode() === 200){
             \DB::transaction(function () use($featudredData) {
                     Storage::makeDirectory('/public/uploads/featuredImage');
-                    Storage::move('public/uploads/temp/'.$featudredData['featured_image'], '/public/uploads/featuredImage'.$featudredData['featured_image']);
+                    Storage::move('public/uploads/temp/'.$featudredData['feature_image'], '/public/uploads/featuredImage/s'.$featudredData['feature_image']);
+                
                     Feature::create($featudredData);
             });
+            $request->session()->flash('toast.success', 'Featured Done!');
             return response()->json([
                 'success'       =>      1,
-                'redirect'      =>  route('front.booking.success'),
+                'redirect'      =>  route('front.index'),
             ],200);
         }else{
             return response()->json([

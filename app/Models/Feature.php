@@ -9,4 +9,8 @@ class Feature extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function homestay(){
+        return $this->belongsTo(Homestay::class);
+    }
 }

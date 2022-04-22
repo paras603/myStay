@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Helpers\HomestayHelper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 
@@ -46,11 +48,13 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogRequest $request)
     {
+
         $author = auth()->user();
 
         $image = $request->file('blog_image');
+    
         $imageName = HomestayHelper::renameImageFileUpload($image);
         $image->storeAs(
             'public/uploads/blogs/',$imageName
@@ -60,11 +64,11 @@ class BlogController extends Controller
             'blog_title'            => $request->input('blog_title'),
             'blog_detail'           => $request->input('blog_detail'),
             'blog_image'            => $imageName,
-            'blog_author'           => $author,
+            'blog_author'           => $author->id,
             'published_date'        => now(),
         ]);
 
-        return redirect()->route('front.index')->with('toast.success', 'Room added');
+        return redirect()->route('front.index')->with('toast.success', 'Blog Created');
     }
 
     /**

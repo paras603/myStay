@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('booking', [\App\Http\Controllers\Front\BookingController::class, 'index'])->name('front.booking.index');
     Route::post('booking/checkout', [\App\Http\Controllers\Front\BookingController::class, 'checkout'])->name('front.booking.checkout');
     Route::post('booking/checkout/verify',[App\Http\Controllers\Front\BookingController::class,'verify'])->name('front.checkout.verify');
-    Route::get('booking/success', [\App\Http\Controllers\Front\BookingController::class, 'success'])->name('front.booking.success');
+    // Route::get('booking/success', [\App\Http\Controllers\Front\BookingController::class, 'success'])->name('front.booking.success');
     Route::get('booking/show', [\App\Http\Controllers\Front\BookingController::class, 'show'])->name('front.user.bookings');
     Route::post('homestay/rate/{id}', [\App\Http\Controllers\Front\HomestayController::class, 'rate'])->name('front.homestay.rate');
 
