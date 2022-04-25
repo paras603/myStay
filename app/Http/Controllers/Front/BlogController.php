@@ -29,7 +29,8 @@ class BlogController extends Controller
 
     public function blog($id){
         $blog = Blog::where('id',$id)->first();
-        return view('front.blog.view', compact('blog'));
+        $recent_blogs = Blog::latest()->take(8)->get();
+        return view('front.blog.view', compact('blog', 'recent_blogs'));
     }
 
     /**

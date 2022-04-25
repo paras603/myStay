@@ -114,7 +114,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('homestays.index')}}" class="nav-link">
+                <a href="{{route('bookings.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Booking Listing</p>
                 </a>
@@ -122,7 +122,7 @@
             </ul>
           </li>
           {{-- blogs --}}
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -138,7 +138,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           {{-- log out --}}
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">

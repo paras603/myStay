@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
+use App\Models\Bookmark;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class BookmarkController extends Controller
 {
@@ -11,9 +14,13 @@ class BookmarkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $user = \auth()->user();
+        $bookmarks = Bookmark::where('user_id', $user->id)->get();
+        // $bookmarks = Bookmark::all();
+        // abort_if(!$room, 404);
+        return view('front.user.bookmark', compact('bookmarks'));
     }
 
     /**
@@ -32,9 +39,16 @@ class BookmarkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,  $current_homestay)
     {
-        //
+        $current_user = \auth()->user();
+        Bookmark::create([
+            'user_id'       =>  $current_user->id,
+            'homestay_id'   =>  $current_homestay
+            
+        ]);
+
+        return redirect()->back()->with('toast.success', 'Homestay Bookmarked');
     }
 
     /**
@@ -79,6 +93,7 @@ class BookmarkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Bookmark::where('id', $id)->delete();
+        return redirect()->back()->with('toast.success', 'Bookmark Removed');
     }
 }

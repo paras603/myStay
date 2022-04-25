@@ -42,4 +42,9 @@ class Homestay extends Model
         return $this->hasOne(Feature::class);
     }
 
+    public function bookmarks(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Bookmark::class);
+    }
+
 }

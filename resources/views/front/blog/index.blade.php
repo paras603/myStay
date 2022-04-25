@@ -18,11 +18,15 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="customer-blog">
                         <div>
-                            <img src="images/homestay5.jpg">
+                            <?php
+                        $src = $blog->blog_image ? asset('storage/uploads/blogs/'.$blog->blog_image) : asset('assets/images/placeholder.jpg');
+                        ?>
+                        <img src="{{ $src}}" style="width:100%;">
+                        
                         </div>
                         <div class="customer-blog-details">
                             <a href="{{ route('front.blog', $blog->id) }}"><h6>{{ $blog->blog_title }}</h6></a>
-                            <p>{{ $blog->blog_detail }}</p>
+                            <p>{!! $blog->blog_detail !!}</p>
                         </div>
                     </div>
                 </div>

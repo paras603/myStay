@@ -10,8 +10,10 @@
                         @foreach($blogs as $blog)
                         <article class="blog-item">
                             <div class="blog-item-img">
-                                {{-- <img src="{{asset('images/'.$blogs->blog_image)}}"> --}}
-                                {{-- <img src="{{asset('images/homestay1.jpg')}}"> --}}
+                                <?php
+                                $src = $blog->blog_image ? asset('storage/uploads/blogs/'.$blog->blog_image) : asset('assets/images/placeholder.jpg');
+                                ?>
+                                <img src="{{ $src}}">
                                 <span class="blog-item-date">
                                     <h3>{{$blog->published_date}}</h3>
                                     {{-- <h3>23 August 2021</h3> --}}
@@ -22,7 +24,7 @@
                                 <a class="d-inline-block" href="{{ route('front.blog',$blog->id) }}">
                                     <h2 class="blog-head">{{$blog->blog_title}}</h2>
                                 </a>
-                                <p>{{$blog->blog_detail}}</p>
+                                <p>{!!$blog->blog_detail!!}</p>
                                 <ul class="blog-info-link">
                                     <li><a href="#">
                                         <i class="fa fa-user"></i>
@@ -46,7 +48,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="blog-right-sidebar">
-                        <aside class="single-sidebar-widget search-widget">
+                        {{-- <aside class="single-sidebar-widget search-widget">
                             <form action="{{url('search')}}">
                                 <div class="form-group m-0">
                                     <div class="input-group">
@@ -57,7 +59,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </aside>
+                        </aside> --}}
                         @auth
                         <aside class="single-sidebar-widget create-blog--widget">
                             <form action="{{route('front.blog.create-blog')}}" method="GET">
@@ -114,17 +116,20 @@
                         </aside> --}}
                         <aside class="single-sidebar-widget recent-post-widget">
                             <h3 class="widget-title" style="margin-bottom: 50px;">Recent Post</h3>
-                            @for($x=0; $x<4; $x++)
+                            @foreach($blogs as $blog)
                             <div class="media post-item">
-                                <img src="..\images\homestay1.jpg">
+                                <?php
+                                $src = $blog->blog_image ? asset('storage/uploads/blogs/'.$blog->blog_image) : asset('assets/images/placeholder.jpg');
+                                ?>
+                                <img src="{{ $src}}">
                                 <div class="media-body">
-                                    <a href="{{ url('blog') }}">
-                                        <h5>From rags to riches</h5>
-                                        <p>August 20, 2021</p>
+                                    <a href="{{ route('front.blog',$blog->id) }}">
+                                        <h5>{{ $blog->blog_title }}</h5>
+                                        <p>{{ $blog->published_date }}</p>
                                     </a>
                                 </div>
                             </div>
-                            @endfor
+                            @endforeach
                         </aside>
                         {{-- tag clouds for blog --}}
                         {{-- <aside class="single-sidebar-widget tag-clouds-widget">

@@ -26,7 +26,7 @@
                                 <a href="{{ route('front.user.bookings') }}"><i class="bi bi-cart-check-fill"></i>My bookings</a>
                             </div>
                             <div class="cust-profile-nav-item">
-                                <a href="{{ route('front.user.bookmark') }}"><i class="bi bi-bookmark-check-fill"></i>Bookmark</a>
+                                <a href="{{ route('front.bookmark.index') }}"><i class="bi bi-bookmark-check-fill"></i>Bookmark</a>
                             </div>
                             @endif
                             <div class="cust-profile-nav-item">

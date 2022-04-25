@@ -1,5 +1,5 @@
 <!-- subscribe -->
-<section class="pt-5 pb-5">
+{{-- <section class="pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-</section>    
+</section>     --}}
 
 <footer>
     <div class="container-fluid">

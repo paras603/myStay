@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\Booking;
 use App\Models\Feature;
 use App\Models\Homestay;
 use App\Models\HomestayImage;
@@ -14,8 +16,10 @@ class HomeController extends Controller
     public function index(){
         $new_homestays = Homestay::with('homestayImage')->latest()->take(8)->get();
         $featured_homestays   = Feature::whereHas('homestay')->where('expiry_date','>',now())->get();
-        
-        return view('front.index', compact('new_homestays', 'featured_homestays'));
+        $top_homestays = Homestay::with('homestayImage')->orderBy('rating','desc')->take(8)->get();
+        $popular_homestays = Booking::latest()->take(8)->select('room_id')->distinct()->get();
+        $latest_blogs = Blog::latest()->take(4)->get();
+        return view('front.index', compact('new_homestays', 'featured_homestays', 'top_homestays', 'popular_homestays', 'latest_blogs'));
 
     }
 

@@ -30,9 +30,9 @@
                 <form method="get" action="{{ route('front.homestay.show', $booking->room->homestay->homestay_name) }}">
                     <button class="customer-booking-btn1">View Homestay</button>
                 </form>
-                <form method="post" action="{{ route('front.homestay.show', $booking->room->homestay->homestay_name) }}">
+                {{-- <form method="post" action="{{ route('front.homestay.show', $booking->room->homestay->homestay_name) }}">
                     <button class="customer-booking-btn2">Rate Homestay</button>
-                </form>
+                </form> --}}
             </div>
         </div>
         @endforeach

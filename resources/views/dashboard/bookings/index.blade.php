@@ -4,16 +4,17 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Merchant Details</h3>
+                    <h3 class="card-title">Booking Details</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="merchantDatatable" class="table table-bordered table-hover">
+                    <table id="bookingDatatable" class="table table-bordered table-hover">
                         <thead>
                         <tr>
+                            <th>Homestay Name</th> 
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Verified</th> 
+                            <th>Total Payment</th> 
                             <th>Created at</th>
                             <th>Action</th>
                         </tr>
@@ -30,13 +31,13 @@
     </div>
 @endsection
 @section('page_level_script')
-    @include('dashboard.merchants._shared')
+    @include('dashboard.bookings._shared')
     <script>
         $(document).ready(function($) {
-            let table = $('#merchantDatatable').DataTable({
+            let table = $('#bookingDatatable').DataTable({
                 "serverSide": true,
                 "ajax": {
-                    "url": BASE_URL + '/dashboard/merchants',
+                    "url": BASE_URL + '/dashboard/bookings',
                     "dataType": "json",
                     "type": "GET",
                     "data": {
@@ -56,14 +57,18 @@
                         }
                     }
                 },
-                "columns": [{
-                    "data": "first_name",
+                "columns": [
+                    {
+                        "data": "homestay_name"
+                    },
+                    {
+                        "data": "first_name",
                     },
                     {
                         "data": "last_name"
                     },
                     {
-                        "data": "verified"
+                        "data": "total"
                     },
                     {
                         "data": "created_at"

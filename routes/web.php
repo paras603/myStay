@@ -46,12 +46,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('user/edit', [\App\Http\Controllers\Front\UserController::class, 'edit'])->name('front.user.edit');
     Route::put('user/update/{id}', [\App\Http\Controllers\Front\UserController::class, 'update'])->name('user-setting.update');
 
-    Route::get('user/bookmark', [\App\Http\Controllers\Front\UserController::class, 'bookmark'])->name('front.user.bookmark');
+    // Route::get('user/bookmark', [\App\Http\Controllers\Front\UserController::class, 'bookmark'])->name('front.user.bookmark');
 
 
     Route::get('blog/index', [\App\Http\Controllers\Front\BlogController::class, 'index'])->name('front.blog.index');
     Route::get('blog/create', [\App\Http\Controllers\Front\BlogController::class, 'create'])->name('front.blog.create');
     Route::post('blog/store', [\App\Http\Controllers\Front\BlogController::class, 'store'])->name('front.blog.store');
+
+    Route::post('booking/store/{homestay_id}', [\App\Http\Controllers\Front\BookmarkController::class, 'store'])->name('front.bookmark.store');
+    Route::get('booking/index', [\App\Http\Controllers\Front\BookmarkController::class, 'index'])->name('front.bookmark.index');
+    Route::post('booking/delete/{bookmark_id}', [\App\Http\Controllers\Front\BookmarkController::class, 'destroy'])->name('front.bookmark.delete');
 
     //Route::get('merchant-setting', [\App\Http\Controllers\Front\MerchantController::class, 'merchantSettings'])->name('merchant-settings');
     //Route::get('homestay/details', [\App\Http\Controllers\Front\HomestayController::class, 'index'])->name('front.homestay.index');
@@ -61,6 +65,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
         Route::resource('merchants', \App\Http\Controllers\Dashboard\MerchantController::class);
         Route::resource('homestays', \App\Http\Controllers\Dashboard\HomestayController::class);
+        Route::resource('bookings', \App\Http\Controllers\Dashboard\BookingController::class);
     });
 });
 

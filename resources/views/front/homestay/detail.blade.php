@@ -199,12 +199,14 @@
                     <div class="location">
                     <h3>Location</h3>
 {{--                        https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56966.43289936654!2d87.27756799999999!3d26.8271616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef43173e613351%3A0xa2c34b493254330b!2sDana%20Bari!5e0!3m2!1sen!2snp!4v1643699564246!5m2!1sen!2snp--}}
-                            <iframe src="{{$homestay->iframe}}" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            {{-- <iframe src="{{$homestay->iframe}}" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56966.43289936654!2d87.27756799999999!3d26.8271616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef43173e613351%3A0xa2c34b493254330b!2sDana%20Bari!5e0!3m2!1sen!2snp!4v1643699564246!5m2!1sen!2snp" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                     <div class="book-bookmark">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <form>
-                                <button type="button" class="btn btn-success">Bookmark</button>
+                            <form action="{{route('front.bookmark.store',$homestay->id)}}" method='post'>
+                                @csrf
+                                <button type="submit" class="btn btn-success">Bookmark</button>
                             </form>
                         </div>
                     </div>

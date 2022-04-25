@@ -16,4 +16,9 @@ class Room extends Model
     public function homestay(){
        return $this->belongsTo(Homestay::class);
     }
+
+    public function bookings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

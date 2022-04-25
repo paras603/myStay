@@ -15,10 +15,10 @@
                                 <p>Publlished on: {{ $blog->published_date }}</p>
                             </div>
                             <div class="each-blog-img">
-                                {{-- <img src="images/homestay5.jpg"> --}}
+                            <img src="{{asset('storage/uploads/blogs/'.$blog->blog_image)}}" style="width:100%;">
                             </div>
                             <div class="each-blog-content">
-                            {{ $blog->blog_detail }}
+                            {!! $blog->blog_detail !!}
                             </div>
                             <div class="each-blog-author">
                                 <ul>
@@ -77,17 +77,20 @@
                         </aside> --}}
                         <aside class="single-sidebar-widget recent-post-widget">
                             <h3 class="widget-title" style="margin-bottom: 50px;">Recent Post</h3>
-                            @for($x=0; $x<4; $x++)
+                            @foreach($recent_blogs as $blog)
                             <div class="media post-item">
-                                <img src="..\images\homestay1.jpg">
+                                <?php
+                                    $src = $blog->blog_image ? asset('storage/uploads/blogs/'.$blog->blog_image) : asset('assets/images/placeholder.jpg');
+                                ?>
+                                <img src="{{ $src }}" style="width:100%;">
                                 <div class="media-body">
-                                    <a href="{{ url('blog') }}">
-                                        <h5>From rags to riches</h5>
-                                        <p>August 20, 2021</p>
+                                    <a href="{{ route('front.blog', $blog->id) }}">
+                                        <h5>{{ $blog->blog_title }}</h5>
+                                        <p>{{ $blog->published_date }}</p>
                                     </a>
                                 </div>
                             </div>
-                            @endfor
+                            @endforeach
                         </aside>                        
                     </div>
                 </div>

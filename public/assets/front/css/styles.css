@@ -95,6 +95,7 @@ a{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 16px;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
@@ -102,14 +103,15 @@ a{
     font-weight: 300;
     letter-spacing: 1px;
     font-size: 44px;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 183px;
 }
 
-.main-banner h4{
+/* .main-banner h4{
     font-weight: 400;
     letter-spacing: 2px;
     padding-bottom: 55px;
-}
+} */
 
 .main-banner a{
     font-family: 'Urbanist', sans-serif;
@@ -247,9 +249,9 @@ a{
 }
 
 /* deals of the day */
-.owl-carousel-wrapper{
+/* .owl-carousel-wrapper{
     border-top: 1px solid rgba(102, 96, 96, 0.473);
-}
+} */
 
 .home-carousel-item{
     /* min-height: 300px; */

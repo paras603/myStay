@@ -21,7 +21,11 @@ class CreateBlogsTable extends Migration
             $table->string('blog_author');//current user
             $table->date('published_date');
             $table->timestamps();
+
+            
+            $table->foreign('blog_author')->references('id')->on('users');
         });
+
     }
 
     /**

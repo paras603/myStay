@@ -18,6 +18,9 @@ class CreateBookmarksTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('homestay_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('homestay_id')->references('id')->on('homestays');
         });
     }
 
