@@ -44,7 +44,38 @@ class HomestayImageSeeder extends Seeder
                 'image'            => 'homestay5.jpg',
                 'homestay_id'      => 3,
                 'created_at'       => now(),
-            ],            
+            ],
+            [
+                'id'               =>  6,
+                'image'            => 'homestay1.jpg',
+                'homestay_id'      => 3,
+                'created_at'       => now(),
+            ],
+            [
+                'id'               =>  7,
+                'image'            => 'homestay2.jpg',
+                'homestay_id'      => 4,
+                'created_at'       => now(),
+            ],
+            [
+                'id'               =>  8,
+                'image'            => 'homestay3.jpg',
+                'homestay_id'      => 4,
+                'created_at'       => now(),
+            ],
+            [
+                'id'               =>  9,
+                'image'            => 'homestay4.jpg',
+                'homestay_id'      => 5,
+                'created_at'       => now(),
+            ],
+            [
+                'id'               =>  10,
+                'image'            => 'homestay5.jpg',
+                'homestay_id'      => 5,
+                'created_at'       => now(),
+            ],
+
          ],[],[]);
     }
 }

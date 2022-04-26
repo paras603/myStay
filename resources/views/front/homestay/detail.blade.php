@@ -35,16 +35,6 @@
                     <div class="row mt-3 mb-3 " style="border-bottom: 1px solid gray;">
                         <div class="col-lg-12 col-sm-12 mb-4">
                             <h3>{{ucwords($homestay->homestay_name)}}</h3>
-{{--                            <ul>--}}
-{{--                                <li class="star-rating">--}}
-{{--                                    <span class="fa fa-star checked"></span>--}}
-{{--                                    <span class="fa fa-star checked"></span>--}}
-{{--                                    <span class="fa fa-star checked"></span>--}}
-{{--                                    <span class="fa fa-star"></span>--}}
-{{--                                    <span class="fa fa-star"></span>--}}
-{{--                                    <span>(3)</span>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
                             <h6><i class="bi bi-geo-alt"></i>{{ucwords($homestay->homestay_address)}}</h6>
                             <h6><i class="bi bi-telephone"></i>{{$homestay->telephone}}</h6>
                             <h6><i class="bi bi-inbox"></i>{{$homestay->merchant->user->email}}</h6>

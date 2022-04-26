@@ -42,6 +42,24 @@ class MerchantSeeder extends Seeder
             'user_id'                   =>  6,
             'created_at'                => now(),
             ],
+            [
+            'id'                        =>  4,
+            'identity_front'            => 'citizenship.png',
+            'identity_back'             => 'back.png',
+            'merchant_image'            =>  'profile.png',
+            'verified'                  => 'yes',
+            'user_id'                   =>  7,
+            'created_at'                => now(),
+            ],
+            [
+                'id'                        =>  5,
+                'identity_front'            => 'citizenship.png',
+                'identity_back'             => 'back.png',
+                'merchant_image'            =>  'profile.png',
+                'verified'                  => 'yes',
+                'user_id'                   =>  8,
+                'created_at'                => now(),
+                ],
         ],[],[]);
     }
 }

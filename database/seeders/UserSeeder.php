@@ -74,8 +74,35 @@ class UserSeeder extends Seeder
                 'remember_token'            => Str::random(10),
             ],
             [
+                'first_name'                => 'suraj',
+                'last_name'                 => 'lumre',
+                'email'                     => 'suraj@gmail.com',
+                'email_verified_at'         => now(),
+                'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'role_id'                   => $merchant_role->id,
+                'remember_token'            => Str::random(10),
+            ],
+            [
+                'first_name'                => 'ram',
+                'last_name'                 => 'ram',
+                'email'                     => 'ram@gmail.com',
+                'email_verified_at'         => now(),
+                'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'role_id'                   => $merchant_role->id,
+                'remember_token'            => Str::random(10),
+            ],
+            [
                 'first_name'                => 'anish',
                 'last_name'                 => 'kc',
+                'email'                     => 'anish@gmail.com',
+                'email_verified_at'         => now(),
+                'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'role_id'                   => 4,
+                'remember_token'            => Str::random(10),
+            ],
+            [
+                'first_name'                => 'customer',
+                'last_name'                 => 'rai',
                 'email'                     => 'customer@gmail.com',
                 'email_verified_at'         => now(),
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

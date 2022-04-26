@@ -1,19 +1,3 @@
-<!-- subscribe -->
-{{-- <section class="pt-5 pb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                <h3>Newsletter</h3>
-                <p>Register now to get updates on promotions & coupons</p>
-            </div>
-            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 subscribe">                    
-                <input type="email" placeholder="Your email address">
-                <button type="button">Subscribe</button>                
-            </div>
-        </div>
-    </div>
-</section>     --}}
-
 <footer>
     <div class="container-fluid">
         <div class="container pt-5 pb-4" style="border-bottom: 1px solid rgba(175, 170, 170, 0.5);">

@@ -18,12 +18,12 @@ class CreateBlogsTable extends Migration
             $table->longText('blog_title');
             $table->longText('blog_detail');
             $table->string('blog_image');
-            $table->string('blog_author');//current user
+            $table->unsignedBigInteger('blog_author');//current user
             $table->date('published_date');
             $table->timestamps();
 
             
-            $table->foreign('blog_author')->references('id')->on('users');
+            $table->foreign('blog_author')->references('id')->on('users')->onDelete('cascade');
         });
 
     }

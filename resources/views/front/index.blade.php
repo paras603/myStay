@@ -228,8 +228,9 @@
                     {{-- <div class=""> --}}
                         @foreach($top_homestays as $top_homestay)
                         <div class=" col-lg-3 col-md-4 col-sm-12 pt-2" id="teamtxt">
+                            <div class="pt-3" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
                             {{-- <div class="container" id="home-carousel-img"> --}}
-                            <div class="container">
+                            <div class="container" >
                                 <?php
                                 $src = $top_homestay->homestayImage ? asset('storage/uploads/homestay/'.$top_homestay->homestayImage->image) : asset('assets/images/placeholder.jpg');
                                 ?>
@@ -262,6 +263,7 @@
                                         <span>({{ $top_homestay->rating }})</span>
                                     </li>
                                 </ul>
+                            </div>
                             </div>
                         </div>
                         @endforeach
@@ -300,51 +302,27 @@
     </div>
     <div>
         <div class="row">
-                    @foreach($popular_homestays as $popular_homestay)
-                    <div class="col-lg-3 col-md-4 col-sm-12 mt-2 pt-4">
-                        {{-- <div class="container" id="home-carousel-img"> --}}
-                        <div class="container">
-                            <?php
-                                $src = $popular_homestay->room->image ? asset('storage/uploads/rooms/'.$popular_homestay->room->image) : asset('assets/images/placeholder.jpg');
-                                ?>
-                                <img src="{{$src}}" style="width:100%; height:230px;">
-
-                            {{-- <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="home-item-status">
-                                        <p id="home-item-status-yellow">new</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <!-- <div class="home-item-discount">
-                                        <p>-10%</p>
-                                    </div> -->
-                                </div>
-                            </div> --}}
-
-                        </div>
-                        <div class=" container home-carousel-details">
-                            {{-- hover buttons --}}
-                            {{-- <div class="teamDiv">
-                                <ul>
-                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
-                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
-                                </ul>
-                            </div> --}}
-                            <ul>
-                                <li>{{ $popular_homestay->room->homestay->homestay_address }}</li>
-                                <li id="product-name"><a href="{{ route('front.homestay.show', $popular_homestay->room->homestay->homestay_name) }}">{{$popular_homestay->room->homestay->homestay_name }}</a></li>
-                                {{-- <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li> --}}
-                                <li class="star-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span>({{$popular_homestay->room->homestay->rating }})</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    @endforeach
+            @foreach($popular_homestays as $popular_homestay)
+            <div class="col-lg-3 col-md-4 col-sm-12 mt-2 pt-4">
+                {{-- <div class="container" id="home-carousel-img"> --}}
+                <div class="container">
+                    <?php
+                        $src = $popular_homestay->room->image ? asset('storage/uploads/rooms/'.$popular_homestay->room->image) : asset('assets/images/placeholder.jpg');
+                        ?>
+                        <img src="{{$src}}" style="width:100%; height:230px;">
+                </div>
+                <div class=" container home-carousel-details">
+                    <ul>
+                        <li>{{ $popular_homestay->room->homestay->homestay_address }}</li>
+                        <li id="product-name"><a href="{{ route('front.homestay.show', $popular_homestay->room->homestay->homestay_name) }}">{{$popular_homestay->room->homestay->homestay_name }}</a></li>
+                        <li class="star-rating">
+                            <span class="fa fa-star checked"></span>
+                            <span>({{$popular_homestay->room->homestay->rating }})</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -369,11 +347,10 @@
                                         <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
                                                 <?php
-                                                $src = $latest_blogs[$x]->image ? asset('storage/uploads/blogs/'.$latest_blogs->blog_image) : asset('assets/images/placeholder.jpg');
+                                                $src = $latest_blogs[$x]->blog_image ? asset('storage/uploads/blogs/'.$latest_blogs[$x]->blog_image) : asset('assets/images/placeholder.jpg');
                                                 ?>
                                                 <img src="{{$src}}" style="width:100%; height:230px;">
                                             </div>
-
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
                                                 <h6>{{ $latest_blogs[$x]->blog_title }}</h6>
                                                 <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">{{ $latest_blogs[$x]->published_date }}</span>
@@ -391,18 +368,15 @@
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-img">
-                                                    <?php
-                                                    $src = $latest_blogs[$x]->image ? asset('storage/uploads/blogs/'.$latest_blogs->blog_image) : asset('assets/images/placeholder.jpg');
-                                                    ?>
-                                                    <img src="{{$src}}" style="width:100%; height:230px;">
-                                                </div>
+                                                <?php
+                                                $src = $latest_blogs[$x]->blog_image ? asset('storage/uploads/blogs/'.$latest_blogs[$x]->blog_image) : asset('assets/images/placeholder.jpg');
+                                                ?>
+                                                <img src="{{$src}}" style="width:100%; height:230px;">
                                             </div>
-
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 home-blog-details">
                                                 <h6>{{ $latest_blogs[$x]->blog_title }}</h6>
                                                 <i class="fa fa-calendar" aria-hidden="true"></i><span class="home-blog-date">{{ $latest_blogs[$x]->published_date }}</span>
-                                                <br><br>{{-- <p>{!! $latest_blogs[$x]->blog_detail !!}</p> --}}
+                                               <br><br>{{-- <p>{!! $latest_blogs[$x]->blog_detail !!}</p> --}}
                                                 <a class="home-blog-read-more" href="{{ route('front.blog',$latest_blogs[$x]->id) }}">Read more</a>
                                             </div>
                                         </div>
