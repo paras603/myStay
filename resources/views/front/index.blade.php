@@ -6,31 +6,36 @@
     <div class="container mt-5">
         @auth
             <div class="row" style="margin: 20px 20px 20px 20px;">
-                {{-- <div style="background-image: url( {{asset('storage/uploads/featuredImage/'.$featured_homestays[sizeof($featured_homestays) - 1]->feature_image)}}); " class="col-lg-8 col-sm-12 home-banner" id="banner-img"> --}}
-                    <div  class="col-lg-8 col-sm-12 home-banner" id="banner-img">
-                    <div class="col-lg-6"  style="background-color: rgba(65, 64, 63, 0.123);">
+                <div  class="col-lg-8 col-sm-12 home-banner" id="banner-img" style=" background-image: url('{{ asset('storage/uploads/featuredImage/'.$featured_homestays[sizeof($featured_homestays) - 1]->feature_image) }}');">
+                    <div class="col-lg-6"  style="background-color: rgba(133, 129, 125, 0.123);">
                         <div class="main-banner mb-5 pb-4">
-                            {{-- <h6>{{ $featured_homestays[0]->homestay->homestay_name }}</h6> --}}
-                            {{-- <h1>{{ $featured_homestays[0]->homestay->slogan   }}</h1> --}}
+                            <h6>{{ $featured_homestays[sizeof($featured_homestays) - 1]->homestay->homestay_name }}</h6>
+                            <h1>{{ $featured_homestays[sizeof($featured_homestays) - 1]->homestay->slogan   }}</h1>
                             {{-- <h4>From <span style="font-weight: 600;">$488</span></h4> --}}
-                            {{-- <a href="{{ route('front.homestay.show', $featured_homestays[0]->homestay->homestay_name) }}">book now</a> --}}
+                            <a href="{{ route('front.homestay.show', $featured_homestays[sizeof($featured_homestays) - 1]->homestay->homestay_name) }}">book now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-12 mt-3">
-                    @for($i = 1; $i < 3; $i++)
-                    {{-- <div class="secondary-banner" id="secondary-banner-1"  style="background-image: url( ../../../storage/app/public/uploads/featuredImage/{{ $featured_homestays[$i]->feature_image }}); "> --}}
-                       
-                    <div class="secondary-banner" id="secondary-banner-1">
+                    
+                    <div class="secondary-banner" id="secondary-banner-1"style=" background-image: url('{{ asset('storage/uploads/featuredImage/'.$featured_homestays[sizeof($featured_homestays) - 3]->feature_image) }}');">
                         <div class=" col-lg-4 col-sm-12">
                             
                             <div class="secondary-banner-text">
-                                {{-- <h4>{{ $featured_homestays[0]->homestay->homestay_name }}</h4> --}}
-                                {{-- <a href="{{ route('front.homestay.show', $featured_homestays[0]->homestay->homestay_name) }}">Book now</a> --}}
+                                <h4>{{ $featured_homestays[sizeof($featured_homestays) - 3]->homestay->homestay_name }}</h4>
+                                <a href="{{ route('front.homestay.show', $featured_homestays[sizeof($featured_homestays) - 3]->homestay->homestay_name) }}">Book now</a>
                             </div>
                         </div>
                     </div>
-                    @endfor
+                    <div class="secondary-banner" id="secondary-banner-1"style=" background-image: url('{{ asset('storage/uploads/featuredImage/'.$featured_homestays[sizeof($featured_homestays) - 4]->feature_image) }}');">
+                        <div class=" col-lg-4 col-sm-12">
+                            
+                            <div class="secondary-banner-text">
+                                <h4>{{ $featured_homestays[sizeof($featured_homestays) - 4]->homestay->homestay_name }}</h4>
+                                <a href="{{ route('front.homestay.show', $featured_homestays[sizeof($featured_homestays) - 4]->homestay->homestay_name) }}">Book now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         @endauth
@@ -188,23 +193,46 @@
                 <div class="owl-carousel owl-theme owl-carousel-wrapper mt-2 pt-4">
                     @foreach($featured_homestays as $featured_homestay)
                     <div class="item home-carousel-item pt-2" id="teamtxt">
-                        {{-- <div class="container" id="home-carousel-img"> --}}
-                        <div class="container">
-                            <div class="">
-                                <div id="showcase-img" class="showcase-item">
-                                    <div class="col-lg-6 col-md-12 col-sm-12 showcase-details" >
-                                        <h6>{{ $featured_homestay->homestay->homestay_name }}</h6>
-                                        <h2>{{ $featured_homestay->homestay->slogan }}</h2>
-                                        <h5><br></h5>
-                                        <h4><br></h4>
-                                        {{-- <h5>Starting at</h5>
-                                        <h4>{{ $featured_homestay->homestay->room->price }}</h4> --}}
-                                    </div>
+                        <div class="container">                               
+                                
+                            <div class="row">
+                                <?php
+                                $src = $featured_homestay->feature_image ? asset('storage/uploads/featuredImage/'.$featured_homestay->feature_image) : asset('assets/images/placeholder.jpg');
+                                ?>
+                                <img src="{{$src}}" style="width:100%; height:180px;">
+                                <div class="col-xl-6">
+                                    {{-- <div class="home-item-status"> 
+                                        <p id="home-item-status-yellow">new</p>
+                                    </div> --}}
                                 </div>
-                            </div>
-
+                                <div class="col-xl-6">
+                                    <!-- <div class="home-item-discount">
+                                        <p>-10%</p>
+                                    </div> -->
+                                </div>
+                            </div>                                  
+                                                        
                         </div>
-                        
+                        <div class=" container home-carousel-details">
+                            {{-- hover buttons --}}
+                            {{-- <div class="teamDiv">
+                                <ul>
+                                    <a target="_blank" href="https://facebook.com/eratechnepal"><li><i class="bi bi-search socialIcons"></i></li></a>
+                                    <a target="_blank" href="https://www.linkedin.com/company/eratech-nepal/"><i class="bi bi-heart socialIcons"></i></li></a>
+                                    <a target="_blank" href="https://wa.me/9779848065866?text=I+have+an+idea+about%3F"><li><i class="bi bi-file-earmark socialIcons"></i></li></a>
+                                    <a target="_blank" href="https://instagram.com/eratechnepal"><li><i class="bi bi-bag socialIcons"></i></li></a>
+                                </ul>
+                            </div> --}}
+                            <ul>
+                                <li>{{ $featured_homestay->homestay->homestay_address }}</li>
+                                <li id="product-name"><a href="{{ url('homestay') }}">{{ $featured_homestay->homestay->homestay_name }}</a></li>
+                                {{-- <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li> --}}
+                                <li class="star-rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span>{{ $featured_homestay->homestay->rating }}</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     @endforeach
                 </div>
@@ -213,6 +241,7 @@
     </div>
 </div>
 </section>
+
 
 {{-- top homestay of the week --}}
 <section>
@@ -275,19 +304,19 @@
     </section>
 
 <!-- showcase 2 (single homestay) -->
-<section>
+<section style="background-color: rgb(241,243,246); padding: 40px 0px 0px 0px; margin: 40px 0px;">
 <div class="container pb-5 ">
     <div class="row" style="overflow: hidden;">
-        <div id="second-showcase" class="showcase2-wrapper">
+        <div id="second-showcase" class="showcase2-wrapper" style=" background-image: url('{{ asset('storage/uploads/featuredImage/'.$featured_homestays[sizeof($featured_homestays) - 2]->feature_image) }}');">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 second-showcase">
                 <span>
-                {{-- <h4>{{  $featured_homestays[sizeof($featured_homestays) - 1]->homestay->slogan  }}</h4>
-                <h3>{{ $featured_homestays[sizeof($featured_homestays) - 1]->homestay->homestay_name }}</h3>
-                <h5>{{ $featured_homestays[sizeof($featured_homestays) - 1]->homestay->homestay_address }}</h5>
-                <h6><a href="{{ route('front.homestay.show', $featured_homestays[sizeof($featured_homestays) - 1]->homestay->homestay_name) }}">Book now</a></h6> --}}
+                <h4>{{  $featured_homestays[sizeof($featured_homestays) - 2]->homestay->slogan  }}</h4>
+                <h3>{{ $featured_homestays[sizeof($featured_homestays) - 2]->homestay->homestay_name }}</h3>
+                <h5>{{ $featured_homestays[sizeof($featured_homestays) - 2]->homestay->homestay_address }}</h5>
+                <h6><a href="{{ route('front.homestay.show', $featured_homestays[sizeof($featured_homestays) - 2]->homestay->homestay_name) }}">Book now</a></h6>
                 </span>
             </div>
-        </div>
+        </div> 
     </div>
 </div>
 </section>
