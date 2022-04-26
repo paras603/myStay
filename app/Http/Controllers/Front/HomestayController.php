@@ -137,7 +137,7 @@ class HomestayController extends Controller
         $featured_image = $request->file('featured_image');
         $imageName = HomestayHelper::renameImageFileUpload($featured_image);
         $featured_image->storeAs(
-            'public/uploads/temp/', $imageName
+            'public/uploads/temp/',$imageName
         );
         $duration = $request->input('duration');
         if(session('featuredData')) {
@@ -161,7 +161,7 @@ class HomestayController extends Controller
         if($resp->getStatusCode() === 200){
             \DB::transaction(function () use($featudredData) {
                     Storage::makeDirectory('/public/uploads/featuredImage');
-                    Storage::move('public/uploads/temp/'.$featudredData['feature_image'], '/public/uploads/featuredImage/s'.$featudredData['feature_image']);
+                    Storage::move('public/uploads/temp/'.$featudredData['feature_image'], '/public/uploads/featuredImage/'.$featudredData['feature_image']);
                 
                     Feature::create($featudredData);
             });
