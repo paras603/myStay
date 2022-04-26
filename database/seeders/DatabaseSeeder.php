@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             RoomSeeder::class,
             HomestayImageSeeder::class,
             BookingSeeder::class,
-            BlogSeeder::class
+            BlogSeeder::class,
+            FeatureSeeder::class
         ]);
     }
 }
