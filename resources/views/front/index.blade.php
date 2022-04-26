@@ -7,7 +7,7 @@
         @auth
             <div class="row" style="margin: 20px 20px 20px 20px;">
                 <div  class="col-lg-8 col-sm-12 home-banner" id="banner-img" style=" background-image: url('{{ asset('storage/uploads/featuredImage/'.$featured_homestays[sizeof($featured_homestays) - 1]->feature_image) }}');">
-                    <div class="col-lg-6"  style="background-color: rgba(133, 129, 125, 0.123);">
+                    <div class="col-lg-6"  style="background-color: rgba(0, 0, 0, 0.281);">
                         <div class="main-banner mb-5 pb-4">
                             <h6>{{ $featured_homestays[sizeof($featured_homestays) - 1]->homestay->homestay_name }}</h6>
                             <h1>{{ $featured_homestays[sizeof($featured_homestays) - 1]->homestay->slogan   }}</h1>
@@ -225,7 +225,7 @@
                             </div> --}}
                             <ul>
                                 <li>{{ $featured_homestay->homestay->homestay_address }}</li>
-                                <li id="product-name"><a href="{{ url('homestay') }}">{{ $featured_homestay->homestay->homestay_name }}</a></li>
+                                <li id="product-name"><a href="{{ route('front.homestay.show',$featured_homestay->homestay->homestay_name) }}">{{ $featured_homestay->homestay->homestay_name }}</a></li>
                                 {{-- <li id="product-price">$36.99&nbsp;&nbsp; <strike>$45.24</strike></li> --}}
                                 <li class="star-rating">
                                     <span class="fa fa-star checked"></span>
@@ -439,8 +439,8 @@
             loop:true,
             margin:10,
             nav:false,
-            autoplay:false,
-            autoplayTimeout: 1500,
+            autoplay:true,
+            autoplayTimeout: 2000,
             dots:false,
             nav:false,
             // navText:["<",">"],
