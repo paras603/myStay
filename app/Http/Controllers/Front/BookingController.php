@@ -63,16 +63,18 @@ class BookingController extends Controller
         if($resp->getStatusCode() === 200){
             $resp_body = collect(json_decode($resp->body()));
 
-            \DB::transaction(function () use($resp_body) {
+            \DB::transaction(function () use($resp_body, $user) {
                 $booking = session('booking');
                 $booking['transaction_id']= $resp_body['idx'];
                 $booking['created_at'] = Carbon::now();
                 $booking['updated_at'] = Carbon::now();
                 $booking['user_id'] = Auth::user()->id;
                 $bookings = Booking::insert($booking);
+                $user->points = $user->points + 100;
+                $user->save();
             });
             $request->session()->flash('toast.success', 'Payemnt Done!');
-        
+
             return response()->json([
                 'success'       =>      1,
                 'redirect'      =>  route('front.index'),
