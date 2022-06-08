@@ -26,31 +26,44 @@
                 <div class="col-md-3 footer-item">
                     <h6>Quick Links</h6>
                     <ul>
-                        <li><a>Contact</a></li>
-                        <li><a>Address</a></li>
-                        <li><a>Term & Condition</a></li>
-                        <li><a>Blogs</a></li>
-                        <li><a>User Manual</a></li>
-                        <li><a>FAQs</a></li>
+                        <li><a href="/" style="color: rgb(102, 103, 105)">Home</a></li>
+                        <li><a href="#new_homestays" style="color: rgb(102, 103, 105)">New Homestays</a></li>
+                        <li><a href="#top_homestays" style="color: rgb(102, 103, 105)">Top Homestays</a></li>                        
+                        <li><a href="#popular_homestays" style="color: rgb(102, 103, 105)">Popular Homestays</a></li>
+                        @guest
+                        <li><a href="{{route('front.blogs')}}" style="color: rgb(102, 103, 105)">Blogs</a></li>
+                        @endguest
+                        <li><a href="{{ url('faq') }}" style="color: rgb(102, 103, 105)">FAQs</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-item">
                     <h6>My Account</h6>
                     <ul>
-                        <li><a>My Account</a></li>
-                        <li><a>Booking History</a></li>
-                        <li><a>Popular Homestays</a></li>
-                        <li><a>Discount</a></li>
-                        <li><a>Blogs</a></li>
+                        @guest
+                        <li><a href="{{ route('login') }}" style="color: rgb(102, 103, 105)">My Account</a></li>
+                        <li><a href="{{ route('login') }}" style="color: rgb(102, 103, 105)">Account Settings</a></li>
+                        <li><a href="{{ route('login') }}" style="color: rgb(102, 103, 105)">Add Blog</a></li>
+                        <li><a href="/" style="color: rgb(102, 103, 105)">Home</a></li>
+                        @endguest
+                        @auth
+                        <li><a href="{{ route('front.user.index') }}" style="color: rgb(102, 103, 105)">My Account</a></li>
+                        <li><a href="{{ route('front.user.edit') }}" style="color: rgb(102, 103, 105)">Account Settings</a></li>
+                        <li><a href="{{ route('front.blog.create') }}" style="color: rgb(102, 103, 105)">Add Blog</a></li>
+                        <li><a href="/" style="color: rgb(102, 103, 105)">Home</a></li>
+                        @endauth
                     </ul>
                 </div>
                 <div class="col-md-3 footer-item">
                     <h6>Bussiness</h6>
                     <ul>
-                        <li><a>Be a Customer</a></li>
-                        <li><a>Be a Merchat</a></li>
-                        <li><a>About us</a></li>
-                        <li><a>Homestays</a></li>
+                        @guest
+                        <li><a href="{{ route('register') }}" style="color: rgb(102, 103, 105)">Be a Customer</a></li>
+                        <li><a href="{{ route('register') }}" style="color: rgb(102, 103, 105)">Be a Merchant</a></li>
+                        @endguest
+                        @auth
+                        <li><a href="#new_homestays" style="color: rgb(102, 103, 105)">Homestays</a></li>
+                        <li><a href="{{ url('faq') }}" style="color: rgb(102, 103, 105)">FAQs</a></li>
+                        @endauth
                     </ul>
                 </div>
             </div>
@@ -63,11 +76,9 @@
                 <div class="col-sm-6">
                     <div class="footer-payment-method">
                         <ul>
-                            <li><i class="fab fa-cc-paypal"></i></li>
-                            <li><i class="fab fa-cc-mastercard"></i></li>
                             <li><i class="fab fa-cc-visa"></i></li>
                             <li><i class="far fa-credit-card"></i></li>
-                            <li><i class="fab fa-cc-amazon-pay"></i></li>
+                            <li><i class="fas fa-wallet"></i></li>
                         </ul>
                     </div>
 

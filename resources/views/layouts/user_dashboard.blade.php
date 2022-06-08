@@ -40,6 +40,9 @@
                                 <a href="{{route('rooms.index')}}"><i class="bi bi-door-closed-fill"></i>My Rooms</a>
                             </div>
                             <div class="cust-profile-nav-item">
+                                <a href="{{route('front.my-customer-booking.index')}}"><i class="bi bi-people-fill"></i>My Customers</a>
+                            </div>
+                            <div class="cust-profile-nav-item">
                                 <a href="{{route('front.homestay.edit',$GLOBAL_HOMESTAY)}}"><i class="bi bi-gear-fill"></i>Update Homestay</a>
                             </div>
                             <div class="cust-profile-nav-item">

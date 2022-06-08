@@ -13,9 +13,12 @@ session(['total' => $amt_total]);
     <div class="alert alert-danger fade  mt-1" id="validationErrorAlert" role="alert" style="display:none;">
         <span id="validationErrorText"></span>
     </div>
-    <span>Per day Price : {{env('PER_FEATURE_PRICE')}}</span>
-    <span>Duration: {{$duration}}</span>
-    <span>{{$amt_total}}</span>
+    <span><h4>Per day Price : {{env('PER_FEATURE_PRICE')}}</h4></span>
+    <br>
+    <span><h4>Duration: {{$duration}}</h4></span>
+    <br>
+    <span><h4>Total: {{$amt_total}}</h4></span>
+    <br>
     <button class="btn btn-outline-primary btn-order btn-block" id="payment-button">
         <span class="d-inline-block">Pay with Khalti</span>
         <div class="ml-3 spinner-border" role="status" id="payStartSpinner" style="display: none; height: 1rem; width: 1rem; margin-left: 5px;">

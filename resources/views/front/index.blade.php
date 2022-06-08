@@ -125,7 +125,7 @@
 </section>
 
 {{-- new homestay --}}
-<section class="home-top-cate-sec pt-5 pb-5">
+<section class="home-top-cate-sec pt-5 pb-5" id="new_homestays">
     <div class="container">
         <div class="home-section-title">
               <h3>New Homestays</h3>
@@ -245,7 +245,7 @@
 
 {{-- top homestay of the week --}}
 <section>
-    <div class="container pb-5">
+    <div class="container pb-5" id="top_homestays">
         <div class="row">
             <div class="col-xl-5 home-section-title">
                 <h3>Top Homestays of the Week</h3>
@@ -322,7 +322,7 @@
 </section>
 
 <!-- popular homestay -->
-<section>
+<section id="popular_homestays">
 <div class="container pb-5">
     <div class="row">
         <div class="col-xl-5   home-section-title">

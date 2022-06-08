@@ -6,6 +6,7 @@ use App\Helpers\HomestayHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Homestay;
+use App\Models\Merchant;
 use App\Models\Room;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -113,6 +114,18 @@ class BookingController extends Controller
         $user = \auth()->user();
         $bookings = Booking::where('user_id', $user->id)->get();
         return view('front.booking.show', compact('bookings'));
+    }
+
+    public function myCustomers(){
+        // $user = \auth()->user();
+        // $merchantId = Merchant::where('user_id', $user->id)->get();
+        // $homestayId = Homestay::where('merchant_id', $merchantId)->get();
+        // $myRooms = Room::where('homestay_id', $homestayId)->get();
+
+        // $bookers = Booking::where('room_id', $myRooms)->get();
+        // return view('front.user.my-customers', compact('bookers'));
+
+        return view('front.user.my-customers');
     }
 
 }
