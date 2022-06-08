@@ -11,21 +11,35 @@ use App\Models\Feature;
 use App\Models\Homestay;
 use App\Models\HomestayImage;
 use App\Models\Merchant;
+use App\Models\Review;
 use App\Models\Room;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class HomestayController extends Controller
 {
 
     public function show($homestay_name){
+        // dd($homestay_name);
         abort_if(!$homestay_name, 404);
         $homestay = Homestay::with('rooms')->where('homestay_name', $homestay_name)->first();
         abort_if(!$homestay, 404);
-        return view('front.homestay.detail', compact('homestay'));
+
+        // $email = DB::table('users')->where('name', 'John')->value('email');
+        $homestay_id = DB::table('homestays')->where('homestay_name', $homestay_name)->value('id');
+
+        $reviews = Review::where('homestay_id', $homestay_id)->get();
+        // dd($reviews);
+
+        // dd($homestay_id);
+        
+
+        return view('front.homestay.detail', compact('homestay','reviews'));
+        
 //        $user = \auth()->user();
 //        if(HomestayHelper::isMerchant($user)) {
 //            if (HomestayHelper::isVerifiedMerchant($user)) {

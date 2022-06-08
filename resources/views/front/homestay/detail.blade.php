@@ -249,33 +249,37 @@
                     <div class="row">
                         <div class="col-lg-12 col-sm-12">
                             <h3>Review</h3>
-                            <div class="row post-review">
+                            <form action="{{ route('front.review.store',$homestay->id) }}" method="POST" id="review-create">
+                            @csrf
+                                <div class="row post-review">
                                 <div class="col-lg-1 col-md-1 col-sm-1">
-                                    <img src="images/profile.jpg">
+                                    <img src="../images/profile.jpg">
                                 </div>
                                 <div class="col-lg-9 col-md-9 col-sm-11">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="review_desc"></textarea>
                                         <label for="floatingTextarea">Comments</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-12">
-                                    <button>Submit</button>
+                                    <button type="submit">Submit</button>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
-                    @for($x=0; $x<3; $x++)
+
+                    @foreach($reviews as $review)
                     <div class="row customer-review">
                         <div class="col-lg-1 col-md-1 col-sm-12">
-                            <img src="images/profile.jpg">
+                            <img src="../images/profile.jpg">
                         </div>
                         <div class="col-lg-11 col-md-11 col-sm-12">
-                            <h6>Ram bahadur phyal</h6>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur reprehenderit possimus ipsum!</p>
+                            <h6>{{ $review->user->first_name }}&nbsp;{{ $review->user->last_name }}</h6>
+                            <p>{{ $review->review }}</p>
                         </div>
                     </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -55,6 +55,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('blog/create', [\App\Http\Controllers\Front\BlogController::class, 'create'])->name('front.blog.create');
     Route::post('blog/store', [\App\Http\Controllers\Front\BlogController::class, 'store'])->name('front.blog.store');
 
+    // Route::get('blog/index', [\App\Http\Controllers\Front\BlogController::class, 'index'])->name('front.blog.index');
+    // Route::get('review/view/{homestay_id}', [\App\Http\Controllers\Front\ReviewController::class, 'show'])->name('front.homestay.show');
+    Route::post('review/store/{homestay_id}', [\App\Http\Controllers\Front\ReviewController::class, 'store'])->name('front.review.store');
+
     Route::post('booking/store/{homestay_id}', [\App\Http\Controllers\Front\BookmarkController::class, 'store'])->name('front.bookmark.store');
     Route::get('booking/index', [\App\Http\Controllers\Front\BookmarkController::class, 'index'])->name('front.bookmark.index');
     Route::post('booking/delete/{bookmark_id}', [\App\Http\Controllers\Front\BookmarkController::class, 'destroy'])->name('front.bookmark.delete');
