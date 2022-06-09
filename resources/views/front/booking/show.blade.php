@@ -33,7 +33,7 @@
                 {{-- <form method="post" action="{{ route('front.homestay.show', $booking->room->homestay->homestay_name) }}">
                     <button class="customer-booking-btn2">Rate Homestay</button>
                 </form> --}}
-                <button class="customer-booking-btn2">Cancel Booking</button>
+                <a href="{{route('booking.cancel', $booking->id)}}" class="customer-booking-btn2">Cancel Booking</a>
             </div>
         </div>
         @endforeach

@@ -11,6 +11,7 @@ use App\Models\Room;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
 class BookingController extends Controller
@@ -18,7 +19,32 @@ class BookingController extends Controller
     public function index(Request $request){
         $room = Room::where('id', $request->input('room'))->first();
         abort_if(!$room, 404);
+        if(HomestayHelper::isMerchant(\auth()->user())){
+            $homestay = Homestay::where('id', $room->homestay_id)->first();
+            $merchant = Merchant::where('user_id', \auth()->user()->id)->first();
+            if($homestay->merchant_id == $merchant->id){
+                return redirect()->back()->with('toast.error', 'Sorry You cannot book your own rom');
+            }
+        }
         return view('front.booking.index', compact('room'));
+    }
+
+    public  function cancel($id){
+        $booking = Booking::findOrFail($id);
+        if($booking->user_id != \auth()->user()->id){
+            abort('401');
+        }
+        if($booking->created_at > Carbon::now()->subDay()){
+            return DB::transaction(function () use($booking){
+                $user = \auth()->user();
+                $user->balance = $user->balance + $booking->total;
+                $user->save();
+                $booking->delete();
+                return redirect()->route('front.index')->with('toast.success', 'Booking Cancelled');
+            });
+        }else{
+            return redirect()->back()->with('toast.error', 'Sorry, Cancellation time expired');
+        }
     }
 
     public function checkout(Request $request){
@@ -31,6 +57,14 @@ class BookingController extends Controller
         if(!$room){
             abort(404);
         }
+        if(HomestayHelper::isMerchant(\auth()->user())){
+            $homestay = Homestay::where('id', $room->homestay_id)->first();
+            $merchant = Merchant::where('user_id', \auth()->user()->id)->first();
+            if($homestay->merchant_id == $merchant->id){
+                return redirect()->route('front.homestay.show',$homestay->homestay_name)->with('toast.error', 'Sorry You cannot book your own rom');
+            }
+        }
+
         $start_date = Carbon::parse($request->input('start_date'));
         $end_date = Carbon::parse($request->input('end_date'));
         $days_count = $end_date->diffInDays($start_date);
@@ -63,7 +97,6 @@ class BookingController extends Controller
         $resp = Http::acceptJson()->withHeaders($header)->post( $url, $args);
         if($resp->getStatusCode() === 200){
             $resp_body = collect(json_decode($resp->body()));
-
             \DB::transaction(function () use($resp_body, $user) {
                 $booking = session('booking');
                 $booking['transaction_id']= $resp_body['idx'];
