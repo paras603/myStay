@@ -117,15 +117,20 @@ class BookingController extends Controller
     }
 
     public function myCustomers(){
-        // $user = \auth()->user();
-        // $merchantId = Merchant::where('user_id', $user->id)->get();
-        // $homestayId = Homestay::where('merchant_id', $merchantId)->get();
-        // $myRooms = Room::where('homestay_id', $homestayId)->get();
-
-        // $bookers = Booking::where('room_id', $myRooms)->get();
-        // return view('front.user.my-customers', compact('bookers'));
-
-        return view('front.user.my-customers');
+         $user = \auth()->user();
+         $isMerchant = HomestayHelper::isMerchant($user);
+         if($isMerchant){
+             if(HomestayHelper::isVerifiedMerchant($user)){
+                 $merchant = Merchant::where('user_id', $user->id)->first();
+                 $homestay = Homestay::where('merchant_id', $merchant->id)->first();
+                 $myRooms = Room::where('homestay_id', $homestay->id)->pluck('id')->toArray();
+                 $bookings = Booking::whereIn('room_id', $myRooms)->get();
+                 return view('front.user.my-customers', compact('bookings'));
+             }{
+                 abort(401);
+             }
+         }
+             abort(401);
     }
 
 }
